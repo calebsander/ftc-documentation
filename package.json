@@ -1,0 +1,16 @@
+{
+	"name": "ftc-documentation",
+	"version": "1.0.0",
+	"description": "Adds documentation to FTC source Java files",
+	"main": "download-source.js",
+	"dependencies": {
+		"progress": "1.1.x",
+		"rmdir": "1.2.x",
+		"unzip": "0.1.11"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Caleb Sander",
+	"license": "MIT"
+}

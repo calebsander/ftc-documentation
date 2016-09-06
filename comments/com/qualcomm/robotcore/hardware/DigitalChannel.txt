@@ -1,0 +1,32 @@
+.class
+Represents a digital port on a device.
+Digital ports can be put in either input mode or output mode.
+In input mode, they can determine whether they are receiving a digital signal or not.
+In output mode, they can be made to send or not send a digital signal.
+
+.method DigitalChannelController.Mode getMode()
+Gets whether the port is being used as an input or an output
+@return <b>INPUT</b> if being used as an input; <b>OUTPUT</b> if being used as an output
+
+.method void setMode(DigitalChannelController.Mode)
+Sets the port to be either an input or an output
+@param mode the desired mode, either <b>INPUT</b> or <b>OUTPUT</b>
+
+.method boolean getState()
+Gets the signal level of the port.
+If the port is set as an output port, it returns the last set value.
+If the port is set as an input port, it returns the value currently being read.
+@return true iff there is a signal on the port
+
+.method void setState(boolean)
+Sets whether the port is activated, if it is set as an output port.
+If the port is set as an input, behavior is undefined.
+@param state true to output a signal, false to stop outputing a signal
+
+.method String getDeviceName()
+@return the text "Digital Channel"
+
+.method String getConnectionInfo()
+Gets connection information about this device in a human-readable format,
+e.g. {@code USB AL00VDDK; digital port 0}
+@return the device and port this motor is attached to

@@ -16,13 +16,16 @@ function walkDir(dir) {
 		}
 	})
 }
-const SIGNATURE_MATCH = /^\.method ([a-zA-Z0-9.]+) ([a-zA-Z0-9]+)\(((?:[a-zA-Z0-9.]+)(?:, [a-zA-Z0-9.]+)*)?\)\n/m
+const METHOD_MATCH = /^\.method ([a-zA-Z0-9.\[\]]+) ([a-zA-Z0-9_$]+)\(((?:[a-zA-Z0-9.\[\]]+)(?:, [a-zA-Z0-9.\[\]]+)*)?\)\n/m
+const FIELD_MATCH = /^\.field ([a-zA-Z0-9_$]+)\n/m
+const CONSTRUCTOR_MATCH = /^.constructor \(((?:[a-zA-Z0-9.\[\]]+)(?:, [a-zA-Z0-9.\[\]]+)*)?\)\n/m
+const MODIFIERS = '(?:\\n|^)\\s*(?:(?:(?:@?[A-Z][a-zA-Z]*(?:\\([^)]*\\))?)|(?:[a-z]+))\\s+)*'
 RegExp.escape = str => {
 	return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
 }
 const WHITESPACE = /^\s$/
-function replaceComments(className) {
-	const javaFile = SOURCE_DIR + className + '.java'
+function replaceComments(classFileName) {
+	const javaFile = SOURCE_DIR + classFileName + '.java'
 	const s = new Simultaneity
 	let source
 	s.addTask(() => {
@@ -34,18 +37,19 @@ function replaceComments(className) {
 	})
 	let comments
 	s.addTask(() => {
-		fs.readFile(ROOT_DIR + className + '.txt', 'utf8', (err, data) => {
+		fs.readFile(ROOT_DIR + classFileName + '.txt', 'utf8', (err, data) => {
 			if (err) throw err
 			comments = data
 			s.taskFinished()
 		})
 	})
 	s.callback(() => {
-		console.log('Replacing comments for: ' + className)
+		console.log('Replacing comments for: ' + classFileName)
+		const className = classFileName.substring(classFileName.lastIndexOf('/') + 1)
 		for (const replacementBlock of comments.split('\n\n')) {
 			try {
 				let sourceMatch
-				const signature = SIGNATURE_MATCH.exec(replacementBlock)
+				const signature = METHOD_MATCH.exec(replacementBlock)
 				if (signature) {
 					const returnType = signature[1]
 					const methodName = signature[2]
@@ -53,7 +57,7 @@ function replaceComments(className) {
 					let arguments
 					if (joinedArguments) arguments = joinedArguments.split(', ')
 					else arguments = []
-					let matchString = '(?:\\n|^)\\s*(?:(?:(?:@?[A-Z][a-zA-Z]*(?:\\([^)]*\\))?)|(?:[a-z]+))\\s+)*' +
+					let matchString = MODIFIERS +
 						RegExp.escape(returnType) +
 						'\\s+' +
 						RegExp.escape(methodName) +
@@ -72,11 +76,46 @@ function replaceComments(className) {
 				}
 				else if (replacementBlock.substring(0, replacementBlock.indexOf('\n')) === '.class') {
 					sourceMatch = new RegExp(
-						'(?:\\n|^)\\s*(?:(?:(?:@?[A-Z][a-zA-Z]*(?:\\([^)]*\\))?)|(?:[a-z]+))\\s+)*(?:(?:class)|(?:interface)|(?:enum))\\s+' +
-						RegExp.escape(className.substring(className.lastIndexOf('/') + 1))
+						MODIFIERS + '(?:(?:class)|(?:interface)|(?:enum))\\s+' +
+						RegExp.escape(className)
 					)
 				}
-				else throw new Error('Failed to identify comment type')
+				else {
+					const signature = FIELD_MATCH.exec(replacementBlock)
+					if (signature) {
+						const fieldName = signature[1]
+						sourceMatch = new RegExp(
+							MODIFIERS +
+							'(?:[a-zA-Z0-9.\\[\\]]+)\\s+' +
+							RegExp.escape(fieldName) +
+							'\\s*[;=]'
+						)
+					}
+					else {
+						const signature = CONSTRUCTOR_MATCH.exec(replacementBlock)
+						if (signature) {
+							const joinedArguments = signature[1]
+							let arguments
+							if (joinedArguments) arguments = joinedArguments.split(', ')
+							else arguments = []
+							let matchString = MODIFIERS +
+								RegExp.escape(className) +
+								'\\s*\\('
+							for (let i = 0; i < arguments.length; i++) {
+								const argument = arguments[i]
+								matchString += '\\s*' +
+									RegExp.escape(argument) +
+									'\\s+' +
+									'[a-zA-Z0-9$_]+\\s*'
+								if (i !== arguments.length - 1) matchString += ','
+							}
+							if (!arguments.length) matchString += '\\s*'
+							matchString += '\\)'
+							sourceMatch = new RegExp(matchString)
+						}
+						else throw new Error('Failed to identify comment type')
+					}
+				}
 				sourceMatch = sourceMatch.exec(source)
 				const matchIndex = sourceMatch.index
 				let testIndex

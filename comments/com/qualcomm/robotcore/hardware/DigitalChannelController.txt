@@ -1,0 +1,29 @@
+.class
+Represents a device with several GPIO digital ports
+
+.method SerialNumber getSerialNumber()
+Gets the FTDI serial number of the module.
+@return the serial number (text version will look like "AL00VDDK")
+
+.method Mode getDigitalChannelMode(int)
+Gets whether a specified port is being used as an input or an output
+@param channel the desired port
+@return <b>INPUT</b> if being used as an input; <b>OUTPUT</b> if being used as an output
+
+.method void setDigitalChannelMode(int, Mode)
+Sets a specified port to be either an input or an output
+@param channel the desired port
+@param mode the desired mode, either <b>INPUT</b> or <b>OUTPUT</b>
+
+.method boolean getDigitalChannelState(int)
+Gets the signal level of a specified port.
+If the port is set as an output port, it returns the last set value.
+If the port is set as an input port, it returns the value currently being read.
+@param channel the desired port
+@return true iff there is a signal on the port
+
+.method void setDigitalChannelState(int, boolean)
+Sets whether a specified port is activated, if it is set as an output port.
+If the port is set as an input, it will not be affected.
+@param channel the desired port
+@param state true to output a signal, false to stop outputing a signal

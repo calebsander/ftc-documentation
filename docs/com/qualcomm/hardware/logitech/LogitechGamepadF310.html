@@ -199,7 +199,7 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html" title
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/logitech/LogitechGamepadF310.html#update-android.view.MotionEvent-">update</a></span>(android.view.MotionEvent&nbsp;event)</code>
-<div class="block">Update the gamepad based on a MotionEvent</div>
+<div class="block">Updates the stick, trigger, and D-pad values based on the new state.</div>
 </td>
 </tr>
 </table>
@@ -265,12 +265,13 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html" title
 <h4>update</h4>
 <pre>public&nbsp;void&nbsp;update(android.view.MotionEvent&nbsp;event)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#update-android.view.MotionEvent-">Gamepad</a></code></span></div>
-<div class="block">Update the gamepad based on a MotionEvent</div>
+<div class="block">Updates the stick, trigger, and D-pad values based on the new state.
+ It is not advised for the user to call this method.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#update-android.view.MotionEvent-">update</a></code>&nbsp;in class&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html" title="class in com.qualcomm.robotcore.hardware">Gamepad</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>event</code> - motion event</dd>
+<dd><code>event</code> - the event specifiying the new joystick values</dd>
 </dl>
 </li>
 </ul>

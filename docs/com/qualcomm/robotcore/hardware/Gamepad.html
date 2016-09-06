@@ -118,21 +118,9 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">Gamepad</span>
 extends RobocolParsableBase</pre>
-<div class="block">Monitor a hardware gamepad.
- <p>
- The buttons, analog sticks, and triggers are represented a public
- member variables that can be read from or written to directly.
- <p>
- Analog sticks are represented as floats that range from -1.0 to +1.0. They will be 0.0 while at
- rest. The horizontal axis is labeled x, and the vertical axis is labeled y.
- <p>
- Triggers are represented as floats that range from 0.0 to 1.0. They will be at 0.0 while at
- rest.
- <p>
- Buttons are boolean values. They will be true if the button is pressed, otherwise they will be
- false.
- <p>
- The dpad is represented as 4 buttons, dpad_up, dpad_down, dpad_left, and dpad_right</div>
+<div class="block">Represents the state of a joystick attached to the driver station.
+ Values for all the buttons and sticks are stored in fields of the object.
+ Fields should be treated as read-only.</div>
 </li>
 </ul>
 </div>
@@ -175,49 +163,49 @@ extends RobocolParsableBase</pre>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#a">a</a></span></code>
-<div class="block">button a</div>
+<div class="block">Whether the A button (bottom on right side) is being pressed.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#b">b</a></span></code>
-<div class="block">button b</div>
+<div class="block">Whether the B button (right on right side) is being pressed.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#back">back</a></span></code>
-<div class="block">button back</div>
+<div class="block">Whether the back button is being pressed.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#dpad_down">dpad_down</a></span></code>
-<div class="block">dpad down</div>
+<div class="block">Whether the D-pad is being pushed down.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#dpad_left">dpad_left</a></span></code>
-<div class="block">dpad left</div>
+<div class="block">Whether the D-pad is being pushed left.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#dpad_right">dpad_right</a></span></code>
-<div class="block">dpad right</div>
+<div class="block">Whether the D-pad is being pushed right.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#dpad_up">dpad_up</a></span></code>
-<div class="block">dpad up</div>
+<div class="block">Whether the D-pad is being pushed up.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#guide">guide</a></span></code>
-<div class="block">button guide - often the large button in the middle of the controller.</div>
+<div class="block">Whether the button in the center of the joystick is being pressed.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -229,97 +217,97 @@ extends RobocolParsableBase</pre>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#ID_UNASSOCIATED">ID_UNASSOCIATED</a></span></code>
-<div class="block">A gamepad with an ID equal to ID_UNASSOCIATED has not been associated with any device.</div>
+<div class="block">The value of <code>id</code> if neither Start+A or Start+B has been pressed yet</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#left_bumper">left_bumper</a></span></code>
-<div class="block">button left bumper</div>
+<div class="block">Whether the left bumper is being pressed.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#left_stick_button">left_stick_button</a></span></code>
-<div class="block">left stick button</div>
+<div class="block">Whether the left stick is being pressed in.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#left_stick_x">left_stick_x</a></span></code>
-<div class="block">left analog stick horizontal axis</div>
+<div class="block">The left joystick's x position.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#left_stick_y">left_stick_y</a></span></code>
-<div class="block">left analog stick vertical axis</div>
+<div class="block">The left joystick's y position.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#left_trigger">left_trigger</a></span></code>
-<div class="block">left trigger</div>
+<div class="block">How much the left trigger is being pressed.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#right_bumper">right_bumper</a></span></code>
-<div class="block">button right bumper</div>
+<div class="block">Whether the right bumper is being pressed.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#right_stick_button">right_stick_button</a></span></code>
-<div class="block">right stick button</div>
+<div class="block">Whether the right stick is being pressed in.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#right_stick_x">right_stick_x</a></span></code>
-<div class="block">right analog stick horizontal axis</div>
+<div class="block">The right joystick's x position.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#right_stick_y">right_stick_y</a></span></code>
-<div class="block">right analog stick vertical axis</div>
+<div class="block">The right joystick's y position.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>float</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#right_trigger">right_trigger</a></span></code>
-<div class="block">right trigger</div>
+<div class="block">How much the right trigger is being pressed.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#start">start</a></span></code>
-<div class="block">button start</div>
+<div class="block">Whether the start button is being pressed.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#timestamp">timestamp</a></span></code>
-<div class="block">Relative timestamp of the last time an event was detected</div>
+<div class="block">The value of <code>System.nanoTime()</code> when event was last detected</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>byte</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#user">user</a></span></code>
-<div class="block">Which user is this gamepad used by</div>
+<div class="block">Value depends on whether it is registered as the first or second joystick</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#x">x</a></span></code>
-<div class="block">button x</div>
+<div class="block">Whether the X button (left on right side) is being pressed.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#y">y</a></span></code>
-<div class="block">button y</div>
+<div class="block">Whether the Y button (top on right side) is being pressed.</div>
 </td>
 </tr>
 </table>
@@ -340,7 +328,9 @@ extends RobocolParsableBase</pre>
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#Gamepad--">Gamepad</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#Gamepad-com.qualcomm.robotcore.hardware.Gamepad.GamepadCallback-">Gamepad</a></span>(<a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.GamepadCallback.html" title="interface in com.qualcomm.robotcore.hardware">Gamepad.GamepadCallback</a>&nbsp;callback)</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#Gamepad-com.qualcomm.robotcore.hardware.Gamepad.GamepadCallback-">Gamepad</a></span>(<a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.GamepadCallback.html" title="interface in com.qualcomm.robotcore.hardware">Gamepad.GamepadCallback</a>&nbsp;callback)</code>
+<div class="block">Constructs a <code>Gamepad</code> that will call the specified method when values change.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -360,7 +350,7 @@ extends RobocolParsableBase</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#atRest--">atRest</a></span>()</code>
-<div class="block">Are all analog sticks and triggers in their rest position?</div>
+<div class="block">Returns whether all the sticks and triggers are at rest.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -384,11 +374,16 @@ extends RobocolParsableBase</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#fromByteArray-byte:A-">fromByteArray</a></span>(byte[]&nbsp;byteArray)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#fromByteArray-byte:A-">fromByteArray</a></span>(byte[]&nbsp;byteArray)</code>
+<div class="block">Makes this instance take on the state specified by a byte array.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>MsgType</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#getRobocolMsgType--">getRobocolMsgType</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#getRobocolMsgType--">getRobocolMsgType</a></span>()</code>
+<div class="block">Returns the type of data being transmitted to the driver station
+ when this object is converted to a byte array and sent</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
@@ -399,18 +394,20 @@ extends RobocolParsableBase</pre>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#reset--">reset</a></span>()</code>
-<div class="block">Reset this gamepad into its initial state</div>
+<div class="block">Resets this gamepad's values to the default state.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#setJoystickDeadzone-float-">setJoystickDeadzone</a></span>(float&nbsp;deadzone)</code>
-<div class="block">Set the joystick deadzone.</div>
+<div class="block">Changes the "deadzone" of the analog sticks.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#toByteArray--">toByteArray</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#toByteArray--">toByteArray</a></span>()</code>
+<div class="block">Converts the state into a byte array</div>
+</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
@@ -427,13 +424,13 @@ extends RobocolParsableBase</pre>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#update-android.view.KeyEvent-">update</a></span>(android.view.KeyEvent&nbsp;event)</code>
-<div class="block">Update the gamepad based on a KeyEvent</div>
+<div class="block">Updates the button and D-pad values based on the new state.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#update-android.view.MotionEvent-">update</a></span>(android.view.MotionEvent&nbsp;event)</code>
-<div class="block">Update the gamepad based on a MotionEvent</div>
+<div class="block">Updates the stick, trigger, and D-pad values based on the new state.</div>
 </td>
 </tr>
 </table>
@@ -465,7 +462,7 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>ID_UNASSOCIATED</h4>
 <pre>public static final&nbsp;int ID_UNASSOCIATED</pre>
-<div class="block">A gamepad with an ID equal to ID_UNASSOCIATED has not been associated with any device.</div>
+<div class="block">The value of <code>id</code> if neither Start+A or Start+B has been pressed yet</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../constant-values.html#com.qualcomm.robotcore.hardware.Gamepad.ID_UNASSOCIATED">Constant Field Values</a></dd>
@@ -479,7 +476,10 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>left_stick_x</h4>
 <pre>public&nbsp;float left_stick_x</pre>
-<div class="block">left analog stick horizontal axis</div>
+<div class="block">The left joystick's x position.
+ <code>-1</code> indicates all the way to the left,
+ <code>0</code> indicates in the middle, and
+ <code>1</code> indicates all the way to the right.</div>
 </li>
 </ul>
 <a name="left_stick_y">
@@ -489,7 +489,10 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>left_stick_y</h4>
 <pre>public&nbsp;float left_stick_y</pre>
-<div class="block">left analog stick vertical axis</div>
+<div class="block">The left joystick's y position.
+ <code>-1</code> indicates all the way up,
+ <code>0</code> indicates in the middle, and
+ <code>1</code> indicates all the way down.</div>
 </li>
 </ul>
 <a name="right_stick_x">
@@ -499,7 +502,10 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>right_stick_x</h4>
 <pre>public&nbsp;float right_stick_x</pre>
-<div class="block">right analog stick horizontal axis</div>
+<div class="block">The right joystick's x position.
+ <code>-1</code> indicates all the way to the left,
+ <code>0</code> indicates in the middle, and
+ <code>1</code> indicates all the way to the right.</div>
 </li>
 </ul>
 <a name="right_stick_y">
@@ -509,7 +515,10 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>right_stick_y</h4>
 <pre>public&nbsp;float right_stick_y</pre>
-<div class="block">right analog stick vertical axis</div>
+<div class="block">The right joystick's y position.
+ <code>-1</code> indicates all the way up,
+ <code>0</code> indicates in the middle, and
+ <code>1</code> indicates all the way down.</div>
 </li>
 </ul>
 <a name="dpad_up">
@@ -519,7 +528,10 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>dpad_up</h4>
 <pre>public&nbsp;boolean dpad_up</pre>
-<div class="block">dpad up</div>
+<div class="block">Whether the D-pad is being pushed up.
+ <code>true</code> indicates that the D-pad is either
+ in the up-left, up, or up-right positions;
+ <code>false</code> indicates that it isn't.</div>
 </li>
 </ul>
 <a name="dpad_down">
@@ -529,7 +541,10 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>dpad_down</h4>
 <pre>public&nbsp;boolean dpad_down</pre>
-<div class="block">dpad down</div>
+<div class="block">Whether the D-pad is being pushed down.
+ <code>true</code> indicates that the D-pad is either
+ in the down-left, down, or down-right positions;
+ <code>false</code> indicates that it isn't.</div>
 </li>
 </ul>
 <a name="dpad_left">
@@ -539,7 +554,10 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>dpad_left</h4>
 <pre>public&nbsp;boolean dpad_left</pre>
-<div class="block">dpad left</div>
+<div class="block">Whether the D-pad is being pushed left.
+ <code>true</code> indicates that the D-pad is either
+ in the up-left, left, or down-left positions;
+ <code>false</code> indicates that it isn't.</div>
 </li>
 </ul>
 <a name="dpad_right">
@@ -549,7 +567,10 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>dpad_right</h4>
 <pre>public&nbsp;boolean dpad_right</pre>
-<div class="block">dpad right</div>
+<div class="block">Whether the D-pad is being pushed right.
+ <code>true</code> indicates that the D-pad is either
+ in the up-right, right, or down-right positions;
+ <code>false</code> indicates that it isn't.</div>
 </li>
 </ul>
 <a name="a">
@@ -559,7 +580,8 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>a</h4>
 <pre>public&nbsp;boolean a</pre>
-<div class="block">button a</div>
+<div class="block">Whether the A button (bottom on right side) is being pressed.
+ <code>true</code> if pressed, <code>false</code> if unpressed.</div>
 </li>
 </ul>
 <a name="b">
@@ -569,7 +591,8 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>b</h4>
 <pre>public&nbsp;boolean b</pre>
-<div class="block">button b</div>
+<div class="block">Whether the B button (right on right side) is being pressed.
+ <code>true</code> if pressed, <code>false</code> if unpressed.</div>
 </li>
 </ul>
 <a name="x">
@@ -579,7 +602,8 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>x</h4>
 <pre>public&nbsp;boolean x</pre>
-<div class="block">button x</div>
+<div class="block">Whether the X button (left on right side) is being pressed.
+ <code>true</code> if pressed, <code>false</code> if unpressed.</div>
 </li>
 </ul>
 <a name="y">
@@ -589,7 +613,8 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>y</h4>
 <pre>public&nbsp;boolean y</pre>
-<div class="block">button y</div>
+<div class="block">Whether the Y button (top on right side) is being pressed.
+ <code>true</code> if pressed, <code>false</code> if unpressed.</div>
 </li>
 </ul>
 <a name="guide">
@@ -599,9 +624,11 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>guide</h4>
 <pre>public&nbsp;boolean guide</pre>
-<div class="block">button guide - often the large button in the middle of the controller. The OS may
- capture this button before it is sent to the app; in which case you'll never
- receive it.</div>
+<div class="block">Whether the button in the center of the joystick is being pressed.
+ This button is between BACK and START on the F310 gamepad.
+ <code>true</code> if pressed, <code>false</code> if unpressed.
+ The OS may capture this button before it is sent to the app;
+ in which case you'll never receive it.</div>
 </li>
 </ul>
 <a name="start">
@@ -611,7 +638,9 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>start</h4>
 <pre>public&nbsp;boolean start</pre>
-<div class="block">button start</div>
+<div class="block">Whether the start button is being pressed.
+ This button is the one above the right stick on the F310 gamepad.
+ <code>true</code> if pressed, <code>false</code> if unpressed.</div>
 </li>
 </ul>
 <a name="back">
@@ -621,7 +650,9 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>back</h4>
 <pre>public&nbsp;boolean back</pre>
-<div class="block">button back</div>
+<div class="block">Whether the back button is being pressed.
+ This button is the one above the left stick on the F310 gamepad.
+ <code>true</code> if pressed, <code>false</code> if unpressed.</div>
 </li>
 </ul>
 <a name="left_bumper">
@@ -631,7 +662,9 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>left_bumper</h4>
 <pre>public&nbsp;boolean left_bumper</pre>
-<div class="block">button left bumper</div>
+<div class="block">Whether the left bumper is being pressed.
+ This is the top button on the left front of the F310 gamepad.
+ <code>true</code> if pressed, <code>false</code> if unpressed.</div>
 </li>
 </ul>
 <a name="right_bumper">
@@ -641,7 +674,9 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>right_bumper</h4>
 <pre>public&nbsp;boolean right_bumper</pre>
-<div class="block">button right bumper</div>
+<div class="block">Whether the right bumper is being pressed.
+ This is the top button on the right front of the F310 gamepad.
+ <code>true</code> if pressed, <code>false</code> if unpressed.</div>
 </li>
 </ul>
 <a name="left_stick_button">
@@ -651,7 +686,8 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>left_stick_button</h4>
 <pre>public&nbsp;boolean left_stick_button</pre>
-<div class="block">left stick button</div>
+<div class="block">Whether the left stick is being pressed in.
+ <code>true</code> if pressed, <code>false</code> if unpressed.</div>
 </li>
 </ul>
 <a name="right_stick_button">
@@ -661,7 +697,8 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>right_stick_button</h4>
 <pre>public&nbsp;boolean right_stick_button</pre>
-<div class="block">right stick button</div>
+<div class="block">Whether the right stick is being pressed in.
+ <code>true</code> if pressed, <code>false</code> if unpressed.</div>
 </li>
 </ul>
 <a name="left_trigger">
@@ -671,7 +708,9 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>left_trigger</h4>
 <pre>public&nbsp;float left_trigger</pre>
-<div class="block">left trigger</div>
+<div class="block">How much the left trigger is being pressed.
+ This is the bottom button on the left front of the F310 Gamepad.
+ <code>0</code> if unpressed, <code>1</code> if fully pressed.</div>
 </li>
 </ul>
 <a name="right_trigger">
@@ -681,7 +720,9 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>right_trigger</h4>
 <pre>public&nbsp;float right_trigger</pre>
-<div class="block">right trigger</div>
+<div class="block">How much the right trigger is being pressed.
+ This is the bottom button on the right front of the F310 Gamepad.
+ <code>0</code> if unpressed, <code>1</code> if fully pressed.</div>
 </li>
 </ul>
 <a name="user">
@@ -691,7 +732,7 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>user</h4>
 <pre>public&nbsp;byte user</pre>
-<div class="block">Which user is this gamepad used by</div>
+<div class="block">Value depends on whether it is registered as the first or second joystick</div>
 </li>
 </ul>
 <a name="id">
@@ -701,7 +742,8 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>id</h4>
 <pre>public&nbsp;int id</pre>
-<div class="block">ID assigned to this gamepad by the OS. This value can change each time the device is plugged in</div>
+<div class="block">ID assigned to this gamepad by the OS.
+ This value can change each time the device is plugged in.</div>
 </li>
 </ul>
 <a name="timestamp">
@@ -711,7 +753,7 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>timestamp</h4>
 <pre>public&nbsp;long timestamp</pre>
-<div class="block">Relative timestamp of the last time an event was detected</div>
+<div class="block">The value of <code>System.nanoTime()</code> when event was last detected</div>
 </li>
 </ul>
 </li>
@@ -738,6 +780,13 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>Gamepad</h4>
 <pre>public&nbsp;Gamepad(<a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.GamepadCallback.html" title="interface in com.qualcomm.robotcore.hardware">Gamepad.GamepadCallback</a>&nbsp;callback)</pre>
+<div class="block">Constructs a <code>Gamepad</code> that will call the specified method when values change.
+ This occurs any time button or stick value changes (but not necessarily once for each changed value)
+ and also when calling <a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#fromByteArray-byte:A-"><code>fromByteArray(byte[])</code></a>.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>callback</code> - contains the method to call upon receiving new values</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -773,7 +822,9 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>reset</h4>
 <pre>public&nbsp;void&nbsp;reset()</pre>
-<div class="block">Reset this gamepad into its initial state</div>
+<div class="block">Resets this gamepad's values to the default state.
+ There is no guarantee that the values will not be set to another value
+ before the user tries to access them.</div>
 </li>
 </ul>
 <a name="setJoystickDeadzone-float-">
@@ -783,10 +834,13 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>setJoystickDeadzone</h4>
 <pre>public&nbsp;void&nbsp;setJoystickDeadzone(float&nbsp;deadzone)</pre>
-<div class="block">Set the joystick deadzone. Must be between 0 and 1.</div>
+<div class="block">Changes the "deadzone" of the analog sticks.
+ If the stick values read less than the deadzone value, they will be set to <code>0</code>.
+ If the stick values read greater than the deadzone value,
+ they will be scaled from the range [deadzone, 1.0] to [0.0, 1.0].</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>deadzone</code> - amount of joystick deadzone</dd>
+<dd><code>deadzone</code> - a number between 0 and 1 to set as the deadzone</dd>
 </dl>
 </li>
 </ul>
@@ -797,10 +851,11 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>update</h4>
 <pre>public&nbsp;void&nbsp;update(android.view.MotionEvent&nbsp;event)</pre>
-<div class="block">Update the gamepad based on a MotionEvent</div>
+<div class="block">Updates the stick, trigger, and D-pad values based on the new state.
+ It is not advised for the user to call this method.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>event</code> - motion event</dd>
+<dd><code>event</code> - the event specifiying the new joystick values</dd>
 </dl>
 </li>
 </ul>
@@ -811,10 +866,11 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>update</h4>
 <pre>public&nbsp;void&nbsp;update(android.view.KeyEvent&nbsp;event)</pre>
-<div class="block">Update the gamepad based on a KeyEvent</div>
+<div class="block">Updates the button and D-pad values based on the new state.
+ It is not advised for the user to call this method.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>event</code> - key event</dd>
+<dd><code>event</code> - the event specifiying the new set of buttons being pressed</dd>
 </dl>
 </li>
 </ul>
@@ -825,6 +881,12 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>getRobocolMsgType</h4>
 <pre>public&nbsp;MsgType&nbsp;getRobocolMsgType()</pre>
+<div class="block">Returns the type of data being transmitted to the driver station
+ when this object is converted to a byte array and sent</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>MsgType.GAMEPAD</dd>
+</dl>
 </li>
 </ul>
 <a name="toByteArray--">
@@ -835,7 +897,10 @@ extends RobocolParsableBase</pre>
 <h4>toByteArray</h4>
 <pre>public&nbsp;byte[]&nbsp;toByteArray()
                    throws RobotCoreException</pre>
+<div class="block">Converts the state into a byte array</div>
 <dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a byte array storing the value of every field</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>RobotCoreException</code></dd>
 </dl>
@@ -849,9 +914,14 @@ extends RobocolParsableBase</pre>
 <h4>fromByteArray</h4>
 <pre>public&nbsp;void&nbsp;fromByteArray(byte[]&nbsp;byteArray)
                    throws RobotCoreException</pre>
+<div class="block">Makes this instance take on the state specified by a byte array.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>byteArray</code> - a byte array (presumably generated by toByteArray())</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>RobotCoreException</code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/Gamepad.html#toByteArray--"><code>toByteArray()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -862,10 +932,11 @@ extends RobocolParsableBase</pre>
 <li class="blockList">
 <h4>atRest</h4>
 <pre>public&nbsp;boolean&nbsp;atRest()</pre>
-<div class="block">Are all analog sticks and triggers in their rest position?</div>
+<div class="block">Returns whether all the sticks and triggers are at rest.
+ If the sticks are within the set deadzones, they count as being at rest.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if all analog sticks and triggers are at rest; otherwise false</dd>
+<dd>true iff every stick and trigger is in its equilibrium position (or sufficiently close)</dd>
 </dl>
 </li>
 </ul>

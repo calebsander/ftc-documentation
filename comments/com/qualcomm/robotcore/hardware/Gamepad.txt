@@ -1,0 +1,173 @@
+.class
+Represents the state of a joystick attached to the driver station.
+Values for all the buttons and sticks are stored in fields of the object.
+Fields should be treated as read-only.
+
+.field ID_UNASSOCIATED
+The value of {@link id} if neither Start+A or Start+B has been pressed yet
+
+.field left_stick_x
+The left joystick's x position.
+{@code -1} indicates all the way to the left,
+{@code 0} indicates in the middle, and
+{@code 1} indicates all the way to the right.
+
+.field left_stick_y
+The left joystick's y position.
+{@code -1} indicates all the way up,
+{@code 0} indicates in the middle, and
+{@code 1} indicates all the way down.
+
+.field right_stick_x
+The right joystick's x position.
+{@code -1} indicates all the way to the left,
+{@code 0} indicates in the middle, and
+{@code 1} indicates all the way to the right.
+
+.field right_stick_y
+The right joystick's y position.
+{@code -1} indicates all the way up,
+{@code 0} indicates in the middle, and
+{@code 1} indicates all the way down.
+
+.field dpad_up
+Whether the D-pad is being pushed up.
+{@code true} indicates that the D-pad is either
+in the up-left, up, or up-right positions;
+{@code false} indicates that it isn't.
+
+.field dpad_down
+Whether the D-pad is being pushed down.
+{@code true} indicates that the D-pad is either
+in the down-left, down, or down-right positions;
+{@code false} indicates that it isn't.
+
+.field dpad_left
+Whether the D-pad is being pushed left.
+{@code true} indicates that the D-pad is either
+in the up-left, left, or down-left positions;
+{@code false} indicates that it isn't.
+
+.field dpad_right
+Whether the D-pad is being pushed right.
+{@code true} indicates that the D-pad is either
+in the up-right, right, or down-right positions;
+{@code false} indicates that it isn't.
+
+.field a
+Whether the A button (bottom on right side) is being pressed.
+{@code true} if pressed, {@code false} if unpressed.
+
+.field b
+Whether the B button (right on right side) is being pressed.
+{@code true} if pressed, {@code false} if unpressed.
+
+.field x
+Whether the X button (left on right side) is being pressed.
+{@code true} if pressed, {@code false} if unpressed.
+
+.field y
+Whether the Y button (top on right side) is being pressed.
+{@code true} if pressed, {@code false} if unpressed.
+
+.field guide
+Whether the button in the center of the joystick is being pressed.
+This button is between BACK and START on the F310 gamepad.
+{@code true} if pressed, {@code false} if unpressed.
+The OS may capture this button before it is sent to the app;
+in which case you'll never receive it.
+
+.field start
+Whether the start button is being pressed.
+This button is the one above the right stick on the F310 gamepad.
+{@code true} if pressed, {@code false} if unpressed.
+
+.field back
+Whether the back button is being pressed.
+This button is the one above the left stick on the F310 gamepad.
+{@code true} if pressed, {@code false} if unpressed.
+
+.field left_bumper
+Whether the left bumper is being pressed.
+This is the top button on the left front of the F310 gamepad.
+{@code true} if pressed, {@code false} if unpressed.
+
+.field right_bumper
+Whether the right bumper is being pressed.
+This is the top button on the right front of the F310 gamepad.
+{@code true} if pressed, {@code false} if unpressed.
+
+.field left_stick_button
+Whether the left stick is being pressed in.
+{@code true} if pressed, {@code false} if unpressed.
+
+.field right_stick_button
+Whether the right stick is being pressed in.
+{@code true} if pressed, {@code false} if unpressed.
+
+.field left_trigger
+How much the left trigger is being pressed.
+This is the bottom button on the left front of the F310 Gamepad.
+{@code 0} if unpressed, {@code 1} if fully pressed.
+
+.field right_trigger
+How much the right trigger is being pressed.
+This is the bottom button on the right front of the F310 Gamepad.
+{@code 0} if unpressed, {@code 1} if fully pressed.
+
+.field user
+Value depends on whether it is registered as the first or second joystick
+
+.field id
+ID assigned to this gamepad by the OS.
+This value can change each time the device is plugged in.
+
+.field timestamp
+The value of {@code System.nanoTime()} when event was last detected
+
+.constructor (GamepadCallback)
+Constructs a {@code Gamepad} that will call the specified method when values change.
+This occurs any time button or stick value changes (but not necessarily once for each changed value)
+and also when calling {@link fromByteArray(byte[])}.
+@param callback contains the method to call upon receiving new values
+
+.method void reset()
+Resets this gamepad's values to the default state.
+There is no guarantee that the values will not be set to another value
+before the user tries to access them.
+
+.method void setJoystickDeadzone(float)
+Changes the "deadzone" of the analog sticks.
+If the stick values read less than the deadzone value, they will be set to {@code 0}.
+If the stick values read greater than the deadzone value,
+they will be scaled from the range [deadzone, 1.0] to [0.0, 1.0].
+@param deadzone a number between 0 and 1 to set as the deadzone
+
+.method void update(android.view.MotionEvent)
+Updates the stick, trigger, and D-pad values based on the new state.
+It is not advised for the user to call this method.
+@param event the event specifiying the new joystick values
+
+.method void update(android.view.KeyEvent)
+Updates the button and D-pad values based on the new state.
+It is not advised for the user to call this method.
+@param event the event specifiying the new set of buttons being pressed
+
+.method MsgType getRobocolMsgType()
+Returns the type of data being transmitted to the driver station
+when this object is converted to a byte array and sent
+@return MsgType.GAMEPAD
+
+.method byte[] toByteArray()
+Converts the state into a byte array
+@return a byte array storing the value of every field
+
+.method void fromByteArray(byte[])
+Makes this instance take on the state specified by a byte array.
+@param byteArray a byte array (presumably generated by toByteArray())
+@see toByteArray()
+
+.method boolean atRest()
+Returns whether all the sticks and triggers are at rest.
+If the sticks are within the set deadzones, they count as being at rest.
+@return true iff every stick and trigger is in its equilibrium position (or sufficiently close)

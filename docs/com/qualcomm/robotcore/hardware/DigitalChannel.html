@@ -114,7 +114,10 @@ var activeTableTab = "activeTableTab";
 <pre>public class <span class="typeNameLabel">DigitalChannel</span>
 extends java.lang.Object
 implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></pre>
-<div class="block">Control a single digital channel</div>
+<div class="block">Represents a digital port on a device.
+ Digital ports can be put in either input mode or output mode.
+ In input mode, they can determine whether they are receiving a digital signal or not.
+ In output mode, they can be made to send or not send a digital signal.</div>
 </li>
 </ul>
 </div>
@@ -177,7 +180,8 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannel.html#getConnectionInfo--">getConnectionInfo</a></span>()</code>
-<div class="block">Get connection information about this device in a human readable format</div>
+<div class="block">Gets connection information about this device in a human-readable format,
+ e.g.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -195,13 +199,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelController.Mode.html" title="enum in com.qualcomm.robotcore.hardware">DigitalChannelController.Mode</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannel.html#getMode--">getMode</a></span>()</code>
-<div class="block">Get the channel mode</div>
+<div class="block">Gets whether the port is being used as an input or an output</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannel.html#getState--">getState</a></span>()</code>
-<div class="block">Get the channel state</div>
+<div class="block">Gets the signal level of the port.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -219,13 +223,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannel.html#setMode-com.qualcomm.robotcore.hardware.DigitalChannelController.Mode-">setMode</a></span>(<a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelController.Mode.html" title="enum in com.qualcomm.robotcore.hardware">DigitalChannelController.Mode</a>&nbsp;mode)</code>
-<div class="block">Set the channel mode</div>
+<div class="block">Sets the port to be either an input or an output</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannel.html#setState-boolean-">setState</a></span>(boolean&nbsp;state)</code>
-<div class="block">Set the channel state</div>
+<div class="block">Sets whether the port is activated, if it is set as an output port.</div>
 </td>
 </tr>
 </table>
@@ -281,10 +285,10 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <li class="blockList">
 <h4>getMode</h4>
 <pre>public&nbsp;<a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelController.Mode.html" title="enum in com.qualcomm.robotcore.hardware">DigitalChannelController.Mode</a>&nbsp;getMode()</pre>
-<div class="block">Get the channel mode</div>
+<div class="block">Gets whether the port is being used as an input or an output</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>channel mode</dd>
+<dd><b>INPUT</b> if being used as an input; <b>OUTPUT</b> if being used as an output</dd>
 </dl>
 </li>
 </ul>
@@ -295,10 +299,10 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <li class="blockList">
 <h4>setMode</h4>
 <pre>public&nbsp;void&nbsp;setMode(<a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelController.Mode.html" title="enum in com.qualcomm.robotcore.hardware">DigitalChannelController.Mode</a>&nbsp;mode)</pre>
-<div class="block">Set the channel mode</div>
+<div class="block">Sets the port to be either an input or an output</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>mode</code> - </dd>
+<dd><code>mode</code> - the desired mode, either <b>INPUT</b> or <b>OUTPUT</b></dd>
 </dl>
 </li>
 </ul>
@@ -309,10 +313,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <li class="blockList">
 <h4>getState</h4>
 <pre>public&nbsp;boolean&nbsp;getState()</pre>
-<div class="block">Get the channel state</div>
+<div class="block">Gets the signal level of the port.
+ If the port is set as an output port, it returns the last set value.
+ If the port is set as an input port, it returns the value currently being read.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>state</dd>
+<dd>true iff there is a signal on the port</dd>
 </dl>
 </li>
 </ul>
@@ -323,12 +329,11 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <li class="blockList">
 <h4>setState</h4>
 <pre>public&nbsp;void&nbsp;setState(boolean&nbsp;state)</pre>
-<div class="block">Set the channel state
- <p>
- The behavior of this method is undefined for INPUT digital channels.</div>
+<div class="block">Sets whether the port is activated, if it is set as an output port.
+ If the port is set as an input, behavior is undefined.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>state</code> - </dd>
+<dd><code>state</code> - true to output a signal, false to stop outputing a signal</dd>
 </dl>
 </li>
 </ul>
@@ -362,7 +367,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getDeviceName--">getDeviceName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>device manufacturer and name</dd>
+<dd>the text "Digital Channel"</dd>
 </dl>
 </li>
 </ul>
@@ -373,13 +378,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <li class="blockList">
 <h4>getConnectionInfo</h4>
 <pre>public&nbsp;java.lang.String&nbsp;getConnectionInfo()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">HardwareDevice</a></code></span></div>
-<div class="block">Get connection information about this device in a human readable format</div>
+<div class="block">Gets connection information about this device in a human-readable format,
+ e.g. <code>USB AL00VDDK; digital port 0</code></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">getConnectionInfo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>connection info</dd>
+<dd>the device and port this motor is attached to</dd>
 </dl>
 </li>
 </ul>

@@ -122,12 +122,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>android.content.ComponentCallbacks, android.content.ComponentCallbacks2</dd>
+<dd>android.content.ComponentCallbacks, android.content.ComponentCallbacks2, <a href="../../../com/qualcomm/robotcore/wifi/NetworkConnection.NetworkConnectionCallback.html" title="interface in com.qualcomm.robotcore.wifi">NetworkConnection.NetworkConnectionCallback</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">FtcRobotControllerService</span>
-extends android.app.Service</pre>
+extends android.app.Service
+implements <a href="../../../com/qualcomm/robotcore/wifi/NetworkConnection.NetworkConnectionCallback.html" title="interface in com.qualcomm.robotcore.wifi">NetworkConnection.NetworkConnectionCallback</a></pre>
 </li>
 </ul>
 </div>
@@ -230,19 +231,19 @@ extends android.app.Service</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>NetworkConnection</code></td>
+<td class="colFirst"><code><a href="../../../com/qualcomm/robotcore/wifi/NetworkConnection.html" title="class in com.qualcomm.robotcore.wifi">NetworkConnection</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/qualcomm/ftccommon/FtcRobotControllerService.html#getNetworkConnection--">getNetworkConnection</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>NetworkConnection.Event</code></td>
+<td class="colFirst"><code><a href="../../../com/qualcomm/robotcore/wifi/NetworkConnection.Event.html" title="enum in com.qualcomm.robotcore.wifi">NetworkConnection.Event</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/qualcomm/ftccommon/FtcRobotControllerService.html#getNetworkConnectionStatus--">getNetworkConnectionStatus</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>Robot</code></td>
+<td class="colFirst"><code><a href="../../../com/qualcomm/robotcore/robot/Robot.html" title="class in com.qualcomm.robotcore.robot">Robot</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/qualcomm/ftccommon/FtcRobotControllerService.html#getRobot--">getRobot</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>RobotStatus</code></td>
+<td class="colFirst"><code><a href="../../../com/qualcomm/robotcore/robot/RobotStatus.html" title="enum in com.qualcomm.robotcore.robot">RobotStatus</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/qualcomm/ftccommon/FtcRobotControllerService.html#getRobotStatus--">getRobotStatus</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
@@ -264,8 +265,8 @@ extends android.app.Service</pre>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>CallbackResult</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/qualcomm/ftccommon/FtcRobotControllerService.html#onNetworkConnectionEvent-NetworkConnection.Event-">onNetworkConnectionEvent</a></span>(NetworkConnection.Event&nbsp;event)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/qualcomm/ftccommon/FtcRobotControllerService.html#onNetworkConnectionEvent-com.qualcomm.robotcore.wifi.NetworkConnection.Event-">onNetworkConnectionEvent</a></span>(<a href="../../../com/qualcomm/robotcore/wifi/NetworkConnection.Event.html" title="enum in com.qualcomm.robotcore.wifi">NetworkConnection.Event</a>&nbsp;event)</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>int</code></td>
@@ -384,7 +385,7 @@ extends android.app.Service</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getNetworkConnection</h4>
-<pre>public&nbsp;NetworkConnection&nbsp;getNetworkConnection()</pre>
+<pre>public&nbsp;<a href="../../../com/qualcomm/robotcore/wifi/NetworkConnection.html" title="class in com.qualcomm.robotcore.wifi">NetworkConnection</a>&nbsp;getNetworkConnection()</pre>
 </li>
 </ul>
 <a name="getNetworkConnectionStatus--">
@@ -393,7 +394,7 @@ extends android.app.Service</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getNetworkConnectionStatus</h4>
-<pre>public&nbsp;NetworkConnection.Event&nbsp;getNetworkConnectionStatus()</pre>
+<pre>public&nbsp;<a href="../../../com/qualcomm/robotcore/wifi/NetworkConnection.Event.html" title="enum in com.qualcomm.robotcore.wifi">NetworkConnection.Event</a>&nbsp;getNetworkConnectionStatus()</pre>
 </li>
 </ul>
 <a name="getRobotStatus--">
@@ -402,7 +403,7 @@ extends android.app.Service</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getRobotStatus</h4>
-<pre>public&nbsp;RobotStatus&nbsp;getRobotStatus()</pre>
+<pre>public&nbsp;<a href="../../../com/qualcomm/robotcore/robot/RobotStatus.html" title="enum in com.qualcomm.robotcore.robot">RobotStatus</a>&nbsp;getRobotStatus()</pre>
 </li>
 </ul>
 <a name="getRobot--">
@@ -411,7 +412,7 @@ extends android.app.Service</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getRobot</h4>
-<pre>public&nbsp;Robot&nbsp;getRobot()</pre>
+<pre>public&nbsp;<a href="../../../com/qualcomm/robotcore/robot/Robot.html" title="class in com.qualcomm.robotcore.robot">Robot</a>&nbsp;getRobot()</pre>
 </li>
 </ul>
 <a name="onCreate--">
@@ -584,13 +585,17 @@ extends android.app.Service</pre>
 <pre>public&nbsp;void&nbsp;shutdownRobot()</pre>
 </li>
 </ul>
-<a name="onNetworkConnectionEvent-NetworkConnection.Event-">
+<a name="onNetworkConnectionEvent-com.qualcomm.robotcore.wifi.NetworkConnection.Event-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>onNetworkConnectionEvent</h4>
-<pre>public&nbsp;CallbackResult&nbsp;onNetworkConnectionEvent(NetworkConnection.Event&nbsp;event)</pre>
+<pre>public&nbsp;<a href="../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;onNetworkConnectionEvent(<a href="../../../com/qualcomm/robotcore/wifi/NetworkConnection.Event.html" title="enum in com.qualcomm.robotcore.wifi">NetworkConnection.Event</a>&nbsp;event)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../com/qualcomm/robotcore/wifi/NetworkConnection.NetworkConnectionCallback.html#onNetworkConnectionEvent-com.qualcomm.robotcore.wifi.NetworkConnection.Event-">onNetworkConnectionEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../com/qualcomm/robotcore/wifi/NetworkConnection.NetworkConnectionCallback.html" title="interface in com.qualcomm.robotcore.wifi">NetworkConnection.NetworkConnectionCallback</a></code></dd>
+</dl>
 </li>
 </ul>
 </li>

@@ -105,10 +105,15 @@ var activeTableTab = "activeTableTab";
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../com/qualcomm/robotcore/util/BatteryChecker.BatteryWatcher.html" title="interface in com.qualcomm.robotcore.util">BatteryChecker.BatteryWatcher</a></dd>
+</dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">FtcEventLoopHandler</span>
-extends java.lang.Object</pre>
+extends java.lang.Object
+implements <a href="../../../com/qualcomm/robotcore/util/BatteryChecker.BatteryWatcher.html" title="interface in com.qualcomm.robotcore.util">BatteryChecker.BatteryWatcher</a></pre>
 </li>
 </ul>
 </div>
@@ -320,11 +325,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getHardwareMap</h4>
 <pre>public&nbsp;<a href="../../../com/qualcomm/robotcore/hardware/HardwareMap.html" title="class in com.qualcomm.robotcore.hardware">HardwareMap</a>&nbsp;getHardwareMap()
-                           throws RobotCoreException,
+                           throws <a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                                   java.lang.InterruptedException</pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 <dd><code>java.lang.InterruptedException</code></dd>
 </dl>
 </li>
@@ -441,6 +446,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>updateBatteryLevel</h4>
 <pre>public&nbsp;void&nbsp;updateBatteryLevel(float&nbsp;percent)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../com/qualcomm/robotcore/util/BatteryChecker.BatteryWatcher.html#updateBatteryLevel-float-">updateBatteryLevel</a></code>&nbsp;in interface&nbsp;<code><a href="../../../com/qualcomm/robotcore/util/BatteryChecker.BatteryWatcher.html" title="interface in com.qualcomm.robotcore.util">BatteryChecker.BatteryWatcher</a></code></dd>
+</dl>
 </li>
 </ul>
 </li>

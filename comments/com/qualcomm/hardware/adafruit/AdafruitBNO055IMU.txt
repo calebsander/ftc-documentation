@@ -1,0 +1,2 @@
+.constructor (I2cDeviceSynch)
+This constructor is used by {@code UserSensorType.createInstance(I2cController, int)}

@@ -1,0 +1,13 @@
+.class
+Instances of {@link SerialNumber} represent serial numbers of devices on the USB bus.
+'Fake' serial numbers are serial numbers that will *never* appear for a real device; they
+are useful, for example, as the serial number of a {@code ControllerConfiguration} that
+has not yet been associated with a actual USB controller device.
+Note that *all* serial numbers loaded in memory at any given instant are guaranteed unique and
+different, even the fake ones; this allows code that processes USB-device-bound {@code
+ControllerConfiguration}s to operate easily on unbound ones as well, a significant coding
+simplification. The technology used in fake serial numbers, {@link UUID}s, in fact guarantees
+uniqueness across space and time, so fake serial numbers can be recorded persistently and
+still maintain uniqueness. Historically, non-unique 'fake' serial numbers were also used: these
+appeared int the form of "-1" or "N/A". When loaded from persistent storage, such legacy
+fake serial numbers are converted to unique ones to maintain the uniqueness guarantee.

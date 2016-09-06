@@ -4,9 +4,11 @@
 	"description": "Adds documentation to FTC source Java files",
 	"main": "download-source.js",
 	"dependencies": {
+		"fernflower": "1.1.x",
+		"mkdirp": "0.5.1",
 		"progress": "1.1.x",
 		"rmdir": "1.2.x",
-		"unzip": "0.1.11"
+		"unzip2": "0.2.5"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"

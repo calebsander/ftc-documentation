@@ -1,0 +1,9 @@
+.class Item
+Instances of {@link Item} represent an item of data on the drive station telemetry display
+@see addData(String, Object)
+
+.method int getCapacity()
+Returns the maximum number of lines which will be retained in a {@link #log()} and
+shown on the driver station display.
+@return the maximum number of lines which will be retained in a {@link #log()}
+@see setCapacity(int)

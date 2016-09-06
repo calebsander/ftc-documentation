@@ -1,0 +1,3 @@
+.method CameraCalibration getCameraCalibration()
+(Advanced) Returns information about Vuforia's knowledge of the camera that it is using.
+@return information about Vuforia's knowledge of the camera that it is using.

@@ -1,0 +1,4 @@
+.method void write(byte[])
+Write to device
+@param data byte array
+@throws RobotCoreException

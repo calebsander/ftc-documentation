@@ -165,8 +165,8 @@ implements <a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html" ti
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>CallbackResult</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html#processCommand-Command-">processCommand</a></span>(Command&nbsp;command)</code>
+<td class="colFirst"><code><a href="../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html#processCommand-com.qualcomm.robotcore.robocol.Command-">processCommand</a></span>(<a href="../../../com/qualcomm/robotcore/robocol/Command.html" title="class in com.qualcomm.robotcore.robocol">Command</a>&nbsp;command)</code>
 <div class="block">Process command method, this will be called if the event loop manager receives a user defined
  command.</div>
 </td>
@@ -221,28 +221,28 @@ implements <a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html" ti
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="processCommand-Command-">
+<a name="processCommand-com.qualcomm.robotcore.robocol.Command-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>processCommand</h4>
-<pre>public&nbsp;CallbackResult&nbsp;processCommand(Command&nbsp;command)
+<pre>public&nbsp;<a href="../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;processCommand(<a href="../../../com/qualcomm/robotcore/robocol/Command.html" title="class in com.qualcomm.robotcore.robocol">Command</a>&nbsp;command)
                               throws java.lang.InterruptedException,
-                                     RobotCoreException</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html#processCommand-Command-">EventLoop</a></code></span></div>
+                                     <a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html#processCommand-com.qualcomm.robotcore.robocol.Command-">EventLoop</a></code></span></div>
 <div class="block">Process command method, this will be called if the event loop manager receives a user defined
  command. How this command is handled is up to the event loop implementation.
 
  Threading: called on the RecvRunnable.run() thread.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html#processCommand-Command-">processCommand</a></code>&nbsp;in interface&nbsp;<code><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html" title="interface in com.qualcomm.robotcore.eventloop">EventLoop</a></code></dd>
+<dd><code><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html#processCommand-com.qualcomm.robotcore.robocol.Command-">processCommand</a></code>&nbsp;in interface&nbsp;<code><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html" title="interface in com.qualcomm.robotcore.eventloop">EventLoop</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>command</code> - command to process</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.InterruptedException</code></dd>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 </dl>
 </li>
 </ul>

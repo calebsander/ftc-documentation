@@ -1,0 +1,5 @@
+.method void calibrate()
+Method not supported by hardware
+
+.method void resetZAxisIntegrator()
+Method not supported by hardware

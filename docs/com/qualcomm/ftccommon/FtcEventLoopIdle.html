@@ -160,10 +160,10 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../com/qualcomm/ftccommon/FtcEventLoopIdle.html#FtcEventLoopIdle-com.qualcomm.hardware.HardwareFactory-com.qualcomm.ftccommon.UpdateUI.Callback-android.app.Activity-ProgrammingModeController-">FtcEventLoopIdle</a></span>(<a href="../../../com/qualcomm/hardware/HardwareFactory.html" title="class in com.qualcomm.hardware">HardwareFactory</a>&nbsp;hardwareFactory,
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../com/qualcomm/ftccommon/FtcEventLoopIdle.html#FtcEventLoopIdle-com.qualcomm.hardware.HardwareFactory-com.qualcomm.ftccommon.UpdateUI.Callback-android.app.Activity-com.qualcomm.ftccommon.ProgrammingModeController-">FtcEventLoopIdle</a></span>(<a href="../../../com/qualcomm/hardware/HardwareFactory.html" title="class in com.qualcomm.hardware">HardwareFactory</a>&nbsp;hardwareFactory,
                 <a href="../../../com/qualcomm/ftccommon/UpdateUI.Callback.html" title="class in com.qualcomm.ftccommon">UpdateUI.Callback</a>&nbsp;callback,
                 android.app.Activity&nbsp;activityContext,
-                ProgrammingModeController&nbsp;programmingModeController)</code>&nbsp;</td>
+                <a href="../../../com/qualcomm/ftccommon/ProgrammingModeController.html" title="interface in com.qualcomm.ftccommon">ProgrammingModeController</a>&nbsp;programmingModeController)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -242,7 +242,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.qualcomm.ftccommon.<a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="class in com.qualcomm.ftccommon">FtcEventLoopBase</a></h3>
-<code><a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html#processCommand-Command-">processCommand</a></code></li>
+<code><a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html#processCommand-com.qualcomm.robotcore.robocol.Command-">processCommand</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -265,7 +265,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="FtcEventLoopIdle-com.qualcomm.hardware.HardwareFactory-com.qualcomm.ftccommon.UpdateUI.Callback-android.app.Activity-ProgrammingModeController-">
+<a name="FtcEventLoopIdle-com.qualcomm.hardware.HardwareFactory-com.qualcomm.ftccommon.UpdateUI.Callback-android.app.Activity-com.qualcomm.ftccommon.ProgrammingModeController-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -274,7 +274,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
 <pre>public&nbsp;FtcEventLoopIdle(<a href="../../../com/qualcomm/hardware/HardwareFactory.html" title="class in com.qualcomm.hardware">HardwareFactory</a>&nbsp;hardwareFactory,
                         <a href="../../../com/qualcomm/ftccommon/UpdateUI.Callback.html" title="class in com.qualcomm.ftccommon">UpdateUI.Callback</a>&nbsp;callback,
                         android.app.Activity&nbsp;activityContext,
-                        ProgrammingModeController&nbsp;programmingModeController)</pre>
+                        <a href="../../../com/qualcomm/ftccommon/ProgrammingModeController.html" title="interface in com.qualcomm.ftccommon">ProgrammingModeController</a>&nbsp;programmingModeController)</pre>
 </li>
 </ul>
 </li>
@@ -292,7 +292,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
 <li class="blockList">
 <h4>init</h4>
 <pre>public&nbsp;void&nbsp;init(<a href="../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html" title="class in com.qualcomm.robotcore.eventloop">EventLoopManager</a>&nbsp;eventLoopManager)
-          throws RobotCoreException,
+          throws <a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                  java.lang.InterruptedException</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html#init-com.qualcomm.robotcore.eventloop.EventLoopManager-">EventLoop</a></code></span></div>
 <div class="block">Init method, this will be called before the first call to loop. You should set up
@@ -304,7 +304,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>eventLoopManager</code> - event loop manager that is responsible for this event loop</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if a RobotCoreException is thrown, it will be handled
+<dd><code><a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if a RobotCoreException is thrown, it will be handled
          by the event loop manager. The manager will report that the robot failed
          to start.</dd>
 <dd><code>java.lang.InterruptedException</code></dd>
@@ -318,7 +318,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
 <li class="blockList">
 <h4>loop</h4>
 <pre>public&nbsp;void&nbsp;loop()
-          throws RobotCoreException,
+          throws <a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                  java.lang.InterruptedException</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html#loop--">EventLoop</a></code></span></div>
 <div class="block">This method will be repeatedly called by the event loop manager.
@@ -326,7 +326,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
  Threading: called on the EventLoopRunnable.run() thread.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if a RobotCoreException is thrown, it will be handled
+<dd><code><a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if a RobotCoreException is thrown, it will be handled
          by the event loop manager. The manager may decide to either stop processing
          this iteration of the loop, or it may decide to shut down the robot.</dd>
 <dd><code>java.lang.InterruptedException</code></dd>
@@ -358,7 +358,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
 <li class="blockList">
 <h4>teardown</h4>
 <pre>public&nbsp;void&nbsp;teardown()
-              throws RobotCoreException,
+              throws <a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                      java.lang.InterruptedException</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html#teardown--">EventLoop</a></code></span></div>
 <div class="block">Teardown method, this will be called after the last call to loop. You should place your robot
@@ -368,7 +368,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
  Threading: called on the EventLoopRunnable.run() thread.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if a RobotCoreException is thrown, it will be handled by the event
+<dd><code><a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if a RobotCoreException is thrown, it will be handled by the event
          loop manager. The manager will then attempt to shut down the robot without the benefit
          of the teardown method.</dd>
 <dd><code>java.lang.InterruptedException</code></dd>
@@ -407,7 +407,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
 <li class="blockList">
 <h4>processedRecentlyAttachedUsbDevices</h4>
 <pre>public&nbsp;void&nbsp;processedRecentlyAttachedUsbDevices()
-                                         throws RobotCoreException,
+                                         throws <a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                                                 java.lang.InterruptedException</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html#processedRecentlyAttachedUsbDevices--">EventLoop</a></code></span></div>
 <div class="block">Process the batch of newly arrived USB devices. This is called on the EventLoop thread by
@@ -415,7 +415,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
  associated module software to make the device operational within the app.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 <dd><code>java.lang.InterruptedException</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html#handleUsbModuleDetach-com.qualcomm.robotcore.hardware.usb.RobotUsbModule-"><code>EventLoop.handleUsbModuleDetach(RobotUsbModule)</code></a>, 
@@ -430,7 +430,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
 <li class="blockList">
 <h4>handleUsbModuleDetach</h4>
 <pre>public&nbsp;void&nbsp;handleUsbModuleDetach(<a href="../../../com/qualcomm/robotcore/hardware/usb/RobotUsbModule.html" title="interface in com.qualcomm.robotcore.hardware.usb">RobotUsbModule</a>&nbsp;module)
-                           throws RobotCoreException,
+                           throws <a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                                   java.lang.InterruptedException</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html#handleUsbModuleDetach-com.qualcomm.robotcore.hardware.usb.RobotUsbModule-">EventLoop</a></code></span></div>
 <div class="block">Process the fact that a usb module has now become detached from the system. This is called
@@ -438,7 +438,7 @@ extends <a href="../../../com/qualcomm/ftccommon/FtcEventLoopBase.html" title="c
  to, e.g., fully disarm and 'pretend' the associated module.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 <dd><code>java.lang.InterruptedException</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../com/qualcomm/robotcore/eventloop/EventLoop.html#processedRecentlyAttachedUsbDevices--"><code>EventLoop.processedRecentlyAttachedUsbDevices()</code></a></dd>

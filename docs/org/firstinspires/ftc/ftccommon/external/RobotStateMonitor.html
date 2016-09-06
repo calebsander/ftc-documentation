@@ -134,7 +134,7 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/ftccommon/external/RobotStateMonitor.html#updateNetworkStatus-NetworkStatus-java.lang.String-">updateNetworkStatus</a></span>(NetworkStatus&nbsp;networkStatus,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/ftccommon/external/RobotStateMonitor.html#updateNetworkStatus-org.firstinspires.ftc.robotcore.internal.network.NetworkStatus-java.lang.String-">updateNetworkStatus</a></span>(<a href="../../../../../org/firstinspires/ftc/robotcore/internal/network/NetworkStatus.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">NetworkStatus</a>&nbsp;networkStatus,
                    java.lang.String&nbsp;extra)</code>
 <div class="block">Informs the monitor of the current status of the network connection.</div>
 </td>
@@ -147,13 +147,13 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/ftccommon/external/RobotStateMonitor.html#updateRobotState-RobotState-">updateRobotState</a></span>(RobotState&nbsp;robotState)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/ftccommon/external/RobotStateMonitor.html#updateRobotState-com.qualcomm.robotcore.robot.RobotState-">updateRobotState</a></span>(<a href="../../../../../com/qualcomm/robotcore/robot/RobotState.html" title="enum in com.qualcomm.robotcore.robot">RobotState</a>&nbsp;robotState)</code>
 <div class="block">Informs the monitor of the current state of the robot.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/ftccommon/external/RobotStateMonitor.html#updateRobotStatus-RobotStatus-">updateRobotStatus</a></span>(RobotStatus&nbsp;robotStatus)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/ftccommon/external/RobotStateMonitor.html#updateRobotStatus-com.qualcomm.robotcore.robot.RobotStatus-">updateRobotStatus</a></span>(<a href="../../../../../com/qualcomm/robotcore/robot/RobotStatus.html" title="enum in com.qualcomm.robotcore.robot">RobotStatus</a>&nbsp;robotStatus)</code>
 <div class="block">Informs the monitor of the current status of the robot.</div>
 </td>
 </tr>
@@ -179,13 +179,13 @@ var activeTableTab = "activeTableTab";
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="updateRobotState-RobotState-">
+<a name="updateRobotState-com.qualcomm.robotcore.robot.RobotState-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>updateRobotState</h4>
-<pre>void&nbsp;updateRobotState(RobotState&nbsp;robotState)</pre>
+<pre>void&nbsp;updateRobotState(<a href="../../../../../com/qualcomm/robotcore/robot/RobotState.html" title="enum in com.qualcomm.robotcore.robot">RobotState</a>&nbsp;robotState)</pre>
 <div class="block">Informs the monitor of the current state of the robot. This may or may not be
  different from the state previously reported.</div>
 <dl>
@@ -194,21 +194,19 @@ var activeTableTab = "activeTableTab";
 </dl>
 </li>
 </ul>
-<a name="updateRobotStatus-RobotStatus-">
+<a name="updateRobotStatus-com.qualcomm.robotcore.robot.RobotStatus-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>updateRobotStatus</h4>
-<pre>void&nbsp;updateRobotStatus(RobotStatus&nbsp;robotStatus)</pre>
+<pre>void&nbsp;updateRobotStatus(<a href="../../../../../com/qualcomm/robotcore/robot/RobotStatus.html" title="enum in com.qualcomm.robotcore.robot">RobotStatus</a>&nbsp;robotStatus)</pre>
 <div class="block">Informs the monitor of the current status of the robot. This may or may not be
  different from the status previously reported. The robot status provides additional
  information when the robot is not in the running state.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>robotStatus</code> - the current status of the robot</dd>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><code>RobotStatus</code></dd>
 </dl>
 </li>
 </ul>
@@ -229,13 +227,13 @@ var activeTableTab = "activeTableTab";
 </dl>
 </li>
 </ul>
-<a name="updateNetworkStatus-NetworkStatus-java.lang.String-">
+<a name="updateNetworkStatus-org.firstinspires.ftc.robotcore.internal.network.NetworkStatus-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>updateNetworkStatus</h4>
-<pre>void&nbsp;updateNetworkStatus(NetworkStatus&nbsp;networkStatus,
+<pre>void&nbsp;updateNetworkStatus(<a href="../../../../../org/firstinspires/ftc/robotcore/internal/network/NetworkStatus.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">NetworkStatus</a>&nbsp;networkStatus,
                          java.lang.String&nbsp;extra)</pre>
 <div class="block">Informs the monitor of the current status of the network connection. This may
  or may not be different from the status previously reported.</div>

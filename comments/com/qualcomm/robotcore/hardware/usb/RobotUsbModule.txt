@@ -1,0 +1,44 @@
+.class
+This interface can be used to control the activeness or aliveness of an object that controls
+a piece of hardware such as a motor or servo controller. The object can be transitioned
+amongst a series of states in which various degrees of functionality are available. The
+states are as follows:
+armed:       the object controlling the hardware is fully functional in its intended, usual way.
+In this state, the object 'owns' full control of the hardware it represents.
+disarmed:    the object is quiescent, not manipulating or controlling the hardware. In this state,
+it is conceivable that some *other* object instance might be created and then be
+successfully armed on the same underlying hardware. In contrast, it is not expected
+that two object instances may be simultaneously armed against the same piece of
+hardware.
+pretending:  the object pretends as best it can to act as if it were armed on an actual
+underlying piece of hardware, but in reality the object is just making it all up:
+writes may be sent to the bit-bucket, reads might always return zeros, and so on.
+Though this may sound odd, having a hardware-controlling object function in this mode
+might minimize impact on upper software layers in the event that the desired actual
+hardware is disconnected or otherwise unavailable.
+closed:      this is much like disarmed, but more serious and permanent shutdown steps might
+be taken as an object transitions to the closed state.
+Transient 'toX' states are also present. The legal state transitions are as follows:
+disarmed -&gt; toArmed,
+toArmed -&gt; armed,
+disarmed -&gt; toPretending,
+toPretending -&gt; pretending,
+armed -&gt; toDisarmed,
+toArmed -&gt; toDisarmed,
+pretending -&gt; toDisarmed,
+toPretending -&gt; toDisarmed,
+toDisarmed -&gt; disarmed,
+armed -&gt; closed,
+toArmed -&gt; closed,
+pretending -&gt; closed,
+toPretending -&gt; closed,
+toDisarmed -&gt; closed,
+disarmed -&gt; closed
+Notice that once closed, no further state transitions are possible. Conversely, it is possible
+to close from any state and to disarm from any state except from closed. In particular, it is
+possible to close or disarm from the transitional toArmed and toPretending states:
+implementations *must* take care to ensure this is always possible.
+Typically, when first instantiated, an object is in the disarmed state.
+Objects should, generally, minimize the time they are in the disarmed state, as to many clients
+they will appear dysfunctional and error prone in that state, since those clients may not have
+been coded correctly to deal with an object that doesn't service read()s or write()s *at*all*.

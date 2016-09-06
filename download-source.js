@@ -2,7 +2,7 @@ const fs = require('fs')
 const https = require('https')
 const ProgressBar = require('progress')
 const rmdir = require('rmdir')
-const unzip = require('unzip')
+const unzip = require('unzip2')
 const zlib = require('zlib')
 
 const REPO_URL = 'https://github.com/ftctechnh/ftc_app/archive/beta.zip'

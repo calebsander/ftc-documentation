@@ -1,0 +1,4 @@
+.method void onTracked(TrackableResult)
+This method is called by the system to notify the
+listener that its associated trackable is currently visible.
+@param trackableResult the Vuforia trackable result object in which we were located

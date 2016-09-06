@@ -1,0 +1,5 @@
+.method void updateRobotStatus(@NonNull RobotStatus)
+Informs the monitor of the current status of the robot. This may or may not be
+different from the status previously reported. The robot status provides additional
+information when the robot is not in the running state.
+@param robotStatus the current status of the robot

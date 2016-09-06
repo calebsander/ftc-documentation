@@ -178,8 +178,8 @@ var activeTableTab = "activeTableTab";
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>CallbackResult</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoop.html#processCommand-Command-">processCommand</a></span>(Command&nbsp;command)</code>
+<td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoop.html#processCommand-com.qualcomm.robotcore.robocol.Command-">processCommand</a></span>(<a href="../../../../com/qualcomm/robotcore/robocol/Command.html" title="class in com.qualcomm.robotcore.robocol">Command</a>&nbsp;command)</code>
 <div class="block">Process command method, this will be called if the event loop manager receives a user defined
  command.</div>
 </td>
@@ -255,7 +255,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>init</h4>
 <pre>void&nbsp;init(<a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html" title="class in com.qualcomm.robotcore.eventloop">EventLoopManager</a>&nbsp;eventLoopManager)
-   throws RobotCoreException,
+   throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
           java.lang.InterruptedException</pre>
 <div class="block">Init method, this will be called before the first call to loop. You should set up
  your hardware in this method.
@@ -266,7 +266,7 @@ var activeTableTab = "activeTableTab";
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>eventLoopManager</code> - event loop manager that is responsible for this event loop</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if a RobotCoreException is thrown, it will be handled
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if a RobotCoreException is thrown, it will be handled
          by the event loop manager. The manager will report that the robot failed
          to start.</dd>
 <dd><code>java.lang.InterruptedException</code></dd>
@@ -280,14 +280,14 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>loop</h4>
 <pre>void&nbsp;loop()
-   throws RobotCoreException,
+   throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
           java.lang.InterruptedException</pre>
 <div class="block">This method will be repeatedly called by the event loop manager.
 
  Threading: called on the EventLoopRunnable.run() thread.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if a RobotCoreException is thrown, it will be handled
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if a RobotCoreException is thrown, it will be handled
          by the event loop manager. The manager may decide to either stop processing
          this iteration of the loop, or it may decide to shut down the robot.</dd>
 <dd><code>java.lang.InterruptedException</code></dd>
@@ -318,7 +318,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>teardown</h4>
 <pre>void&nbsp;teardown()
-       throws RobotCoreException,
+       throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
               java.lang.InterruptedException</pre>
 <div class="block">Teardown method, this will be called after the last call to loop. You should place your robot
  into a safe state before this method exits, since there will be no more changes to communicate
@@ -327,7 +327,7 @@ var activeTableTab = "activeTableTab";
  Threading: called on the EventLoopRunnable.run() thread.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if a RobotCoreException is thrown, it will be handled by the event
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if a RobotCoreException is thrown, it will be handled by the event
          loop manager. The manager will then attempt to shut down the robot without the benefit
          of the teardown method.</dd>
 <dd><code>java.lang.InterruptedException</code></dd>
@@ -365,14 +365,14 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>processedRecentlyAttachedUsbDevices</h4>
 <pre>void&nbsp;processedRecentlyAttachedUsbDevices()
-                                  throws RobotCoreException,
+                                  throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                                          java.lang.InterruptedException</pre>
 <div class="block">Process the batch of newly arrived USB devices. This is called on the EventLoop thread by
  the EventLoopManager; there is sufficient time and correct context to, e.g., fully arm the
  associated module software to make the device operational within the app.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 <dd><code>java.lang.InterruptedException</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoop.html#handleUsbModuleDetach-com.qualcomm.robotcore.hardware.usb.RobotUsbModule-"><code>handleUsbModuleDetach(RobotUsbModule)</code></a>, 
@@ -387,7 +387,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>handleUsbModuleDetach</h4>
 <pre>void&nbsp;handleUsbModuleDetach(<a href="../../../../com/qualcomm/robotcore/hardware/usb/RobotUsbModule.html" title="interface in com.qualcomm.robotcore.hardware.usb">RobotUsbModule</a>&nbsp;module)
-                    throws RobotCoreException,
+                    throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                            java.lang.InterruptedException</pre>
 <div class="block">Process the fact that a usb module has now become detached from the system. This is called
  on the EventLoop thread by the EventLoopManager; there is sufficient time and correct context
@@ -396,22 +396,22 @@ var activeTableTab = "activeTableTab";
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>module</code> - </dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 <dd><code>java.lang.InterruptedException</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoop.html#processedRecentlyAttachedUsbDevices--"><code>processedRecentlyAttachedUsbDevices()</code></a></dd>
 </dl>
 </li>
 </ul>
-<a name="processCommand-Command-">
+<a name="processCommand-com.qualcomm.robotcore.robocol.Command-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>processCommand</h4>
-<pre>CallbackResult&nbsp;processCommand(Command&nbsp;command)
+<pre><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;processCommand(<a href="../../../../com/qualcomm/robotcore/robocol/Command.html" title="class in com.qualcomm.robotcore.robocol">Command</a>&nbsp;command)
                        throws java.lang.InterruptedException,
-                              RobotCoreException</pre>
+                              <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></pre>
 <div class="block">Process command method, this will be called if the event loop manager receives a user defined
  command. How this command is handled is up to the event loop implementation.
 
@@ -421,7 +421,7 @@ var activeTableTab = "activeTableTab";
 <dd><code>command</code> - command to process</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.InterruptedException</code></dd>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 </dl>
 </li>
 </ul>

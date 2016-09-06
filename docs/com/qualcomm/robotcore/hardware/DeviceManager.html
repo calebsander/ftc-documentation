@@ -348,9 +348,9 @@ var activeTableTab = "activeTableTab";
 </tr>
 <tr id="i33" class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DeviceManager.html#createUserI2cDevice-com.qualcomm.robotcore.hardware.I2cController-int-UserSensorType-">createUserI2cDevice</a></span>(<a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a>&nbsp;controller,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DeviceManager.html#createUserI2cDevice-com.qualcomm.robotcore.hardware.I2cController-int-com.qualcomm.robotcore.hardware.configuration.UserSensorType-">createUserI2cDevice</a></span>(<a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a>&nbsp;controller,
                    int&nbsp;channel,
-                   UserSensorType&nbsp;type)</code>
+                   <a href="../../../../com/qualcomm/robotcore/hardware/configuration/UserSensorType.html" title="class in com.qualcomm.robotcore.hardware.configuration">UserSensorType</a>&nbsp;type)</code>
 <div class="block">Returns a new instance of a user-defined sensor type.</div>
 </td>
 </tr>
@@ -382,7 +382,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>scanForUsbDevices</h4>
 <pre>java.util.Map&lt;<a href="../../../../com/qualcomm/robotcore/util/SerialNumber.html" title="class in com.qualcomm.robotcore.util">SerialNumber</a>,<a href="../../../../com/qualcomm/robotcore/hardware/DeviceManager.DeviceType.html" title="enum in com.qualcomm.robotcore.hardware">DeviceManager.DeviceType</a>&gt;&nbsp;scanForUsbDevices()
-                                                                throws RobotCoreException</pre>
+                                                                throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></pre>
 <div class="block">Get a listing of all Modern Robotics devices connected.
  <p>
  This method will attempt to open all USB devices that are using an FTDI USB chipset. It will
@@ -395,7 +395,7 @@ var activeTableTab = "activeTableTab";
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a map of serial numbers to Modern Robotics device types</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if unable to open a device</dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if unable to open a device</dd>
 </dl>
 </li>
 </ul>
@@ -406,7 +406,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>createUsbDcMotorController</h4>
 <pre><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a>&nbsp;createUsbDcMotorController(<a href="../../../../com/qualcomm/robotcore/util/SerialNumber.html" title="class in com.qualcomm.robotcore.util">SerialNumber</a>&nbsp;serialNumber)
-                                      throws RobotCoreException,
+                                      throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                                              java.lang.InterruptedException</pre>
 <div class="block">Create an instance of a DcMotorController</div>
 <dl>
@@ -415,7 +415,7 @@ var activeTableTab = "activeTableTab";
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an instance of a DcMotorController</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if unable to create instance</dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if unable to create instance</dd>
 <dd><code>java.lang.InterruptedException</code></dd>
 </dl>
 </li>
@@ -455,7 +455,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>createUsbServoController</h4>
 <pre><a href="../../../../com/qualcomm/robotcore/hardware/ServoController.html" title="interface in com.qualcomm.robotcore.hardware">ServoController</a>&nbsp;createUsbServoController(<a href="../../../../com/qualcomm/robotcore/util/SerialNumber.html" title="class in com.qualcomm.robotcore.util">SerialNumber</a>&nbsp;serialNumber)
-                                  throws RobotCoreException,
+                                  throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                                          java.lang.InterruptedException</pre>
 <div class="block">Create an instance of a ServoController</div>
 <dl>
@@ -464,7 +464,7 @@ var activeTableTab = "activeTableTab";
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an instance of a ServoController</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if unable to create instance</dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if unable to create instance</dd>
 <dd><code>java.lang.InterruptedException</code></dd>
 </dl>
 </li>
@@ -514,7 +514,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>createUsbLegacyModule</h4>
 <pre><a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.html" title="interface in com.qualcomm.robotcore.hardware">LegacyModule</a>&nbsp;createUsbLegacyModule(<a href="../../../../com/qualcomm/robotcore/util/SerialNumber.html" title="class in com.qualcomm.robotcore.util">SerialNumber</a>&nbsp;serialNumber)
-                            throws RobotCoreException,
+                            throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                                    java.lang.InterruptedException</pre>
 <div class="block">Create an instance of a LegacyModule</div>
 <dl>
@@ -523,7 +523,7 @@ var activeTableTab = "activeTableTab";
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an instance of a LegacyModule</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if unable to create instance</dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if unable to create instance</dd>
 <dd><code>java.lang.InterruptedException</code></dd>
 </dl>
 </li>
@@ -535,7 +535,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>createDeviceInterfaceModule</h4>
 <pre><a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html" title="interface in com.qualcomm.robotcore.hardware">DeviceInterfaceModule</a>&nbsp;createDeviceInterfaceModule(<a href="../../../../com/qualcomm/robotcore/util/SerialNumber.html" title="class in com.qualcomm.robotcore.util">SerialNumber</a>&nbsp;serialNumber)
-                                           throws RobotCoreException,
+                                           throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a>,
                                                   java.lang.InterruptedException</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -543,7 +543,7 @@ var activeTableTab = "activeTableTab";
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>- an instance of a Core Device Interface Module</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if unable to create instance</dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if unable to create instance</dd>
 <dd><code>java.lang.InterruptedException</code></dd>
 </dl>
 </li>
@@ -673,7 +673,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 </li>
 </ul>
-<a name="createUserI2cDevice-com.qualcomm.robotcore.hardware.I2cController-int-UserSensorType-">
+<a name="createUserI2cDevice-com.qualcomm.robotcore.hardware.I2cController-int-com.qualcomm.robotcore.hardware.configuration.UserSensorType-">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -681,7 +681,7 @@ var activeTableTab = "activeTableTab";
 <h4>createUserI2cDevice</h4>
 <pre><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a>&nbsp;createUserI2cDevice(<a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a>&nbsp;controller,
                                    int&nbsp;channel,
-                                   UserSensorType&nbsp;type)</pre>
+                                   <a href="../../../../com/qualcomm/robotcore/hardware/configuration/UserSensorType.html" title="class in com.qualcomm.robotcore.hardware.configuration">UserSensorType</a>&nbsp;type)</pre>
 <div class="block">Returns a new instance of a user-defined sensor type.</div>
 </li>
 </ul>

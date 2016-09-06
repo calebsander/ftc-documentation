@@ -105,10 +105,15 @@ var activeTableTab = "activeTableTab";
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../com/qualcomm/robotcore/wifi/NetworkConnection.NetworkConnectionCallback.html" title="interface in com.qualcomm.robotcore.wifi">NetworkConnection.NetworkConnectionCallback</a>, <a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">RecvLoopRunnable.RecvLoopCallback</a>, <a href="../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.ClientCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">SendOnceRunnable.ClientCallback</a></dd>
+</dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">EventLoopManager</span>
-extends java.lang.Object</pre>
+extends java.lang.Object
+implements <a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">RecvLoopRunnable.RecvLoopCallback</a>, <a href="../../../../com/qualcomm/robotcore/wifi/NetworkConnection.NetworkConnectionCallback.html" title="interface in com.qualcomm.robotcore.wifi">NetworkConnection.NetworkConnectionCallback</a>, <a href="../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.ClientCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">SendOnceRunnable.ClientCallback</a></pre>
 <div class="block">Event Loop Manager
  <p>
  Takes RobocolDatagram messages, converts them into the appropriate data type, and then passes it
@@ -161,7 +166,7 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#ROBOT_BATTERY_LEVEL_KEY">ROBOT_BATTERY_LEVEL_KEY</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>RobotState</code></td>
+<td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/robot/RobotState.html" title="enum in com.qualcomm.robotcore.robot">RobotState</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#state">state</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -224,16 +229,16 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#close--">close</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>CallbackResult</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#commandEvent-Command-">commandEvent</a></span>(Command&nbsp;command)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#commandEvent-com.qualcomm.robotcore.robocol.Command-">commandEvent</a></span>(<a href="../../../../com/qualcomm/robotcore/robocol/Command.html" title="class in com.qualcomm.robotcore.robocol">Command</a>&nbsp;command)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>CallbackResult</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#emptyEvent-RobocolDatagram-">emptyEvent</a></span>(RobocolDatagram&nbsp;packet)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#emptyEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">emptyEvent</a></span>(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet)</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>CallbackResult</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#gamepadEvent-RobocolDatagram-">gamepadEvent</a></span>(RobocolDatagram&nbsp;packet)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#gamepadEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">gamepadEvent</a></span>(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet)</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoop.html" title="interface in com.qualcomm.robotcore.eventloop">EventLoop</a></code></td>
@@ -260,7 +265,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code>Heartbeat</code></td>
+<td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/robocol/Heartbeat.html" title="class in com.qualcomm.robotcore.robocol">Heartbeat</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#getHeartbeat--">getHeartbeat</a></span>()</code>
 <div class="block">Get the current heartbeat state</div>
 </td>
@@ -272,17 +277,17 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code>CallbackResult</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#heartbeatEvent-RobocolDatagram-long-">heartbeatEvent</a></span>(RobocolDatagram&nbsp;packet,
+<td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#heartbeatEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-long-">heartbeatEvent</a></span>(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet,
               long&nbsp;tReceived)</code>&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code>CallbackResult</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#onNetworkConnectionEvent-NetworkConnection.Event-">onNetworkConnectionEvent</a></span>(NetworkConnection.Event&nbsp;event)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#onNetworkConnectionEvent-com.qualcomm.robotcore.wifi.NetworkConnection.Event-">onNetworkConnectionEvent</a></span>(<a href="../../../../com/qualcomm/robotcore/wifi/NetworkConnection.Event.html" title="enum in com.qualcomm.robotcore.wifi">NetworkConnection.Event</a>&nbsp;event)</code>&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
-<td class="colFirst"><code>CallbackResult</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#packetReceived-RobocolDatagram-">packetReceived</a></span>(RobocolDatagram&nbsp;packet)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#packetReceived-com.qualcomm.robotcore.robocol.RobocolDatagram-">packetReceived</a></span>(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet)</code>&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -293,8 +298,8 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#peerDisconnected--">peerDisconnected</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i16" class="altColor">
-<td class="colFirst"><code>CallbackResult</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#peerDiscoveryEvent-RobocolDatagram-">peerDiscoveryEvent</a></span>(RobocolDatagram&nbsp;packet)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#peerDiscoveryEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">peerDiscoveryEvent</a></span>(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet)</code>&nbsp;</td>
 </tr>
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -316,7 +321,7 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i20" class="altColor">
-<td class="colFirst"><code>CallbackResult</code></td>
+<td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#reportGlobalError-java.lang.String-boolean-">reportGlobalError</a></span>(java.lang.String&nbsp;error,
                  boolean&nbsp;recoverable)</code>&nbsp;</td>
 </tr>
@@ -355,8 +360,8 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i27" class="rowColor">
-<td class="colFirst"><code>CallbackResult</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#telemetryEvent-RobocolDatagram-">telemetryEvent</a></span>(RobocolDatagram&nbsp;packet)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#telemetryEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">telemetryEvent</a></span>(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet)</code>&nbsp;</td>
 </tr>
 <tr id="i28" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -470,7 +475,7 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>state</h4>
-<pre>public&nbsp;RobotState state</pre>
+<pre>public&nbsp;<a href="../../../../com/qualcomm/robotcore/robot/RobotState.html" title="enum in com.qualcomm.robotcore.robot">RobotState</a> state</pre>
 </li>
 </ul>
 </li>
@@ -602,7 +607,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getHeartbeat</h4>
-<pre>public&nbsp;Heartbeat&nbsp;getHeartbeat()</pre>
+<pre>public&nbsp;<a href="../../../../com/qualcomm/robotcore/robocol/Heartbeat.html" title="class in com.qualcomm.robotcore.robocol">Heartbeat</a>&nbsp;getHeartbeat()</pre>
 <div class="block">Get the current heartbeat state</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -610,13 +615,17 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a name="telemetryEvent-RobocolDatagram-">
+<a name="telemetryEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>telemetryEvent</h4>
-<pre>public&nbsp;CallbackResult&nbsp;telemetryEvent(RobocolDatagram&nbsp;packet)</pre>
+<pre>public&nbsp;<a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;telemetryEvent(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html#telemetryEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">telemetryEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">RecvLoopRunnable.RecvLoopCallback</a></code></dd>
+</dl>
 </li>
 </ul>
 <a name="reportGlobalError-java.lang.String-boolean-">
@@ -625,17 +634,25 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>reportGlobalError</h4>
-<pre>public&nbsp;CallbackResult&nbsp;reportGlobalError(java.lang.String&nbsp;error,
+<pre>public&nbsp;<a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;reportGlobalError(java.lang.String&nbsp;error,
                                         boolean&nbsp;recoverable)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html#reportGlobalError-java.lang.String-boolean-">reportGlobalError</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">RecvLoopRunnable.RecvLoopCallback</a></code></dd>
+</dl>
 </li>
 </ul>
-<a name="packetReceived-RobocolDatagram-">
+<a name="packetReceived-com.qualcomm.robotcore.robocol.RobocolDatagram-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>packetReceived</h4>
-<pre>public&nbsp;CallbackResult&nbsp;packetReceived(RobocolDatagram&nbsp;packet)</pre>
+<pre>public&nbsp;<a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;packetReceived(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html#packetReceived-com.qualcomm.robotcore.robocol.RobocolDatagram-">packetReceived</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">RecvLoopRunnable.RecvLoopCallback</a></code></dd>
+</dl>
 </li>
 </ul>
 <a name="refreshSystemTelemetryNow--">
@@ -659,13 +676,17 @@ extends java.lang.Object</pre>
  without incurring undo overhead.</div>
 </li>
 </ul>
-<a name="onNetworkConnectionEvent-NetworkConnection.Event-">
+<a name="onNetworkConnectionEvent-com.qualcomm.robotcore.wifi.NetworkConnection.Event-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>onNetworkConnectionEvent</h4>
-<pre>public&nbsp;CallbackResult&nbsp;onNetworkConnectionEvent(NetworkConnection.Event&nbsp;event)</pre>
+<pre>public&nbsp;<a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;onNetworkConnectionEvent(<a href="../../../../com/qualcomm/robotcore/wifi/NetworkConnection.Event.html" title="enum in com.qualcomm.robotcore.wifi">NetworkConnection.Event</a>&nbsp;event)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../com/qualcomm/robotcore/wifi/NetworkConnection.NetworkConnectionCallback.html#onNetworkConnectionEvent-com.qualcomm.robotcore.wifi.NetworkConnection.Event-">onNetworkConnectionEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/wifi/NetworkConnection.NetworkConnectionCallback.html" title="interface in com.qualcomm.robotcore.wifi">NetworkConnection.NetworkConnectionCallback</a></code></dd>
+</dl>
 </li>
 </ul>
 <a name="start-com.qualcomm.robotcore.eventloop.EventLoop-">
@@ -675,7 +696,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>start</h4>
 <pre>public&nbsp;void&nbsp;start(<a href="../../../../com/qualcomm/robotcore/eventloop/EventLoop.html" title="interface in com.qualcomm.robotcore.eventloop">EventLoop</a>&nbsp;eventLoop)
-           throws RobotCoreException</pre>
+           throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></pre>
 <div class="block">Starts up the <a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html" title="class in com.qualcomm.robotcore.eventloop"><code>EventLoopManager</code></a>. This mostly involves setting up the network
  connections and listeners and senders, then getting the event loop thread going.
 
@@ -685,7 +706,7 @@ extends java.lang.Object</pre>
  correctly. Thus, we must be aware of that possibility here as we start.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../com/qualcomm/robotcore/eventloop/EventLoopManager.html#shutdown--"><code>shutdown()</code></a></dd>
 </dl>
@@ -754,13 +775,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setEventLoop</h4>
 <pre>public&nbsp;void&nbsp;setEventLoop(<a href="../../../../com/qualcomm/robotcore/eventloop/EventLoop.html" title="interface in com.qualcomm.robotcore.eventloop">EventLoop</a>&nbsp;eventLoop)
-                  throws RobotCoreException</pre>
+                  throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></pre>
 <div class="block">Replace the current event loop with a new event loop</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>eventLoop</code> - new event loop</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code> - if event loop fails to init</dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code> - if event loop fails to init</dd>
 </dl>
 </li>
 </ul>
@@ -780,32 +801,36 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a name="gamepadEvent-RobocolDatagram-">
+<a name="gamepadEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>gamepadEvent</h4>
-<pre>public&nbsp;CallbackResult&nbsp;gamepadEvent(RobocolDatagram&nbsp;packet)
-                            throws RobotCoreException</pre>
+<pre>public&nbsp;<a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;gamepadEvent(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet)
+                            throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></pre>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html#gamepadEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">gamepadEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">RecvLoopRunnable.RecvLoopCallback</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="heartbeatEvent-RobocolDatagram-long-">
+<a name="heartbeatEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-long-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>heartbeatEvent</h4>
-<pre>public&nbsp;CallbackResult&nbsp;heartbeatEvent(RobocolDatagram&nbsp;packet,
+<pre>public&nbsp;<a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;heartbeatEvent(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet,
                                      long&nbsp;tReceived)
-                              throws RobotCoreException</pre>
+                              throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></pre>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html#heartbeatEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-long-">heartbeatEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">RecvLoopRunnable.RecvLoopCallback</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -816,6 +841,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>peerConnected</h4>
 <pre>public&nbsp;void&nbsp;peerConnected(boolean&nbsp;peerLikelyChanged)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.ClientCallback.html#peerConnected-boolean-">peerConnected</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.ClientCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">SendOnceRunnable.ClientCallback</a></code></dd>
+</dl>
 </li>
 </ul>
 <a name="peerDisconnected--">
@@ -825,43 +854,55 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>peerDisconnected</h4>
 <pre>public&nbsp;void&nbsp;peerDisconnected()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.ClientCallback.html#peerDisconnected--">peerDisconnected</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.ClientCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">SendOnceRunnable.ClientCallback</a></code></dd>
+</dl>
 </li>
 </ul>
-<a name="peerDiscoveryEvent-RobocolDatagram-">
+<a name="peerDiscoveryEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>peerDiscoveryEvent</h4>
-<pre>public&nbsp;CallbackResult&nbsp;peerDiscoveryEvent(RobocolDatagram&nbsp;packet)
-                                  throws RobotCoreException</pre>
+<pre>public&nbsp;<a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;peerDiscoveryEvent(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet)
+                                  throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></pre>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html#peerDiscoveryEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">peerDiscoveryEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">RecvLoopRunnable.RecvLoopCallback</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="commandEvent-Command-">
+<a name="commandEvent-com.qualcomm.robotcore.robocol.Command-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>commandEvent</h4>
-<pre>public&nbsp;CallbackResult&nbsp;commandEvent(Command&nbsp;command)
-                            throws RobotCoreException</pre>
+<pre>public&nbsp;<a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;commandEvent(<a href="../../../../com/qualcomm/robotcore/robocol/Command.html" title="class in com.qualcomm.robotcore.robocol">Command</a>&nbsp;command)
+                            throws <a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></pre>
 <dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html#commandEvent-com.qualcomm.robotcore.robocol.Command-">commandEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">RecvLoopRunnable.RecvLoopCallback</a></code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>RobotCoreException</code></dd>
+<dd><code><a href="../../../../com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="emptyEvent-RobocolDatagram-">
+<a name="emptyEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>emptyEvent</h4>
-<pre>public&nbsp;CallbackResult&nbsp;emptyEvent(RobocolDatagram&nbsp;packet)</pre>
+<pre>public&nbsp;<a href="../../../../org/firstinspires/ftc/robotcore/internal/network/CallbackResult.html" title="enum in org.firstinspires.ftc.robotcore.internal.network">CallbackResult</a>&nbsp;emptyEvent(<a href="../../../../com/qualcomm/robotcore/robocol/RobocolDatagram.html" title="class in com.qualcomm.robotcore.robocol">RobocolDatagram</a>&nbsp;packet)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html#emptyEvent-com.qualcomm.robotcore.robocol.RobocolDatagram-">emptyEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/firstinspires/ftc/robotcore/internal/network/RecvLoopRunnable.RecvLoopCallback.html" title="interface in org.firstinspires.ftc.robotcore.internal.network">RecvLoopRunnable.RecvLoopCallback</a></code></dd>
+</dl>
 </li>
 </ul>
 <a name="buildAndSendTelemetry-java.lang.String-java.lang.String-">

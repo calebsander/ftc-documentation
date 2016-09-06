@@ -98,6 +98,329 @@
 </ul>
 </li>
 <li class="blockList">
+<h2 title="Package">Package&nbsp;com.qualcomm.ftccommon.configuration</h2>
+<ul class="blockList">
+<li class="blockList"><a name="com.qualcomm.ftccommon.configuration.EditParameters">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/ftccommon/configuration/EditParameters.html" title="class in com.qualcomm.ftccommon.configuration">com.qualcomm.ftccommon.configuration.EditParameters</a> extends java.lang.Object implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>isConfigDirty</h4>
+<pre>boolean isConfigDirty</pre>
+</li>
+<li class="blockList">
+<h4>configuration</h4>
+<pre><a href="com/qualcomm/robotcore/hardware/configuration/DeviceConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">DeviceConfiguration</a> configuration</pre>
+</li>
+<li class="blockList">
+<h4>currentItems</h4>
+<pre>java.util.List&lt;E&gt; currentItems</pre>
+</li>
+<li class="blockList">
+<h4>initialPortNumber</h4>
+<pre>int initialPortNumber</pre>
+</li>
+<li class="blockList">
+<h4>maxItemCount</h4>
+<pre>int maxItemCount</pre>
+</li>
+<li class="blockList">
+<h4>growable</h4>
+<pre>boolean growable</pre>
+</li>
+<li class="blockList">
+<h4>scannedDevices</h4>
+<pre><a href="com/qualcomm/ftccommon/configuration/ScannedDevices.html" title="class in com.qualcomm.ftccommon.configuration">ScannedDevices</a> scannedDevices</pre>
+</li>
+<li class="blockList">
+<h4>robotConfigMap</h4>
+<pre><a href="com/qualcomm/ftccommon/configuration/RobotConfigMap.html" title="class in com.qualcomm.ftccommon.configuration">RobotConfigMap</a> robotConfigMap</pre>
+</li>
+<li class="blockList">
+<h4>haveRobotConfigMapParameter</h4>
+<pre>boolean haveRobotConfigMapParameter</pre>
+</li>
+<li class="blockList">
+<h4>extantRobotConfigurations</h4>
+<pre>java.util.List&lt;E&gt; extantRobotConfigurations</pre>
+</li>
+<li class="blockList">
+<h4>configurationTypes</h4>
+<pre><a href="com/qualcomm/robotcore/hardware/configuration/ConfigurationType.html" title="interface in com.qualcomm.robotcore.hardware.configuration">ConfigurationType</a>[] configurationTypes</pre>
+</li>
+<li class="blockListLast">
+<h4>currentCfgFile</h4>
+<pre><a href="com/qualcomm/ftccommon/configuration/RobotConfigFile.html" title="class in com.qualcomm.ftccommon.configuration">RobotConfigFile</a> currentCfgFile</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="com.qualcomm.ftccommon.configuration.RobotConfigMap">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/ftccommon/configuration/RobotConfigMap.html" title="class in com.qualcomm.ftccommon.configuration">com.qualcomm.ftccommon.configuration.RobotConfigMap</a> extends java.lang.Object implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockListLast">
+<h4>map</h4>
+<pre>java.util.Map&lt;K,V&gt; map</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="com.qualcomm.ftccommon.configuration.ScannedDevices">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/ftccommon/configuration/ScannedDevices.html" title="class in com.qualcomm.ftccommon.configuration">com.qualcomm.ftccommon.configuration.ScannedDevices</a> extends java.util.HashMap implements Serializable</h3>
+</li>
+</ul>
+</li>
+<li class="blockList">
+<h2 title="Package">Package&nbsp;com.qualcomm.robotcore.exception</h2>
+<ul class="blockList">
+<li class="blockList"><a name="com.qualcomm.robotcore.exception.DuplicateNameException">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/exception/DuplicateNameException.html" title="class in com.qualcomm.robotcore.exception">com.qualcomm.robotcore.exception.DuplicateNameException</a> extends java.lang.RuntimeException implements Serializable</h3>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.exception.FTDeviceClosedException">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/exception/FTDeviceClosedException.html" title="class in com.qualcomm.robotcore.exception">com.qualcomm.robotcore.exception.FTDeviceClosedException</a> extends <a href="com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a> implements Serializable</h3>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.exception.FTDeviceIncompleteInitializationException">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/exception/FTDeviceIncompleteInitializationException.html" title="class in com.qualcomm.robotcore.exception">com.qualcomm.robotcore.exception.FTDeviceIncompleteInitializationException</a> extends <a href="com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a> implements Serializable</h3>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.exception.RobotCoreException">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">com.qualcomm.robotcore.exception.RobotCoreException</a> extends java.lang.Exception implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>-6837027308140695266L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockListLast">
+<h4>chainedException</h4>
+<pre>java.lang.Exception chainedException</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.exception.RobotCoreNonResponsiveException">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/exception/RobotCoreNonResponsiveException.html" title="class in com.qualcomm.robotcore.exception">com.qualcomm.robotcore.exception.RobotCoreNonResponsiveException</a> extends <a href="com/qualcomm/robotcore/exception/RobotCoreException.html" title="class in com.qualcomm.robotcore.exception">RobotCoreException</a> implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>-8802870885822003745L</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li class="blockList">
+<h2 title="Package">Package&nbsp;com.qualcomm.robotcore.hardware.configuration</h2>
+<ul class="blockList">
+<li class="blockList"><a name="com.qualcomm.robotcore.hardware.configuration.ControllerConfiguration">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/hardware/configuration/ControllerConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">com.qualcomm.robotcore.hardware.configuration.ControllerConfiguration</a> extends <a href="com/qualcomm/robotcore/hardware/configuration/DeviceConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">DeviceConfiguration</a> implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>devices</h4>
+<pre>java.util.List&lt;E&gt; devices</pre>
+</li>
+<li class="blockList">
+<h4>serialNumber</h4>
+<pre><a href="com/qualcomm/robotcore/util/SerialNumber.html" title="class in com.qualcomm.robotcore.util">SerialNumber</a> serialNumber</pre>
+</li>
+<li class="blockListLast">
+<h4>knownToBeAttached</h4>
+<pre>boolean knownToBeAttached</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.hardware.configuration.DeviceConfiguration">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/hardware/configuration/DeviceConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">com.qualcomm.robotcore.hardware.configuration.DeviceConfiguration</a> extends java.lang.Object implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>name</h4>
+<pre>java.lang.String name</pre>
+</li>
+<li class="blockList">
+<h4>type</h4>
+<pre><a href="com/qualcomm/robotcore/hardware/configuration/ConfigurationType.html" title="interface in com.qualcomm.robotcore.hardware.configuration">ConfigurationType</a> type</pre>
+</li>
+<li class="blockList">
+<h4>port</h4>
+<pre>int port</pre>
+</li>
+<li class="blockListLast">
+<h4>enabled</h4>
+<pre>boolean enabled</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.hardware.configuration.DeviceInterfaceModuleConfiguration">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/hardware/configuration/DeviceInterfaceModuleConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">com.qualcomm.robotcore.hardware.configuration.DeviceInterfaceModuleConfiguration</a> extends <a href="com/qualcomm/robotcore/hardware/configuration/ControllerConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">ControllerConfiguration</a> implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>pwmOutputs</h4>
+<pre>java.util.List&lt;E&gt; pwmOutputs</pre>
+</li>
+<li class="blockList">
+<h4>i2cDevices</h4>
+<pre>java.util.List&lt;E&gt; i2cDevices</pre>
+</li>
+<li class="blockList">
+<h4>analogInputDevices</h4>
+<pre>java.util.List&lt;E&gt; analogInputDevices</pre>
+</li>
+<li class="blockList">
+<h4>digitalDevices</h4>
+<pre>java.util.List&lt;E&gt; digitalDevices</pre>
+</li>
+<li class="blockListLast">
+<h4>analogOutputDevices</h4>
+<pre>java.util.List&lt;E&gt; analogOutputDevices</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.hardware.configuration.LegacyModuleControllerConfiguration">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/hardware/configuration/LegacyModuleControllerConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">com.qualcomm.robotcore.hardware.configuration.LegacyModuleControllerConfiguration</a> extends <a href="com/qualcomm/robotcore/hardware/configuration/ControllerConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">ControllerConfiguration</a> implements Serializable</h3>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.hardware.configuration.MatrixControllerConfiguration">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/hardware/configuration/MatrixControllerConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">com.qualcomm.robotcore.hardware.configuration.MatrixControllerConfiguration</a> extends <a href="com/qualcomm/robotcore/hardware/configuration/ControllerConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">ControllerConfiguration</a> implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>servos</h4>
+<pre>java.util.List&lt;E&gt; servos</pre>
+</li>
+<li class="blockListLast">
+<h4>motors</h4>
+<pre>java.util.List&lt;E&gt; motors</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.hardware.configuration.MotorConfiguration">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/hardware/configuration/MotorConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">com.qualcomm.robotcore.hardware.configuration.MotorConfiguration</a> extends <a href="com/qualcomm/robotcore/hardware/configuration/DeviceConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">DeviceConfiguration</a> implements Serializable</h3>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.hardware.configuration.MotorControllerConfiguration">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/hardware/configuration/MotorControllerConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">com.qualcomm.robotcore.hardware.configuration.MotorControllerConfiguration</a> extends <a href="com/qualcomm/robotcore/hardware/configuration/ControllerConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">ControllerConfiguration</a> implements Serializable</h3>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.hardware.configuration.ServoConfiguration">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/hardware/configuration/ServoConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">com.qualcomm.robotcore.hardware.configuration.ServoConfiguration</a> extends <a href="com/qualcomm/robotcore/hardware/configuration/DeviceConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">DeviceConfiguration</a> implements Serializable</h3>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.hardware.configuration.ServoControllerConfiguration">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/hardware/configuration/ServoControllerConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">com.qualcomm.robotcore.hardware.configuration.ServoControllerConfiguration</a> extends <a href="com/qualcomm/robotcore/hardware/configuration/ControllerConfiguration.html" title="class in com.qualcomm.robotcore.hardware.configuration">ControllerConfiguration</a> implements Serializable</h3>
+</li>
+<li class="blockList"><a name="com.qualcomm.robotcore.hardware.configuration.UserSensorType">
+<!--   -->
+</a>
+<h3>Class <a href="com/qualcomm/robotcore/hardware/configuration/UserSensorType.html" title="class in com.qualcomm.robotcore.hardware.configuration">com.qualcomm.robotcore.hardware.configuration.UserSensorType</a> extends java.lang.Object implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialization Methods</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>readObject</h4>
+<pre>private&nbsp;void&nbsp;readObject(java.io.ObjectInputStream&nbsp;in)
+                 throws java.io.InvalidObjectException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.InvalidObjectException</code></dd>
+</dl>
+</li>
+<li class="blockListLast">
+<h4>writeReplace</h4>
+<pre>private&nbsp;java.lang.Object&nbsp;writeReplace()</pre>
+</li>
+</ul>
+</li>
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>xmlTag</h4>
+<pre>java.lang.String xmlTag</pre>
+</li>
+<li class="blockList">
+<h4>flavor</h4>
+<pre><a href="com/qualcomm/robotcore/hardware/configuration/UserSensorType.Flavor.html" title="enum in com.qualcomm.robotcore.hardware.configuration">UserSensorType.Flavor</a> flavor</pre>
+</li>
+<li class="blockList">
+<h4>name</h4>
+<pre>java.lang.String name</pre>
+</li>
+<li class="blockList">
+<h4>description</h4>
+<pre>java.lang.String description</pre>
+</li>
+<li class="blockList">
+<h4>clazz</h4>
+<pre>java.lang.Class&lt;T&gt; clazz</pre>
+</li>
+<li class="blockListLast">
+<h4>constructors</h4>
+<pre>java.util.List&lt;E&gt; constructors</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList">
 <h2 title="Package">Package&nbsp;com.qualcomm.robotcore.util</h2>
 <ul class="blockList">
 <li class="blockList"><a name="com.qualcomm.robotcore.util.SerialNumber">
@@ -111,6 +434,31 @@
 <li class="blockListLast">
 <h4>serialNumber</h4>
 <pre>java.lang.String serialNumber</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList">
+<h2 title="Package">Package&nbsp;fi.iki.elonen</h2>
+<ul class="blockList">
+<li class="blockList"><a name="fi.iki.elonen.NanoHTTPD.ResponseException">
+<!--   -->
+</a>
+<h3>Class <a href="fi/iki/elonen/NanoHTTPD.ResponseException.html" title="class in fi.iki.elonen">fi.iki.elonen.NanoHTTPD.ResponseException</a> extends java.lang.Exception implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>6569838532917408380L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockListLast">
+<h4>status</h4>
+<pre><a href="fi/iki/elonen/NanoHTTPD.Response.Status.html" title="enum in fi.iki.elonen">NanoHTTPD.Response.Status</a> status</pre>
 </li>
 </ul>
 </li>

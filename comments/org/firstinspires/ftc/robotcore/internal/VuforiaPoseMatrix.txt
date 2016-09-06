@@ -1,0 +1,3 @@
+.class
+{@link VuforiaPoseMatrix} is a matrix that is returned from, e.g., the
+{@code TrackableResult.getPose()} API.

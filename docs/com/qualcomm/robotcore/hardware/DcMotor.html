@@ -110,7 +110,8 @@ var activeTableTab = "activeTableTab";
 <pre>public interface <span class="typeNameLabel">DcMotor</span>
 extends <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorSimple.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorSimple</a></pre>
 <div class="block">Represents a motor attached to a certain port of a motor controller.
- Most methods simply invoke the corresponding method for <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware"><code>DcMotorController</code></a>.
+ Motors are given DC voltage and their position can be measured if an encoder is attached.
+ There are several different modes in which to run the motor.
  <p>It is also possible to set the motors as reversed or not reversed (see <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorSimple.Direction.html" title="enum in com.qualcomm.robotcore.hardware"><code>DcMotorSimple.Direction</code></a>).
  <p>Motor powers are reset to <code>0.0</code> between runs of an <a href="../../../../com/qualcomm/robotcore/eventloop/opmode/OpMode.html" title="class in com.qualcomm.robotcore.eventloop.opmode"><code>OpMode</code></a>,
  but encoder values and the run mode are not reset until the robot's power is turned off

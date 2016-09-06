@@ -1,6 +1,7 @@
 .class
 Represents a motor attached to a certain port of a motor controller.
-Most methods simply invoke the corresponding method for {@link DcMotorController}.
+Motors are given DC voltage and their position can be measured if an encoder is attached.
+There are several different modes in which to run the motor.
 <p>It is also possible to set the motors as reversed or not reversed (see {@link DcMotorSimple.Direction}).
 <p>Motor powers are reset to {@code 0.0} between runs of an {@link com.qualcomm.robotcore.eventloop.opmode.OpMode},
 but encoder values and the run mode are not reset until the robot's power is turned off

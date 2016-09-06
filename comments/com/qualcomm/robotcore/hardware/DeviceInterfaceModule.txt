@@ -1,0 +1,41 @@
+.class
+Represents a Modern Robotics Device Interface Module.
+Beyond being an {@link AnalogInputController}, an {@link AnalogOutputController},
+a {@link DigitalChannelController}, an {@link I2cController}, and a {@link PWMOutputController},
+it is also possible to control all the digital ports at once and to control the LEDs.
+
+.method int getDigitalInputStateByte()
+Gets the signal level of all the digital ports.
+If a port is set as an output port, it returns the last set value.
+If a port is set as an input port, it returns the value currently being read.
+@return a bitmask where ((bitmask &gt;&gt; portNumber) &amp; 1) == 1 will be true iff there is a signal on the port
+
+.method void setDigitalIOControlByte(byte)
+Sets whether each digital port is an input or an output.
+@param input a bitmask where (bitmask &gt;&gt; portNumber) &amp; 1 is 1 if the port should become an output port, 0 if it should become an input port
+
+.method byte getDigitalIOControlByte()
+Gets whether each digital port is an input or an output.
+@return a bitmask where (bitmask &gt;&gt; portNumber) &amp; 1 is 1 if the port is an output port, 0 if it is an input port
+@see setDigitalIOControlByte(byte)
+
+.method void setDigitalOutputByte(byte)
+Sets whether each digital output port is activated.
+If any ports are set as inputs, they will not be affected.
+@param input a bitmask where (bitmask &gt;&gt; portNumber) &amp; 1 == 1 iff the port should output a signal
+
+.method byte getDigitalOutputStateByte()
+Gets whether each digital output port is activated.
+@return a bitmask where (bitmask &gt;&gt; portNumber) &amp; 1 == 1 iff the port is outputing a signal
+@see setDigitalOutputByte(byte)
+
+.method boolean getLEDState(int)
+Gets whether the specified LED is turned on.
+@param channel use 0 for the blue LED, 1 for the red LED
+@return true iff the led is turned on
+@see setLED(int, boolean)
+
+.method void setLED(int, boolean)
+Turns the specified LED on or off.
+@param channel use 0 for the blue LED, 1 for the red LED
+@param state true will turn on the LED, false will turn it off

@@ -218,7 +218,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/matrix/MatrixDcMotorController.html#getMotorCurrentPosition-int-">getMotorCurrentPosition</a></span>(int&nbsp;motor)</code>
-<div class="block">Get the current motor position</div>
+<div class="block">Gets the current value of the encoder.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -237,19 +237,21 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/matrix/MatrixDcMotorController.html#getMotorPower-int-">getMotorPower</a></span>(int&nbsp;motor)</code>
-<div class="block">Get the current motor power</div>
+<div class="block">Returns the power that the motor is moving at, where <code>-1.0</code> means full power backwards,
+ <code>0.0</code> means stopped or coasting, and <code>1.0</code> means full power forward.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/matrix/MatrixDcMotorController.html#getMotorPowerFloat-int-">getMotorPowerFloat</a></span>(int&nbsp;motor)</code>
-<div class="block">Is motor power set to float?</div>
+<div class="block">Returns whether the controller has told the motor to coast (put minimal resistance on it).</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/matrix/MatrixDcMotorController.html#getMotorTargetPosition-int-">getMotorTargetPosition</a></span>(int&nbsp;motor)</code>
-<div class="block">Get the current motor target position</div>
+<div class="block">Returns the encoder position that the motor has been told to move to if in the
+ <a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html#RUN_TO_POSITION"><code>RUN_TO_POSITION</code></a> mode</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -286,7 +288,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/matrix/MatrixDcMotorController.html#isBusy-int-">isBusy</a></span>(int&nbsp;motor)</code>
-<div class="block">Is the motor busy?</div>
+<div class="block">Returns whether the robot has not yet reached its target position.</div>
 </td>
 </tr>
 <tr id="i18" class="altColor">
@@ -307,14 +309,15 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/matrix/MatrixDcMotorController.html#setMotorMode-int-com.qualcomm.robotcore.hardware.DcMotor.RunMode-">setMotorMode</a></span>(int&nbsp;motor,
             <a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html" title="enum in com.qualcomm.robotcore.hardware">DcMotor.RunMode</a>&nbsp;mode)</code>
-<div class="block">Set the current motor mode.</div>
+<div class="block">Changes the mode in which the motor controller is moving the motor.</div>
 </td>
 </tr>
 <tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/matrix/MatrixDcMotorController.html#setMotorPower-int-double-">setMotorPower</a></span>(int&nbsp;motor,
              double&nbsp;power)</code>
-<div class="block">Set the current motor power</div>
+<div class="block">Sets the motor's power, where <code>-1.0</code> means full power backwards,
+ <code>0.0</code> means stopped, and <code>1.0</code> means full power forward.</div>
 </td>
 </tr>
 <tr id="i22" class="altColor">
@@ -328,7 +331,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/matrix/MatrixDcMotorController.html#setMotorTargetPosition-int-int-">setMotorTargetPosition</a></span>(int&nbsp;motor,
                       int&nbsp;position)</code>
-<div class="block">Set the motor target position.</div>
+<div class="block">Sets the desired encoder position for the motor.</div>
 </td>
 </tr>
 <tr id="i24" class="altColor">
@@ -419,14 +422,16 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <h4>isBusy</h4>
 <pre>public&nbsp;boolean&nbsp;isBusy(int&nbsp;motor)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#isBusy-int-">DcMotorController</a></code></span></div>
-<div class="block">Is the motor busy?</div>
+<div class="block">Returns whether the robot has not yet reached its target position.
+ Don't rely on the return value if not in the
+ <a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html#RUN_TO_POSITION"><code>RUN_TO_POSITION</code></a> mode.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#isBusy-int-">isBusy</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>motor</code> - port of motor</dd>
+<dd><code>motor</code> - the motor port number (1 to 2 or 1 to 4)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if the motor is busy</dd>
+<dd><code>false</code> if the motor has stopped, <code>true</code> otherwise</dd>
 </dl>
 </li>
 </ul>
@@ -484,13 +489,16 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <pre>public&nbsp;void&nbsp;setMotorMode(int&nbsp;motor,
                          <a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html" title="enum in com.qualcomm.robotcore.hardware">DcMotor.RunMode</a>&nbsp;mode)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorMode-int-com.qualcomm.robotcore.hardware.DcMotor.RunMode-">DcMotorController</a></code></span></div>
-<div class="block">Set the current motor mode. <a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html" title="enum in com.qualcomm.robotcore.hardware"><code>DcMotor.RunMode</code></a></div>
+<div class="block">Changes the mode in which the motor controller is moving the motor.
+ The mode defaults to <a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html#RUN_WITHOUT_ENCODERS"><code>RUN_WITHOUT_ENCODERS</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorMode-int-com.qualcomm.robotcore.hardware.DcMotor.RunMode-">setMotorMode</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>motor</code> - port of motor</dd>
-<dd><code>mode</code> - run mode</dd>
+<dd><code>motor</code> - the motor port number (1 to 2 or 1 to 4)</dd>
+<dd><code>mode</code> - the run mode to use</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html" title="enum in com.qualcomm.robotcore.hardware"><code>DcMotor.RunMode</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -555,14 +563,17 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <h4>getMotorPowerFloat</h4>
 <pre>public&nbsp;boolean&nbsp;getMotorPowerFloat(int&nbsp;motor)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorPowerFloat-int-">DcMotorController</a></code></span></div>
-<div class="block">Is motor power set to float?</div>
+<div class="block">Returns whether the controller has told the motor to coast (put minimal resistance on it).</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorPowerFloat-int-">getMotorPowerFloat</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>motor</code> - port of motor</dd>
+<dd><code>motor</code> - the motor port number (1 to 2 or 1 to 4)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true of motor is set to float</dd>
+<dd><code>true</code> if the motor is coasting, <code>false</code> if not</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorZeroPowerBehavior-int-com.qualcomm.robotcore.hardware.DcMotor.ZeroPowerBehavior-"><code>DcMotorController.setMotorZeroPowerBehavior(int, DcMotor.ZeroPowerBehavior)</code></a>, 
+<a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorPower-int-double-"><code>DcMotorController.setMotorPower(int, double)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -593,13 +604,16 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <pre>public&nbsp;void&nbsp;setMotorPower(int&nbsp;motor,
                           double&nbsp;power)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorPower-int-double-">DcMotorController</a></code></span></div>
-<div class="block">Set the current motor power</div>
+<div class="block">Sets the motor's power, where <code>-1.0</code> means full power backwards,
+ <code>0.0</code> means stopped, and <code>1.0</code> means full power forward.
+ In <a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html#RUN_TO_POSITION"><code>RUN_TO_POSITION</code></a> mode,
+ sets the maximum power to send to the motor.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorPower-int-double-">setMotorPower</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>motor</code> - port of motor</dd>
-<dd><code>power</code> - from -1.0 to 1.0</dd>
+<dd><code>motor</code> - the motor port number (1 to 2 or 1 to 4)</dd>
+<dd><code>power</code> - the desired power</dd>
 </dl>
 </li>
 </ul>
@@ -611,14 +625,17 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <h4>getMotorPower</h4>
 <pre>public&nbsp;double&nbsp;getMotorPower(int&nbsp;motor)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorPower-int-">DcMotorController</a></code></span></div>
-<div class="block">Get the current motor power</div>
+<div class="block">Returns the power that the motor is moving at, where <code>-1.0</code> means full power backwards,
+ <code>0.0</code> means stopped or coasting, and <code>1.0</code> means full power forward.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorPower-int-">getMotorPower</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>motor</code> - port of motor</dd>
+<dd><code>motor</code> - the motor port number (1 to 2 or 1 to 4)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>scaled from -1.0 to 1.0</dd>
+<dd>the motor's power value</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorPower-int-double-"><code>DcMotorController.setMotorPower(int, double)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -631,15 +648,18 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <pre>public&nbsp;void&nbsp;setMotorTargetPosition(int&nbsp;motor,
                                    int&nbsp;position)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorTargetPosition-int-int-">DcMotorController</a></code></span></div>
-<div class="block">Set the motor target position. This takes in an integer, which is not scaled.
-
- Motor power should be positive if using run to position</div>
+<div class="block">Sets the desired encoder position for the motor. It will automatically
+ move there (requires an encoder to be attached).
+ Should only be used in the <a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html#RUN_WITHOUT_ENCODERS"><code>RUN_TO_POSITION</code></a> mode.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorTargetPosition-int-int-">setMotorTargetPosition</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>motor</code> - port of motor</dd>
-<dd><code>position</code> - range from Integer.MIN_VALUE to Integer.MAX_VALUE</dd>
+<dd><code>motor</code> - the motor port number (1 to 2 or 1 to 4)</dd>
+<dd><code>position</code> - the target encoder position</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorCurrentPosition-int-"><code>DcMotorController.getMotorCurrentPosition(int)</code></a>, 
+<a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorTargetPosition-int-"><code>DcMotorController.getMotorTargetPosition(int)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -651,14 +671,18 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <h4>getMotorTargetPosition</h4>
 <pre>public&nbsp;int&nbsp;getMotorTargetPosition(int&nbsp;motor)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorTargetPosition-int-">DcMotorController</a></code></span></div>
-<div class="block">Get the current motor target position</div>
+<div class="block">Returns the encoder position that the motor has been told to move to if in the
+ <a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html#RUN_TO_POSITION"><code>RUN_TO_POSITION</code></a> mode</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorTargetPosition-int-">getMotorTargetPosition</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>motor</code> - port of motor</dd>
+<dd><code>motor</code> - the motor port number (1 to 2 or 1 to 4)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>integer, unscaled</dd>
+<dd>the target encoder position</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorCurrentPosition-int-"><code>DcMotorController.getMotorCurrentPosition(int)</code></a>, 
+<a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorTargetPosition-int-int-"><code>DcMotorController.setMotorTargetPosition(int, int)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -670,14 +694,16 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorControlle
 <h4>getMotorCurrentPosition</h4>
 <pre>public&nbsp;int&nbsp;getMotorCurrentPosition(int&nbsp;motor)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorCurrentPosition-int-">DcMotorController</a></code></span></div>
-<div class="block">Get the current motor position</div>
+<div class="block">Gets the current value of the encoder. The number of encoder ticks per revolution
+ depends on the motor encoder being used. For example, Tetrix motors have 1440 ticks/rev
+ and Andymark NeveRest 40 motors have 1120.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorCurrentPosition-int-">getMotorCurrentPosition</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>motor</code> - port of motor</dd>
+<dd><code>motor</code> - the motor port number (1 to 2 or 1 to 4)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>integer, unscaled</dd>
+<dd>the encoder tick count</dd>
 </dl>
 </li>
 </ul>

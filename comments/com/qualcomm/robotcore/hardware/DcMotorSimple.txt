@@ -1,3 +1,7 @@
+.class
+Represents a generic motor—you can set its power and whether or not it is reversed.
+Currently, {@link DcMotor} and {@link CRServo} are the only such devices.
+
 .method void setDirection(Direction)
 Sets the current direction that the motor is running in
 @see Direction

@@ -1,0 +1,67 @@
+.class
+Represents a HiTechnic, Modern Robotics, or Matrix motor controller.
+Motor controllers are attached to 2 motors (4 in the case of the Matrix one).
+Motors are moved by sending DC voltage in pulses.
+In order to figure out how far the motors have turned, it is possible to
+attach an "encoder" that will keep track of the motor's motion.
+@see DcMotor
+
+.method void setMotorMode(int, DcMotor.RunMode)
+Changes the mode in which the motor controller is moving the motor.
+The mode defaults to {@link DcMotor.RunMode#RUN_WITHOUT_ENCODERS RUN_WITHOUT_ENCODERS}.
+@param motor the motor port number (1 to 2 or 1 to 4)
+@param mode the run mode to use
+@see DcMotor.RunMode
+
+.method void setMotorPower(int, double)
+Sets the motor's power, where {@code -1.0} means full power backwards,
+{@code 0.0} means stopped, and {@code 1.0} means full power forward.
+In {@link DcMotor.RunMode#RUN_TO_POSITION RUN_TO_POSITION} mode,
+sets the maximum power to send to the motor.
+@param motor the motor port number (1 to 2 or 1 to 4)
+@param power the desired power
+
+.method double getMotorPower(int)
+Returns the power that the motor is moving at, where {@code -1.0} means full power backwards,
+{@code 0.0} means stopped or coasting, and {@code 1.0} means full power forward.
+@param motor the motor port number (1 to 2 or 1 to 4)
+@return the motor's power value
+@see setMotorPower(int, double)
+
+.method boolean isBusy(int)
+Returns whether the robot has not yet reached its target position.
+Don't rely on the return value if not in the
+{@link DcMotor.RunMode#RUN_TO_POSITION RUN_TO_POSITION} mode.
+@param motor the motor port number (1 to 2 or 1 to 4)
+@return {@code false} if the motor has stopped, {@code true} otherwise
+
+.method boolean getMotorPowerFloat(int)
+Returns whether the controller has told the motor to coast (put minimal resistance on it).
+@param motor the motor port number (1 to 2 or 1 to 4)
+@return {@code true} if the motor is coasting, {@code false} if not
+@see setMotorZeroPowerBehavior(int, DcMotor.ZeroPowerBehavior)
+@see setMotorPower(int, double)
+
+.method void setMotorTargetPosition(int, int)
+Sets the desired encoder position for the motor. It will automatically
+move there (requires an encoder to be attached).
+Should only be used in the {@link DcMotor.RunMode#RUN_WITHOUT_ENCODERS RUN_TO_POSITION} mode.
+@param motor the motor port number (1 to 2 or 1 to 4)
+@param position the target encoder position
+@see getMotorCurrentPosition(int)
+@see getMotorTargetPosition(int)
+
+.method int getMotorTargetPosition(int)
+Returns the encoder position that the motor has been told to move to if in the
+{@link DcMotor.RunMode#RUN_TO_POSITION RUN_TO_POSITION} mode
+@param motor the motor port number (1 to 2 or 1 to 4)
+@return the target encoder position
+@see getMotorCurrentPosition(int)
+@see setMotorTargetPosition(int, int)
+
+.method int getMotorCurrentPosition(int)
+Gets the current value of the encoder. The number of encoder ticks per revolution
+depends on the motor encoder being used. For example, Tetrix motors have 1440 ticks/rev
+and Andymark NeveRest 40 motors have 1120.
+@param motor the motor port number (1 to 2 or 1 to 4)
+@return the encoder tick count

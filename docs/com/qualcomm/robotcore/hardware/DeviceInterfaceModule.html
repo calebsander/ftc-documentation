@@ -109,7 +109,10 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public interface <span class="typeNameLabel">DeviceInterfaceModule</span>
 extends <a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelController.html" title="interface in com.qualcomm.robotcore.hardware">DigitalChannelController</a>, <a href="../../../../com/qualcomm/robotcore/hardware/AnalogInputController.html" title="interface in com.qualcomm.robotcore.hardware">AnalogInputController</a>, <a href="../../../../com/qualcomm/robotcore/hardware/PWMOutputController.html" title="interface in com.qualcomm.robotcore.hardware">PWMOutputController</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a>, <a href="../../../../com/qualcomm/robotcore/hardware/AnalogOutputController.html" title="interface in com.qualcomm.robotcore.hardware">AnalogOutputController</a></pre>
-<div class="block">DeviceInterfaceModule for working with various devices</div>
+<div class="block">Represents a Modern Robotics Device Interface Module.
+ Beyond being an <a href="../../../../com/qualcomm/robotcore/hardware/AnalogInputController.html" title="interface in com.qualcomm.robotcore.hardware"><code>AnalogInputController</code></a>, an <a href="../../../../com/qualcomm/robotcore/hardware/AnalogOutputController.html" title="interface in com.qualcomm.robotcore.hardware"><code>AnalogOutputController</code></a>,
+ a <a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelController.html" title="interface in com.qualcomm.robotcore.hardware"><code>DigitalChannelController</code></a>, an <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware"><code>I2cController</code></a>, and a <a href="../../../../com/qualcomm/robotcore/hardware/PWMOutputController.html" title="interface in com.qualcomm.robotcore.hardware"><code>PWMOutputController</code></a>,
+ it is also possible to control all the digital ports at once and to control the LEDs.</div>
 </li>
 </ul>
 </div>
@@ -175,46 +178,44 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelContr
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#getDigitalInputStateByte--">getDigitalInputStateByte</a></span>()</code>
-<div class="block">A byte containing the current logic levels present in the D7-D0 channel pins.</div>
+<div class="block">Gets the signal level of all the digital ports.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>byte</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#getDigitalIOControlByte--">getDigitalIOControlByte</a></span>()</code>
-<div class="block">Get the digital IO control byte</div>
+<div class="block">Gets whether each digital port is an input or an output.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>byte</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#getDigitalOutputStateByte--">getDigitalOutputStateByte</a></span>()</code>
-<div class="block">The D7-D0 output set field is a byte containing the required I/O output of the D7-D0
- channel pins.</div>
+<div class="block">Gets whether each digital output port is activated.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#getLEDState-int-">getLEDState</a></span>(int&nbsp;channel)</code>
-<div class="block">Indicates whether the LED on the given channel is on or not</div>
+<div class="block">Gets whether the specified LED is turned on.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#setDigitalIOControlByte-byte-">setDigitalIOControlByte</a></span>(byte&nbsp;input)</code>
-<div class="block">If a particular bit is set to one, the corresponding channel pin will be in output mode.</div>
+<div class="block">Sets whether each digital port is an input or an output.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#setDigitalOutputByte-byte-">setDigitalOutputByte</a></span>(byte&nbsp;input)</code>
-<div class="block">If a a particular control field bit is set to one, the channel pin will be in output mode and
- will reflect the value of the corresponding field bit.</div>
+<div class="block">Sets whether each digital output port is activated.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#setLED-int-boolean-">setLED</a></span>(int&nbsp;channel,
       boolean&nbsp;state)</code>
-<div class="block">Turn on or off a particular LED</div>
+<div class="block">Turns the specified LED on or off.</div>
 </td>
 </tr>
 </table>
@@ -281,8 +282,13 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelContr
 <li class="blockList">
 <h4>getDigitalInputStateByte</h4>
 <pre>int&nbsp;getDigitalInputStateByte()</pre>
-<div class="block">A byte containing the current logic levels present in the D7-D0 channel pins.
- If a particular pin is in output mode, the current output state will be reported.</div>
+<div class="block">Gets the signal level of all the digital ports.
+ If a port is set as an output port, it returns the last set value.
+ If a port is set as an input port, it returns the value currently being read.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a bitmask where ((bitmask &gt;&gt; portNumber) &amp; 1) == 1 will be true iff there is a signal on the port</dd>
+</dl>
 </li>
 </ul>
 <a name="setDigitalIOControlByte-byte-">
@@ -292,11 +298,10 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelContr
 <li class="blockList">
 <h4>setDigitalIOControlByte</h4>
 <pre>void&nbsp;setDigitalIOControlByte(byte&nbsp;input)</pre>
-<div class="block">If a particular bit is set to one, the corresponding channel pin will be in output mode.
- Else it will be in input mode.</div>
+<div class="block">Sets whether each digital port is an input or an output.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>input</code> - - the desired setting for each channel pin.</dd>
+<dd><code>input</code> - a bitmask where (bitmask &gt;&gt; portNumber) &amp; 1 is 1 if the port should become an output port, 0 if it should become an input port</dd>
 </dl>
 </li>
 </ul>
@@ -307,10 +312,12 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelContr
 <li class="blockList">
 <h4>getDigitalIOControlByte</h4>
 <pre>byte&nbsp;getDigitalIOControlByte()</pre>
-<div class="block">Get the digital IO control byte</div>
+<div class="block">Gets whether each digital port is an input or an output.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>control byte</dd>
+<dd>a bitmask where (bitmask &gt;&gt; portNumber) &amp; 1 is 1 if the port is an output port, 0 if it is an input port</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#setDigitalIOControlByte-byte-"><code>setDigitalIOControlByte(byte)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -321,11 +328,11 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelContr
 <li class="blockList">
 <h4>setDigitalOutputByte</h4>
 <pre>void&nbsp;setDigitalOutputByte(byte&nbsp;input)</pre>
-<div class="block">If a a particular control field bit is set to one, the channel pin will be in output mode and
- will reflect the value of the corresponding field bit.</div>
+<div class="block">Sets whether each digital output port is activated.
+ If any ports are set as inputs, they will not be affected.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>input</code> - with output state of the digital pins.</dd>
+<dd><code>input</code> - a bitmask where (bitmask &gt;&gt; portNumber) &amp; 1 == 1 iff the port should output a signal</dd>
 </dl>
 </li>
 </ul>
@@ -336,12 +343,12 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelContr
 <li class="blockList">
 <h4>getDigitalOutputStateByte</h4>
 <pre>byte&nbsp;getDigitalOutputStateByte()</pre>
-<div class="block">The D7-D0 output set field is a byte containing the required I/O output of the D7-D0
- channel pins. If the corresponding Dy-D0 I/O control field bit is set to one, the channel pin
- will be in output mode and will reflect the value of the corresponding D7-D0 output set field bit.</div>
+<div class="block">Gets whether each digital output port is activated.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>D7-D0 output set field.</dd>
+<dd>a bitmask where (bitmask &gt;&gt; portNumber) &amp; 1 == 1 iff the port is outputing a signal</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#setDigitalOutputByte-byte-"><code>setDigitalOutputByte(byte)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -352,10 +359,14 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelContr
 <li class="blockList">
 <h4>getLEDState</h4>
 <pre>boolean&nbsp;getLEDState(int&nbsp;channel)</pre>
-<div class="block">Indicates whether the LED on the given channel is on or not</div>
+<div class="block">Gets whether the specified LED is turned on.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>channel</code> - use 0 for the blue LED, 1 for the red LED</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true for ON, false for OFF</dd>
+<dd>true iff the led is turned on</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#setLED-int-boolean-"><code>setLED(int, boolean)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -367,11 +378,11 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannelContr
 <h4>setLED</h4>
 <pre>void&nbsp;setLED(int&nbsp;channel,
             boolean&nbsp;state)</pre>
-<div class="block">Turn on or off a particular LED</div>
+<div class="block">Turns the specified LED on or off.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>channel</code> - - int indicating the ID of the LED.</dd>
-<dd><code>state</code> - - byte containing the desired setting.</dd>
+<dd><code>channel</code> - use 0 for the blue LED, 1 for the red LED</dd>
+<dd><code>state</code> - true will turn on the LED, false will turn it off</dd>
 </dl>
 </li>
 </ul>

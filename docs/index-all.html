@@ -1595,7 +1595,7 @@
 </dd>
 <dt><a href="com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware"><span class="typeNameLink">DcMotorController</span></a> - Interface in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
-<div class="block">Interface for working with DC Motor Controllers</div>
+<div class="block">Represents a HiTechnic, Modern Robotics, or Matrix motor controller.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/HardwareMap.html#dcMotorController">dcMotorController</a></span> - Variable in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/HardwareMap.html" title="class in com.qualcomm.robotcore.hardware">HardwareMap</a></dt>
 <dd>&nbsp;</dd>
@@ -1631,7 +1631,7 @@
 <dd>&nbsp;</dd>
 <dt><a href="com/qualcomm/robotcore/hardware/DcMotorSimple.html" title="interface in com.qualcomm.robotcore.hardware"><span class="typeNameLink">DcMotorSimple</span></a> - Interface in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
-<div class="block">Instances of DcMotorSimple interface provide a most basic motor-like functionality</div>
+<div class="block">Represents a generic motor—you can set its power and whether or not it is reversed.</div>
 </dd>
 <dt><a href="com/qualcomm/robotcore/hardware/DcMotorSimple.Direction.html" title="enum in com.qualcomm.robotcore.hardware"><span class="typeNameLink">DcMotorSimple.Direction</span></a> - Enum in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
@@ -1758,7 +1758,7 @@
 </dd>
 <dt><a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html" title="interface in com.qualcomm.robotcore.hardware"><span class="typeNameLink">DeviceInterfaceModule</span></a> - Interface in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
-<div class="block">DeviceInterfaceModule for working with various devices</div>
+<div class="block">Represents a Modern Robotics Device Interface Module.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/HardwareMap.html#deviceInterfaceModule">deviceInterfaceModule</a></span> - Variable in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/HardwareMap.html" title="class in com.qualcomm.robotcore.hardware">HardwareMap</a></dt>
 <dd>&nbsp;</dd>
@@ -2743,20 +2743,19 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#getDigitalInputStateByte--">getDigitalInputStateByte()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html" title="interface in com.qualcomm.robotcore.hardware">DeviceInterfaceModule</a></dt>
 <dd>
-<div class="block">A byte containing the current logic levels present in the D7-D0 channel pins.</div>
+<div class="block">Gets the signal level of all the digital ports.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbDeviceInterfaceModule.html#getDigitalIOControlByte--">getDigitalIOControlByte()</a></span> - Method in class com.qualcomm.hardware.modernrobotics.<a href="com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbDeviceInterfaceModule.html" title="class in com.qualcomm.hardware.modernrobotics">ModernRoboticsUsbDeviceInterfaceModule</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#getDigitalIOControlByte--">getDigitalIOControlByte()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html" title="interface in com.qualcomm.robotcore.hardware">DeviceInterfaceModule</a></dt>
 <dd>
-<div class="block">Get the digital IO control byte</div>
+<div class="block">Gets whether each digital port is an input or an output.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbDeviceInterfaceModule.html#getDigitalOutputStateByte--">getDigitalOutputStateByte()</a></span> - Method in class com.qualcomm.hardware.modernrobotics.<a href="com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbDeviceInterfaceModule.html" title="class in com.qualcomm.hardware.modernrobotics">ModernRoboticsUsbDeviceInterfaceModule</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#getDigitalOutputStateByte--">getDigitalOutputStateByte()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html" title="interface in com.qualcomm.robotcore.hardware">DeviceInterfaceModule</a></dt>
 <dd>
-<div class="block">The D7-D0 output set field is a byte containing the required I/O output of the D7-D0
- channel pins.</div>
+<div class="block">Gets whether each digital output port is activated.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtCompassSensor.html#getDirection--">getDirection()</a></span> - Method in class com.qualcomm.hardware.hitechnic.<a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtCompassSensor.html" title="class in com.qualcomm.hardware.hitechnic">HiTechnicNxtCompassSensor</a></dt>
 <dd>&nbsp;</dd>
@@ -3019,7 +3018,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#getLEDState-int-">getLEDState(int)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html" title="interface in com.qualcomm.robotcore.hardware">DeviceInterfaceModule</a></dt>
 <dd>
-<div class="block">Indicates whether the LED on the given channel is on or not</div>
+<div class="block">Gets whether the specified LED is turned on.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/LegacyModulePortDevice.html#getLegacyModule--">getLegacyModule()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/LegacyModulePortDevice.html" title="interface in com.qualcomm.robotcore.hardware">LegacyModulePortDevice</a></dt>
 <dd>
@@ -3211,7 +3210,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorCurrentPosition-int-">getMotorCurrentPosition(int)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></dt>
 <dd>
-<div class="block">Get the current motor position</div>
+<div class="block">Gets the current value of the encoder.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html#getMotorMaxSpeed-int-">getMotorMaxSpeed(int)</a></span> - Method in class com.qualcomm.hardware.hitechnic.<a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html" title="class in com.qualcomm.hardware.hitechnic">HiTechnicNxtDcMotorController</a></dt>
 <dd>&nbsp;</dd>
@@ -3242,7 +3241,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorPower-int-">getMotorPower(int)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></dt>
 <dd>
-<div class="block">Get the current motor power</div>
+<div class="block">Returns the power that the motor is moving at, where <code>-1.0</code> means full power backwards,
+ <code>0.0</code> means stopped or coasting, and <code>1.0</code> means full power forward.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html#getMotorPowerFloat-int-">getMotorPowerFloat(int)</a></span> - Method in class com.qualcomm.hardware.hitechnic.<a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html" title="class in com.qualcomm.hardware.hitechnic">HiTechnicNxtDcMotorController</a></dt>
 <dd>&nbsp;</dd>
@@ -3252,7 +3252,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorPowerFloat-int-">getMotorPowerFloat(int)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></dt>
 <dd>
-<div class="block">Is motor power set to float?</div>
+<div class="block">Returns whether the controller has told the motor to coast (put minimal resistance on it).</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html#getMotorTargetPosition-int-">getMotorTargetPosition(int)</a></span> - Method in class com.qualcomm.hardware.hitechnic.<a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html" title="class in com.qualcomm.hardware.hitechnic">HiTechnicNxtDcMotorController</a></dt>
 <dd>&nbsp;</dd>
@@ -3262,7 +3262,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorController.html#getMotorTargetPosition-int-">getMotorTargetPosition(int)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></dt>
 <dd>
-<div class="block">Get the current motor target position</div>
+<div class="block">Returns the encoder position that the motor has been told to move to if in the
+ <a href="com/qualcomm/robotcore/hardware/DcMotor.RunMode.html#RUN_TO_POSITION"><code>RUN_TO_POSITION</code></a> mode</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html#getMotorZeroPowerBehavior-int-">getMotorZeroPowerBehavior(int)</a></span> - Method in class com.qualcomm.hardware.hitechnic.<a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html" title="class in com.qualcomm.hardware.hitechnic">HiTechnicNxtDcMotorController</a></dt>
 <dd>&nbsp;</dd>
@@ -4481,7 +4482,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorController.html#isBusy-int-">isBusy(int)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></dt>
 <dd>
-<div class="block">Is the motor busy?</div>
+<div class="block">Returns whether the robot has not yet reached its target position.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorImpl.html#isBusy--">isBusy()</a></span> - Method in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorImpl.html" title="class in com.qualcomm.robotcore.hardware">DcMotorImpl</a></dt>
 <dd>
@@ -6892,7 +6893,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#setDigitalIOControlByte-byte-">setDigitalIOControlByte(byte)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html" title="interface in com.qualcomm.robotcore.hardware">DeviceInterfaceModule</a></dt>
 <dd>
-<div class="block">If a particular bit is set to one, the corresponding channel pin will be in output mode.</div>
+<div class="block">Sets whether each digital port is an input or an output.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#setDigitalLine-int-int-boolean-">setDigitalLine(int, int, boolean)</a></span> - Method in class com.qualcomm.hardware.modernrobotics.<a href="com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html" title="class in com.qualcomm.hardware.modernrobotics">ModernRoboticsUsbLegacyModule</a></dt>
 <dd>&nbsp;</dd>
@@ -6904,8 +6905,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#setDigitalOutputByte-byte-">setDigitalOutputByte(byte)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html" title="interface in com.qualcomm.robotcore.hardware">DeviceInterfaceModule</a></dt>
 <dd>
-<div class="block">If a a particular control field bit is set to one, the channel pin will be in output mode and
- will reflect the value of the corresponding field bit.</div>
+<div class="block">Sets whether each digital output port is activated.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/CRServoImpl.html#setDirection-com.qualcomm.robotcore.hardware.DcMotorSimple.Direction-">setDirection(DcMotorSimple.Direction)</a></span> - Method in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/CRServoImpl.html" title="class in com.qualcomm.robotcore.hardware">CRServoImpl</a></dt>
 <dd>&nbsp;</dd>
@@ -7061,7 +7061,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html#setLED-int-boolean-">setLED(int, boolean)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html" title="interface in com.qualcomm.robotcore.hardware">DeviceInterfaceModule</a></dt>
 <dd>
-<div class="block">Turn on or off a particular LED</div>
+<div class="block">Turns the specified LED on or off.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/firstinspires/ftc/robotcore/external/navigation/VuforiaTrackable.html#setListener-org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackable.Listener-">setListener(VuforiaTrackable.Listener)</a></span> - Method in interface org.firstinspires.ftc.robotcore.external.navigation.<a href="org/firstinspires/ftc/robotcore/external/navigation/VuforiaTrackable.html" title="interface in org.firstinspires.ftc.robotcore.external.navigation">VuforiaTrackable</a></dt>
 <dd>
@@ -7165,7 +7165,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorMode-int-com.qualcomm.robotcore.hardware.DcMotor.RunMode-">setMotorMode(int, DcMotor.RunMode)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></dt>
 <dd>
-<div class="block">Set the current motor mode.</div>
+<div class="block">Changes the mode in which the motor controller is moving the motor.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html#setMotorPower-int-double-">setMotorPower(int, double)</a></span> - Method in class com.qualcomm.hardware.hitechnic.<a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html" title="class in com.qualcomm.hardware.hitechnic">HiTechnicNxtDcMotorController</a></dt>
 <dd>&nbsp;</dd>
@@ -7179,7 +7179,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorPower-int-double-">setMotorPower(int, double)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></dt>
 <dd>
-<div class="block">Set the current motor power</div>
+<div class="block">Sets the motor's power, where <code>-1.0</code> means full power backwards,
+ <code>0.0</code> means stopped, and <code>1.0</code> means full power forward.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html#setMotorTargetPosition-int-int-">setMotorTargetPosition(int, int)</a></span> - Method in class com.qualcomm.hardware.hitechnic.<a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html" title="class in com.qualcomm.hardware.hitechnic">HiTechnicNxtDcMotorController</a></dt>
 <dd>&nbsp;</dd>
@@ -7189,7 +7190,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorController.html#setMotorTargetPosition-int-int-">setMotorTargetPosition(int, int)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></dt>
 <dd>
-<div class="block">Set the motor target position.</div>
+<div class="block">Sets the desired encoder position for the motor.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html#setMotorZeroPowerBehavior-int-com.qualcomm.robotcore.hardware.DcMotor.ZeroPowerBehavior-">setMotorZeroPowerBehavior(int, DcMotor.ZeroPowerBehavior)</a></span> - Method in class com.qualcomm.hardware.hitechnic.<a href="com/qualcomm/hardware/hitechnic/HiTechnicNxtDcMotorController.html" title="class in com.qualcomm.hardware.hitechnic">HiTechnicNxtDcMotorController</a></dt>
 <dd>&nbsp;</dd>

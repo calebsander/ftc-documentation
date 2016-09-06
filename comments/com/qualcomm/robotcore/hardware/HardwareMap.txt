@@ -1,0 +1,9 @@
+.field appContext
+The instance of the {@code FtcRobotControllerActivity} class.
+Useful for some system services.
+
+.constructor (Context)
+Constructs a {@code HardwareMap} with the specified {@link #appContext appContext} field
+
+.method void logDevices()
+Logs all devices in the hardware map to the logcat

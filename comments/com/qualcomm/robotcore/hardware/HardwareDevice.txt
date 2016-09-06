@@ -1,0 +1,20 @@
+.class
+Represents any sort of device attached to the control system
+
+.method String getDeviceName()
+Gets the name of the type of device.
+This value will be the same for all objects of the same class.
+@return a human-readable string representing the sort of device this class represents
+
+.method String getConnectionInfo()
+Gets information about what the device is connected to
+@return a human-readable string showing the chain of devices connecting the device to the Power Distribution Module
+
+.method int getVersion()
+Returns a number representing the "version" of a sensor, or 1 for other devices.
+This value will be the same for all objects of the same class.
+For example, the MR IRSeeker V3 returns {@code 3}.
+@return a number representing the "version" of a sensor
+
+.method void close()
+Carries out any tasks necessary to prepare the device to end communication

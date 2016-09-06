@@ -1,0 +1,185 @@
+.class
+Represents a device with several I2C ports.
+On the Legacy Module, each port is separate,
+but on the Device Interface Module all the ports are
+physically on the same bus, so be sure not to have
+conflicting I2C addresses on the DIM.
+All I2C interactions are asynchronous (meaning the user
+must request one to be performed and then handle
+the result at some other time).
+It is possible to read or write up to 26 contiguous
+registers at the same time.
+The read buffer contains what the controller most
+recently indicated its copy of the write buffer was.
+
+.field I2C_BUFFER_START_ADDRESS
+The index in the read and write buffers where the data begins.
+Metadata is located before this index in the buffers.
+
+.method SerialNumber getSerialNumber()
+Gets the FTDI serial number of the module.
+@return the serial number (text version will look like "AL00VDDK")
+
+.method void enableI2cReadMode(int, I2cAddr, int, int)
+Requests that the controller continually issue reads
+to certain registers on a certain I2C device
+@param physicalPort the port number on the controller
+@param i2cAddress the I2C address of the device
+@param memAddress the first register of the contiguous set to read
+@param length the number of registers to read in a row
+
+.method void enableI2cWriteMode(int, I2cAddr, int, int)
+Requests that the controller issue a write
+the next time it can to certain registers on a certain I2C device
+@param physicalPort the port number on the controller
+@param i2cAddress the I2C address of the device
+@param memAddress the first register of the contiguous set to write to
+@param length the number of registers to write to in a row
+
+.method byte[] getCopyOfReadBuffer(int)
+Gets an array containing precisely the last bytes read
+from the current read request. Overwriting values in this array
+doesn't affect the values stored by the controller.
+The value at index 0 is the result from the lowest register and so on.
+@param physicalPort the port number of the device on the controller
+
+.method byte[] getCopyOfWriteBuffer(int)
+Gets an array containing precisely the last bytes requested to be written
+for the current write request. Overwriting values in this array
+doesn't affect the values stored by the controller.
+The value at index 0 is for the lowest register and so on.
+@param physicalPort the port number of the device on the controller
+
+.method void copyBufferIntoWriteBuffer(int, byte[])
+Sets the bytes to be written for the current write request
+@param physicalPort the port number of the device on the controller
+@param buffer the values to write to the registers, starting at the lowest register
+
+.method void setI2cPortActionFlag(int)
+Tells the controller to issue whatever request was asked of it
+@param port the port number of the device on the controller
+
+.method void clearI2cPortActionFlag(int)
+Tells the controller not to issue whatever request was asked of it.
+Essentially, undoes {@link setI2cPortActionFlag(int)}.
+@param port the port number of the device on the controller
+@see setI2cPortActionFlag(int)
+
+.method boolean isI2cPortActionFlagSet(int)
+Returns whether {@link setI2cPortActionFlag(int)} was called more recently than {@link clearI2cPortActionFlag(int)}
+for a certain device
+@param port the port number of the device on the controller
+@return whether the action will be performed
+
+.method void readI2cCacheFromController(int)
+Requests that the next values read from the controller are stored in this object.
+If this method isn't called, the read buffer will not be updated.
+@param port the port number of the device on the controller
+
+.method void writeI2cCacheToController(int)
+Requests that the current registers, read/write mode, and write data be sent to the controller.
+This should be called after {@link readI2cCacheFromController(int)}
+to avoid overwriting the data.
+@param port the port number of the device on the controller
+
+.method void writeI2cPortFlagOnlyToController(int)
+Writes only the value of the action flag to the controller
+@param port the port number of the device on the controller
+@see setI2cPortActionFlag(int)
+@see writeI2cCacheToController(int)
+
+.method boolean isI2cPortInReadMode(int)
+Gets whether the port is currently in read mode
+@param port the port number of the device on the controller
+@return true iff the port was last set in read mode
+
+.method boolean isI2cPortInWriteMode(int)
+Gets whether the port is currently in write mode
+@param port the port number of the device on the controller
+@return true iff the port was last set in write mode
+
+.method boolean isI2cPortReady(int)
+Gets whether the last request to the port has been completed.
+@param port the port number of the device on the controller
+@return true iff the port is ready for another request
+
+.method Lock getI2cReadCacheLock(int)
+Gets a lock on the read buffer so it can be directly read from.
+By {@code lock()}ing the lock, you can be guaranteed that nothing else
+will change the contents of the buffer before you unlock it.
+It is generally easier to simply call {@link getCopyOfReadBuffer(int)}.
+@param port the port number of the device on the controller
+@return an object which allows you to gain temporary unique access to the read buffer
+
+.method Lock getI2cWriteCacheLock(int)
+Gets a lock on the write buffer so it can be directly written to.
+By {@code lock()}ing the lock, you can be guaranteed that nothing else
+will change the contents of the buffer or read from the buffer before you unlock it.
+It is generally easier to simply call {@link copyBufferIntoWriteBuffer(int, byte[])}
+or {@link getCopyOfWriteBuffer(int)}.
+@param port the port number of the device on the controller
+@return an object which allows you to gain temporary unique access to the write buffer
+
+.method byte[] getI2cReadCache(int)
+Gets a reference to the read buffer that won't change for the controller object.
+The format is as follows:
+<ul>
+	<li>Byte 0: indicates either read or write</li>
+	<li>Byte 1: the 8-bit I2C address of the device</li>
+	<li>Byte 2: the lowest register in the contiguous set</li>
+	<li>Byte 3: the number of registers in the contiguous set</li>
+	<li>Bytes 4-30: the data</li>
+	<li>Byte 31: the action flag</li>
+</ul>
+You should lock the buffer before using it.
+@param port the port number of the device on the controller
+@return a reference to the read buffer
+
+.method byte[] getI2cWriteCache(int)
+Gets a reference to the write buffer that won't change for the controller object.
+The format is as follows:
+<ul>
+	<li>Byte 0: indicates either read or write</li>
+	<li>Byte 1: the 8-bit I2C address of the device</li>
+	<li>Byte 2: the lowest register in the contiguous set</li>
+	<li>Byte 3: the number of registers in the contiguous set</li>
+	<li>Bytes 4-30: the data</li>
+	<li>Byte 31: the action flag</li>
+</ul>
+You should lock the buffer before using it.
+@param port the port number of the device on the controller
+@return a reference to the write buffer
+
+.method void registerForI2cPortReadyCallback(I2cPortReadyCallback, int)
+Indicates what method to run when each request finishes.
+Only one callback can be set at a time for a single port.
+@param callback the method to run (or, if null, indicates that no method should be run)
+@param port the port number of the device on the controller
+
+.method I2cPortReadyCallback getI2cPortReadyCallback(int)
+Gets the last-set ready callback
+@param port the port number of the device on the controller
+@return the callback
+@see registerForI2cPortReadyCallback(I2cPortReadyCallback, int)
+
+.method void deregisterForPortReadyCallback(int)
+Indicates that the previous callback should no longer be run when the port is ready.
+@param port the port number of the device on the controller
+@see registerForI2cPortReadyCallback(I2cPortReadyCallback, int)
+
+.method void registerForPortReadyBeginEndCallback(I2cPortReadyBeginEndNotifications, int)
+Indicates what method to run when all a port is ready
+before and after the read callback is called
+@param callback the method to run
+@param port the port number of the device on the controller
+
+.method I2cPortReadyBeginEndNotifications getPortReadyBeginEndCallback(int)
+Gets the last-set ready begin-end callback
+@param port the port number of the device on the controller
+@return the callback
+@see registerForPortReadyBeginEndCallback(I2cPortReadyBeginEndNotifications, int)
+
+.method void deregisterForPortReadyBeginEndCallback(int)
+Indicates that the previous ready begin-end callback should no longer be run
+@param port the port number of the device on the controller
+@see registerForPortReadyBeginEndCallback(I2cPortReadyBeginEndNotifications, int)

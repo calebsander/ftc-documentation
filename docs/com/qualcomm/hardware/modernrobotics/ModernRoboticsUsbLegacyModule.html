@@ -447,7 +447,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#clearI2cPortActionFlag-int-">clearI2cPortActionFlag</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Clears the port action flag, undoing the effect of previous setI2cPortActionFlag()</div>
+<div class="block">Tells the controller not to issue whatever request was asked of it.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -460,13 +460,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#copyBufferIntoWriteBuffer-int-byte:A-">copyBufferIntoWriteBuffer</a></span>(int&nbsp;physicalPort,
                          byte[]&nbsp;buffer)</code>
-<div class="block">Copy a byte array into the buffer that is set to be written out to the device</div>
+<div class="block">Sets the bytes to be written for the current write request</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#deregisterForPortReadyCallback-int-">deregisterForPortReadyCallback</a></span>(int&nbsp;port)</code>
-<div class="block">De-register for port ready notifications.</div>
+<div class="block">Indicates that the previous callback should no longer be run when the port is ready.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
@@ -488,7 +488,8 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
                  <a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a>&nbsp;i2cAddress,
                  int&nbsp;memAddress,
                  int&nbsp;length)</code>
-<div class="block">Enable read mode for a particular I2C device</div>
+<div class="block">Requests that the controller continually issue reads
+ to certain registers on a certain I2C device</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -497,25 +498,28 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
                   <a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a>&nbsp;i2cAddress,
                   int&nbsp;memAddress,
                   int&nbsp;length)</code>
-<div class="block">Enable write mode for a particular I2C device</div>
+<div class="block">Requests that the controller issue a write
+ the next time it can to certain registers on a certain I2C device</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#getConnectionInfo--">getConnectionInfo</a></span>()</code>
-<div class="block">Get connection information about this device in a human readable format</div>
+<div class="block">Gets information about what the device is connected to</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#getCopyOfReadBuffer-int-">getCopyOfReadBuffer</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Get a copy of the most recent data read in from the device</div>
+<div class="block">Gets an array containing precisely the last bytes read
+ from the current read request.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>byte[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#getCopyOfWriteBuffer-int-">getCopyOfWriteBuffer</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Get a copy of the data that is set to be written out to the device</div>
+<div class="block">Gets an array containing precisely the last bytes requested to be written
+ for the current write request.</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -527,32 +531,31 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.I2cPortReadyCallback.html" title="interface in com.qualcomm.robotcore.hardware">I2cController.I2cPortReadyCallback</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#getI2cPortReadyCallback-int-">getI2cPortReadyCallback</a></span>(int&nbsp;port)</code>
-<div class="block">Returns the callback currently registered to receive portIsReady notifications for the
- indicated port</div>
+<div class="block">Gets the last-set ready callback</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#getI2cReadCache-int-">getI2cReadCache</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Get direct access to the cache that I2C reads will be populated into</div>
+<div class="block">Gets a reference to the read buffer that won't change for the controller object.</div>
 </td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>java.util.concurrent.locks.Lock</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#getI2cReadCacheLock-int-">getI2cReadCacheLock</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Get access to the read cache lock.</div>
+<div class="block">Gets a lock on the read buffer so it can be directly read from.</div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#getI2cWriteCache-int-">getI2cWriteCache</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Get direct access to the cache that I2C writes will be populated into</div>
+<div class="block">Gets a reference to the write buffer that won't change for the controller object.</div>
 </td>
 </tr>
 <tr id="i16" class="altColor">
 <td class="colFirst"><code>java.util.concurrent.locks.Lock</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#getI2cWriteCacheLock-int-">getI2cWriteCacheLock</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Get access to the write cache lock.</div>
+<div class="block">Gets a lock on the write buffer so it can be directly written to.</div>
 </td>
 </tr>
 <tr id="i17" class="rowColor">
@@ -574,25 +577,26 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <tr id="i20" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#isI2cPortActionFlagSet-int-">isI2cPortActionFlagSet</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Get the port action flag; this flag is set if the particular port is busy.</div>
+<div class="block">Returns whether <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#setI2cPortActionFlag-int-"><code>I2cController.setI2cPortActionFlag(int)</code></a> was called more recently than <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#clearI2cPortActionFlag-int-"><code>I2cController.clearI2cPortActionFlag(int)</code></a>
+ for a certain device</div>
 </td>
 </tr>
 <tr id="i21" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#isI2cPortInReadMode-int-">isI2cPortInReadMode</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Is the port in read mode?</div>
+<div class="block">Gets whether the port is currently in read mode</div>
 </td>
 </tr>
 <tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#isI2cPortInWriteMode-int-">isI2cPortInWriteMode</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Is the port in write mode?</div>
+<div class="block">Gets whether the port is currently in write mode</div>
 </td>
 </tr>
 <tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#isI2cPortReady-int-">isI2cPortReady</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Determine if a physical port is ready</div>
+<div class="block">Gets whether the last request to the port has been completed.</div>
 </td>
 </tr>
 <tr id="i24" class="altColor">
@@ -614,9 +618,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <tr id="i27" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#readI2cCacheFromController-int-">readI2cCacheFromController</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Read the local cache in from the I2C Controller
-
- NOTE: unless this method is called the internal cache isn't updated</div>
+<div class="block">Requests that the next values read from the controller are stored in this object.</div>
 </td>
 </tr>
 <tr id="i28" class="altColor">
@@ -655,8 +657,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <tr id="i33" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#setI2cPortActionFlag-int-">setI2cPortActionFlag</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Set the port action flag; this flag tells the controller to send the
- current data in its buffer to the I2C device</div>
+<div class="block">Tells the controller to issue whatever request was asked of it</div>
 </td>
 </tr>
 <tr id="i34" class="altColor">
@@ -675,9 +676,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <tr id="i36" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#writeI2cCacheToController-int-">writeI2cCacheToController</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Write the local cache to the I2C Controller
-
- NOTE: unless this method is called the internal cache isn't updated</div>
+<div class="block">Requests that the current registers, read/write mode, and write data be sent to the controller.</div>
 </td>
 </tr>
 <tr id="i37" class="rowColor">
@@ -689,7 +688,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <tr id="i38" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbLegacyModule.html#writeI2cPortFlagOnlyToController-int-">writeI2cPortFlagOnlyToController</a></span>(int&nbsp;physicalPort)</code>
-<div class="block">Write just the port action flag in the local cache to the I2C controller</div>
+<div class="block">Writes only the value of the action flag to the controller</div>
 </td>
 </tr>
 <tr id="i39" class="rowColor">
@@ -1466,12 +1465,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>getConnectionInfo</h4>
 <pre>public&nbsp;java.lang.String&nbsp;getConnectionInfo()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">HardwareDevice</a></code></span></div>
-<div class="block">Get connection information about this device in a human readable format</div>
+<div class="block">Gets information about what the device is connected to</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">getConnectionInfo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>connection info</dd>
+<dd>a human-readable string showing the chain of devices connecting the device to the Power Distribution Module</dd>
 </dl>
 </li>
 </ul>
@@ -1541,15 +1540,16 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>getI2cPortReadyCallback</h4>
 <pre>public&nbsp;<a href="../../../../com/qualcomm/robotcore/hardware/I2cController.I2cPortReadyCallback.html" title="interface in com.qualcomm.robotcore.hardware">I2cController.I2cPortReadyCallback</a>&nbsp;getI2cPortReadyCallback(int&nbsp;port)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getI2cPortReadyCallback-int-">I2cController</a></code></span></div>
-<div class="block">Returns the callback currently registered to receive portIsReady notifications for the
- indicated port</div>
+<div class="block">Gets the last-set ready callback</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getI2cPortReadyCallback-int-">getI2cPortReadyCallback</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>port</code> - the port of interest</dd>
+<dd><code>port</code> - the port number of the device on the controller</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the currently registered callback, if any</dd>
+<dd>the callback</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#registerForI2cPortReadyCallback-com.qualcomm.robotcore.hardware.I2cController.I2cPortReadyCallback-int-"><code>I2cController.registerForI2cPortReadyCallback(I2cPortReadyCallback, int)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1561,12 +1561,14 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>deregisterForPortReadyCallback</h4>
 <pre>public&nbsp;void&nbsp;deregisterForPortReadyCallback(int&nbsp;port)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#deregisterForPortReadyCallback-int-">I2cController</a></code></span></div>
-<div class="block">De-register for port ready notifications.</div>
+<div class="block">Indicates that the previous callback should no longer be run when the port is ready.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#deregisterForPortReadyCallback-int-">deregisterForPortReadyCallback</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>port</code> - port no longer being monitored.</dd>
+<dd><code>port</code> - the port number of the device on the controller</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#registerForI2cPortReadyCallback-com.qualcomm.robotcore.hardware.I2cController.I2cPortReadyCallback-int-"><code>I2cController.registerForI2cPortReadyCallback(I2cPortReadyCallback, int)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1581,15 +1583,16 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
                               int&nbsp;memAddress,
                               int&nbsp;length)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#enableI2cReadMode-int-com.qualcomm.robotcore.hardware.I2cAddr-int-int-">I2cController</a></code></span></div>
-<div class="block">Enable read mode for a particular I2C device</div>
+<div class="block">Requests that the controller continually issue reads
+ to certain registers on a certain I2C device</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#enableI2cReadMode-int-com.qualcomm.robotcore.hardware.I2cAddr-int-int-">enableI2cReadMode</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - the port the device is attached to</dd>
-<dd><code>i2cAddress</code> - the i2c address of the device</dd>
-<dd><code>memAddress</code> - mem address at which to start reading</dd>
-<dd><code>length</code> - number of bytes to read</dd>
+<dd><code>physicalPort</code> - the port number on the controller</dd>
+<dd><code>i2cAddress</code> - the I2C address of the device</dd>
+<dd><code>memAddress</code> - the first register of the contiguous set to read</dd>
+<dd><code>length</code> - the number of registers to read in a row</dd>
 </dl>
 </li>
 </ul>
@@ -1604,15 +1607,16 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
                                int&nbsp;memAddress,
                                int&nbsp;length)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#enableI2cWriteMode-int-com.qualcomm.robotcore.hardware.I2cAddr-int-int-">I2cController</a></code></span></div>
-<div class="block">Enable write mode for a particular I2C device</div>
+<div class="block">Requests that the controller issue a write
+ the next time it can to certain registers on a certain I2C device</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#enableI2cWriteMode-int-com.qualcomm.robotcore.hardware.I2cAddr-int-int-">enableI2cWriteMode</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - the port the device is attached to</dd>
-<dd><code>i2cAddress</code> - the i2c address of the device</dd>
-<dd><code>memAddress</code> - the memory address at which to start writing</dd>
-<dd><code>length</code> - number of bytes to read</dd>
+<dd><code>physicalPort</code> - the port number on the controller</dd>
+<dd><code>i2cAddress</code> - the I2C address of the device</dd>
+<dd><code>memAddress</code> - the first register of the contiguous set to write to</dd>
+<dd><code>length</code> - the number of registers to write to in a row</dd>
 </dl>
 </li>
 </ul>
@@ -1773,14 +1777,15 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>getCopyOfReadBuffer</h4>
 <pre>public&nbsp;byte[]&nbsp;getCopyOfReadBuffer(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getCopyOfReadBuffer-int-">I2cController</a></code></span></div>
-<div class="block">Get a copy of the most recent data read in from the device</div>
+<div class="block">Gets an array containing precisely the last bytes read
+ from the current read request. Overwriting values in this array
+ doesn't affect the values stored by the controller.
+ The value at index 0 is the result from the lowest register and so on.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getCopyOfReadBuffer-int-">getCopyOfReadBuffer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - the port the device is attached to</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>a copy of the most recent data read in from the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 </dl>
 </li>
 </ul>
@@ -1792,14 +1797,15 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>getCopyOfWriteBuffer</h4>
 <pre>public&nbsp;byte[]&nbsp;getCopyOfWriteBuffer(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getCopyOfWriteBuffer-int-">I2cController</a></code></span></div>
-<div class="block">Get a copy of the data that is set to be written out to the device</div>
+<div class="block">Gets an array containing precisely the last bytes requested to be written
+ for the current write request. Overwriting values in this array
+ doesn't affect the values stored by the controller.
+ The value at index 0 is for the lowest register and so on.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getCopyOfWriteBuffer-int-">getCopyOfWriteBuffer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - the port the device is attached to</dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>a copy of the data set to be written out to the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 </dl>
 </li>
 </ul>
@@ -1812,13 +1818,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <pre>public&nbsp;void&nbsp;copyBufferIntoWriteBuffer(int&nbsp;physicalPort,
                                       byte[]&nbsp;buffer)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#copyBufferIntoWriteBuffer-int-byte:A-">I2cController</a></code></span></div>
-<div class="block">Copy a byte array into the buffer that is set to be written out to the device</div>
+<div class="block">Sets the bytes to be written for the current write request</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#copyBufferIntoWriteBuffer-int-byte:A-">copyBufferIntoWriteBuffer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - the port the device is attached to</dd>
-<dd><code>buffer</code> - buffer to copy</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
+<dd><code>buffer</code> - the values to write to the registers, starting at the lowest register</dd>
 </dl>
 </li>
 </ul>
@@ -1830,15 +1836,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>setI2cPortActionFlag</h4>
 <pre>public&nbsp;void&nbsp;setI2cPortActionFlag(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#setI2cPortActionFlag-int-">I2cController</a></code></span></div>
-<div class="block">Set the port action flag; this flag tells the controller to send the
- current data in its buffer to the I2C device</div>
+<div class="block">Tells the controller to issue whatever request was asked of it</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#setI2cPortActionFlag-int-">setI2cPortActionFlag</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#clearI2cPortActionFlag-int-"><code>I2cController.clearI2cPortActionFlag(int)</code></a></dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 </dl>
 </li>
 </ul>
@@ -1850,12 +1853,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>clearI2cPortActionFlag</h4>
 <pre>public&nbsp;void&nbsp;clearI2cPortActionFlag(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#clearI2cPortActionFlag-int-">I2cController</a></code></span></div>
-<div class="block">Clears the port action flag, undoing the effect of previous setI2cPortActionFlag()</div>
+<div class="block">Tells the controller not to issue whatever request was asked of it.
+ Essentially, undoes <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#setI2cPortActionFlag-int-"><code>I2cController.setI2cPortActionFlag(int)</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#clearI2cPortActionFlag-int-">clearI2cPortActionFlag</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#setI2cPortActionFlag-int-"><code>I2cController.setI2cPortActionFlag(int)</code></a></dd>
 </dl>
@@ -1869,12 +1873,15 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>isI2cPortActionFlagSet</h4>
 <pre>public&nbsp;boolean&nbsp;isI2cPortActionFlagSet(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#isI2cPortActionFlagSet-int-">I2cController</a></code></span></div>
-<div class="block">Get the port action flag; this flag is set if the particular port is busy.</div>
+<div class="block">Returns whether <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#setI2cPortActionFlag-int-"><code>I2cController.setI2cPortActionFlag(int)</code></a> was called more recently than <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#clearI2cPortActionFlag-int-"><code>I2cController.clearI2cPortActionFlag(int)</code></a>
+ for a certain device</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#isI2cPortActionFlagSet-int-">isI2cPortActionFlagSet</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether the action will be performed</dd>
 </dl>
 </li>
 </ul>
@@ -1886,14 +1893,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>readI2cCacheFromController</h4>
 <pre>public&nbsp;void&nbsp;readI2cCacheFromController(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#readI2cCacheFromController-int-">I2cController</a></code></span></div>
-<div class="block">Read the local cache in from the I2C Controller
-
- NOTE: unless this method is called the internal cache isn't updated</div>
+<div class="block">Requests that the next values read from the controller are stored in this object.
+ If this method isn't called, the read buffer will not be updated.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#readI2cCacheFromController-int-">readI2cCacheFromController</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 </dl>
 </li>
 </ul>
@@ -1905,14 +1911,14 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>writeI2cCacheToController</h4>
 <pre>public&nbsp;void&nbsp;writeI2cCacheToController(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#writeI2cCacheToController-int-">I2cController</a></code></span></div>
-<div class="block">Write the local cache to the I2C Controller
-
- NOTE: unless this method is called the internal cache isn't updated</div>
+<div class="block">Requests that the current registers, read/write mode, and write data be sent to the controller.
+ This should be called after <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#readI2cCacheFromController-int-"><code>I2cController.readI2cCacheFromController(int)</code></a>
+ to avoid overwriting the data.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#writeI2cCacheToController-int-">writeI2cCacheToController</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 </dl>
 </li>
 </ul>
@@ -1924,12 +1930,15 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>writeI2cPortFlagOnlyToController</h4>
 <pre>public&nbsp;void&nbsp;writeI2cPortFlagOnlyToController(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#writeI2cPortFlagOnlyToController-int-">I2cController</a></code></span></div>
-<div class="block">Write just the port action flag in the local cache to the I2C controller</div>
+<div class="block">Writes only the value of the action flag to the controller</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#writeI2cPortFlagOnlyToController-int-">writeI2cPortFlagOnlyToController</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#setI2cPortActionFlag-int-"><code>I2cController.setI2cPortActionFlag(int)</code></a>, 
+<a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#writeI2cCacheToController-int-"><code>I2cController.writeI2cCacheToController(int)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -1941,14 +1950,14 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>isI2cPortInReadMode</h4>
 <pre>public&nbsp;boolean&nbsp;isI2cPortInReadMode(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#isI2cPortInReadMode-int-">I2cController</a></code></span></div>
-<div class="block">Is the port in read mode?</div>
+<div class="block">Gets whether the port is currently in read mode</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#isI2cPortInReadMode-int-">isI2cPortInReadMode</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if in read mode; otherwise false</dd>
+<dd>true iff the port was last set in read mode</dd>
 </dl>
 </li>
 </ul>
@@ -1960,14 +1969,14 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>isI2cPortInWriteMode</h4>
 <pre>public&nbsp;boolean&nbsp;isI2cPortInWriteMode(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#isI2cPortInWriteMode-int-">I2cController</a></code></span></div>
-<div class="block">Is the port in write mode?</div>
+<div class="block">Gets whether the port is currently in write mode</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#isI2cPortInWriteMode-int-">isI2cPortInWriteMode</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if in write mode; otherwise false</dd>
+<dd>true iff the port was last set in write mode</dd>
 </dl>
 </li>
 </ul>
@@ -1979,14 +1988,14 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>isI2cPortReady</h4>
 <pre>public&nbsp;boolean&nbsp;isI2cPortReady(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#isI2cPortReady-int-">I2cController</a></code></span></div>
-<div class="block">Determine if a physical port is ready</div>
+<div class="block">Gets whether the last request to the port has been completed.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#isI2cPortReady-int-">isI2cPortReady</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if ready for command; false otherwise</dd>
+<dd>true iff the port is ready for another request</dd>
 </dl>
 </li>
 </ul>
@@ -2016,17 +2025,17 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>getI2cReadCacheLock</h4>
 <pre>public&nbsp;java.util.concurrent.locks.Lock&nbsp;getI2cReadCacheLock(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getI2cReadCacheLock-int-">I2cController</a></code></span></div>
-<div class="block">Get access to the read cache lock.
- <p>
- This is needed if you are accessing the read cache directly. The read
- cache lock needs to be acquired before attempting to interact with the read cache</div>
+<div class="block">Gets a lock on the read buffer so it can be directly read from.
+ By <code>lock()</code>ing the lock, you can be guaranteed that nothing else
+ will change the contents of the buffer before you unlock it.
+ It is generally easier to simply call <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getCopyOfReadBuffer-int-"><code>I2cController.getCopyOfReadBuffer(int)</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getI2cReadCacheLock-int-">getI2cReadCacheLock</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>lock</dd>
+<dd>an object which allows you to gain temporary unique access to the read buffer</dd>
 </dl>
 </li>
 </ul>
@@ -2038,18 +2047,18 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>getI2cWriteCacheLock</h4>
 <pre>public&nbsp;java.util.concurrent.locks.Lock&nbsp;getI2cWriteCacheLock(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getI2cWriteCacheLock-int-">I2cController</a></code></span></div>
-<div class="block">Get access to the write cache lock.
- <p>
- This is needed if you are accessing the write cache directly. The write
- cache lock needs to be acquired before attempting to interact with the
- write cache</div>
+<div class="block">Gets a lock on the write buffer so it can be directly written to.
+ By <code>lock()</code>ing the lock, you can be guaranteed that nothing else
+ will change the contents of the buffer or read from the buffer before you unlock it.
+ It is generally easier to simply call <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#copyBufferIntoWriteBuffer-int-byte:A-"><code>I2cController.copyBufferIntoWriteBuffer(int, byte[])</code></a>
+ or <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getCopyOfWriteBuffer-int-"><code>I2cController.getCopyOfWriteBuffer(int)</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getI2cWriteCacheLock-int-">getI2cWriteCacheLock</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>lock</dd>
+<dd>an object which allows you to gain temporary unique access to the write buffer</dd>
 </dl>
 </li>
 </ul>
@@ -2061,16 +2070,24 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>getI2cReadCache</h4>
 <pre>public&nbsp;byte[]&nbsp;getI2cReadCache(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getI2cReadCache-int-">I2cController</a></code></span></div>
-<div class="block">Get direct access to the cache that I2C reads will be populated into
- <p>
- Please lock the cache before accessing it.</div>
+<div class="block">Gets a reference to the read buffer that won't change for the controller object.
+ The format is as follows:
+ <ul>
+        <li>Byte 0: indicates either read or write</li>
+        <li>Byte 1: the 8-bit I2C address of the device</li>
+        <li>Byte 2: the lowest register in the contiguous set</li>
+        <li>Byte 3: the number of registers in the contiguous set</li>
+        <li>Bytes 4-30: the data</li>
+        <li>Byte 31: the action flag</li>
+ </ul>
+ You should lock the buffer before using it.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getI2cReadCache-int-">getI2cReadCache</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>byte array</dd>
+<dd>a reference to the read buffer</dd>
 </dl>
 </li>
 </ul>
@@ -2082,16 +2099,24 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/LegacyModule.htm
 <h4>getI2cWriteCache</h4>
 <pre>public&nbsp;byte[]&nbsp;getI2cWriteCache(int&nbsp;physicalPort)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getI2cWriteCache-int-">I2cController</a></code></span></div>
-<div class="block">Get direct access to the cache that I2C writes will be populated into
- <p>
- Please lock the cache before accessing it.</div>
+<div class="block">Gets a reference to the write buffer that won't change for the controller object.
+ The format is as follows:
+ <ul>
+        <li>Byte 0: indicates either read or write</li>
+        <li>Byte 1: the 8-bit I2C address of the device</li>
+        <li>Byte 2: the lowest register in the contiguous set</li>
+        <li>Byte 3: the number of registers in the contiguous set</li>
+        <li>Bytes 4-30: the data</li>
+        <li>Byte 31: the action flag</li>
+ </ul>
+ You should lock the buffer before using it.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getI2cWriteCache-int-">getI2cWriteCache</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>physicalPort</code> - physical port number on the device</dd>
+<dd><code>physicalPort</code> - the port number of the device on the controller</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>byte array</dd>
+<dd>a reference to the write buffer</dd>
 </dl>
 </li>
 </ul>

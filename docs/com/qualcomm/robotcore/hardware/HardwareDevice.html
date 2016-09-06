@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">HardwareDevice</span></pre>
-<div class="block">Interface used by Hardware Devices</div>
+<div class="block">Represents any sort of device attached to the control system</div>
 </li>
 </ul>
 </div>
@@ -149,19 +149,19 @@ var activeTableTab = "activeTableTab";
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">close</a></span>()</code>
-<div class="block">Closes this device</div>
+<div class="block">Carries out any tasks necessary to prepare the device to end communication</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">getConnectionInfo</a></span>()</code>
-<div class="block">Get connection information about this device in a human readable format</div>
+<div class="block">Gets information about what the device is connected to</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getDeviceName--">getDeviceName</a></span>()</code>
-<div class="block">Returns a string suitable for display to the user as to the type of device</div>
+<div class="block">Gets the name of the type of device.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -173,7 +173,7 @@ var activeTableTab = "activeTableTab";
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">getVersion</a></span>()</code>
-<div class="block">Version</div>
+<div class="block">Returns a number representing the "version" of a sensor, or 1 for other devices.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -218,10 +218,11 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>getDeviceName</h4>
 <pre>java.lang.String&nbsp;getDeviceName()</pre>
-<div class="block">Returns a string suitable for display to the user as to the type of device</div>
+<div class="block">Gets the name of the type of device.
+ This value will be the same for all objects of the same class.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>device manufacturer and name</dd>
+<dd>a human-readable string representing the sort of device this class represents</dd>
 </dl>
 </li>
 </ul>
@@ -232,10 +233,10 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>getConnectionInfo</h4>
 <pre>java.lang.String&nbsp;getConnectionInfo()</pre>
-<div class="block">Get connection information about this device in a human readable format</div>
+<div class="block">Gets information about what the device is connected to</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>connection info</dd>
+<dd>a human-readable string showing the chain of devices connecting the device to the Power Distribution Module</dd>
 </dl>
 </li>
 </ul>
@@ -246,10 +247,12 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>getVersion</h4>
 <pre>int&nbsp;getVersion()</pre>
-<div class="block">Version</div>
+<div class="block">Returns a number representing the "version" of a sensor, or 1 for other devices.
+ This value will be the same for all objects of the same class.
+ For example, the MR IRSeeker V3 returns <code>3</code>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>get the version of this device</dd>
+<dd>a number representing the "version" of a sensor</dd>
 </dl>
 </li>
 </ul>
@@ -271,7 +274,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <h4>close</h4>
 <pre>void&nbsp;close()</pre>
-<div class="block">Closes this device</div>
+<div class="block">Carries out any tasks necessary to prepare the device to end communication</div>
 </li>
 </ul>
 </li>

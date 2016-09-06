@@ -174,7 +174,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannel.html#close--">close</a></span>()</code>
-<div class="block">Closes this device</div>
+<div class="block">Carries out any tasks necessary to prepare the device to end communication</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -187,7 +187,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannel.html#getDeviceName--">getDeviceName</a></span>()</code>
-<div class="block">Returns a string suitable for display to the user as to the type of device</div>
+<div class="block">Gets the name of the type of device.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -211,7 +211,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DigitalChannel.html#getVersion--">getVersion</a></span>()</code>
-<div class="block">Version</div>
+<div class="block">Returns a number representing the "version" of a sensor, or 1 for other devices.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -362,7 +362,8 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <h4>getDeviceName</h4>
 <pre>public&nbsp;java.lang.String&nbsp;getDeviceName()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getDeviceName--">HardwareDevice</a></code></span></div>
-<div class="block">Returns a string suitable for display to the user as to the type of device</div>
+<div class="block">Gets the name of the type of device.
+ This value will be the same for all objects of the same class.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getDeviceName--">getDeviceName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
@@ -396,12 +397,14 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <h4>getVersion</h4>
 <pre>public&nbsp;int&nbsp;getVersion()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">HardwareDevice</a></code></span></div>
-<div class="block">Version</div>
+<div class="block">Returns a number representing the "version" of a sensor, or 1 for other devices.
+ This value will be the same for all objects of the same class.
+ For example, the MR IRSeeker V3 returns <code>3</code>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">getVersion</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>get the version of this device</dd>
+<dd>a number representing the "version" of a sensor</dd>
 </dl>
 </li>
 </ul>
@@ -429,7 +432,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <h4>close</h4>
 <pre>public&nbsp;void&nbsp;close()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">HardwareDevice</a></code></span></div>
-<div class="block">Closes this device</div>
+<div class="block">Carries out any tasks necessary to prepare the device to end communication</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>

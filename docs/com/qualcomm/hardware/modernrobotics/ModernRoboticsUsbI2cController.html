@@ -239,13 +239,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.ht
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbI2cController.html#deregisterForPortReadyBeginEndCallback-int-">deregisterForPortReadyBeginEndCallback</a></span>(int&nbsp;port)</code>
-<div class="block">Deregisters any existing notifications callback for the given port</div>
+<div class="block">Indicates that the previous ready begin-end callback should no longer be run</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.I2cPortReadyBeginEndNotifications.html" title="interface in com.qualcomm.robotcore.hardware">I2cController.I2cPortReadyBeginEndNotifications</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbI2cController.html#getPortReadyBeginEndCallback-int-">getPortReadyBeginEndCallback</a></span>(int&nbsp;port)</code>
-<div class="block">Returns the current callback registered for a given port</div>
+<div class="block">Gets the last-set ready begin-end callback</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -260,7 +260,8 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.ht
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbI2cController.html#registerForPortReadyBeginEndCallback-com.qualcomm.robotcore.hardware.I2cController.I2cPortReadyBeginEndNotifications-int-">registerForPortReadyBeginEndCallback</a></span>(<a href="../../../../com/qualcomm/robotcore/hardware/I2cController.I2cPortReadyBeginEndNotifications.html" title="interface in com.qualcomm.robotcore.hardware">I2cController.I2cPortReadyBeginEndNotifications</a>&nbsp;callback,
                                     int&nbsp;port)</code>
-<div class="block">Registers to be notification when portIsReady callbacks begin or cease</div>
+<div class="block">Indicates what method to run when all a port is ready
+ before and after the read callback is called</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
@@ -378,13 +379,14 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.ht
 <pre>public&nbsp;void&nbsp;registerForPortReadyBeginEndCallback(<a href="../../../../com/qualcomm/robotcore/hardware/I2cController.I2cPortReadyBeginEndNotifications.html" title="interface in com.qualcomm.robotcore.hardware">I2cController.I2cPortReadyBeginEndNotifications</a>&nbsp;callback,
                                                  int&nbsp;port)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#registerForPortReadyBeginEndCallback-com.qualcomm.robotcore.hardware.I2cController.I2cPortReadyBeginEndNotifications-int-">I2cController</a></code></span></div>
-<div class="block">Registers to be notification when portIsReady callbacks begin or cease</div>
+<div class="block">Indicates what method to run when all a port is ready
+ before and after the read callback is called</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#registerForPortReadyBeginEndCallback-com.qualcomm.robotcore.hardware.I2cController.I2cPortReadyBeginEndNotifications-int-">registerForPortReadyBeginEndCallback</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>callback</code> - the callback to register</dd>
-<dd><code>port</code> - the port number to register the callback on</dd>
+<dd><code>callback</code> - the method to run</dd>
+<dd><code>port</code> - the port number of the device on the controller</dd>
 </dl>
 </li>
 </ul>
@@ -396,14 +398,16 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.ht
 <h4>getPortReadyBeginEndCallback</h4>
 <pre>public&nbsp;<a href="../../../../com/qualcomm/robotcore/hardware/I2cController.I2cPortReadyBeginEndNotifications.html" title="interface in com.qualcomm.robotcore.hardware">I2cController.I2cPortReadyBeginEndNotifications</a>&nbsp;getPortReadyBeginEndCallback(int&nbsp;port)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getPortReadyBeginEndCallback-int-">I2cController</a></code></span></div>
-<div class="block">Returns the current callback registered for a given port</div>
+<div class="block">Gets the last-set ready begin-end callback</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#getPortReadyBeginEndCallback-int-">getPortReadyBeginEndCallback</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>port</code> - the port in question</dd>
+<dd><code>port</code> - the port number of the device on the controller</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the current callback for that port, or null if none presently exists</dd>
+<dd>the callback</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#registerForPortReadyBeginEndCallback-com.qualcomm.robotcore.hardware.I2cController.I2cPortReadyBeginEndNotifications-int-"><code>I2cController.registerForPortReadyBeginEndCallback(I2cPortReadyBeginEndNotifications, int)</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -415,12 +419,14 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/I2cController.ht
 <h4>deregisterForPortReadyBeginEndCallback</h4>
 <pre>public&nbsp;void&nbsp;deregisterForPortReadyBeginEndCallback(int&nbsp;port)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#deregisterForPortReadyBeginEndCallback-int-">I2cController</a></code></span></div>
-<div class="block">Deregisters any existing notifications callback for the given port</div>
+<div class="block">Indicates that the previous ready begin-end callback should no longer be run</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#deregisterForPortReadyBeginEndCallback-int-">deregisterForPortReadyBeginEndCallback</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html" title="interface in com.qualcomm.robotcore.hardware">I2cController</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>port</code> - the port in question</dd>
+<dd><code>port</code> - the port number of the device on the controller</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/I2cController.html#registerForPortReadyBeginEndCallback-com.qualcomm.robotcore.hardware.I2cController.I2cPortReadyBeginEndNotifications-int-"><code>I2cController.registerForPortReadyBeginEndCallback(I2cPortReadyBeginEndNotifications, int)</code></a></dd>
 </dl>
 </li>
 </ul>

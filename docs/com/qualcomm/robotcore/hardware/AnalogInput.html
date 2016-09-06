@@ -114,7 +114,12 @@ var activeTableTab = "activeTableTab";
 <pre>public class <span class="typeNameLabel">AnalogInput</span>
 extends java.lang.Object
 implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></pre>
-<div class="block">Control a single analog device</div>
+<div class="block">Represents an analog-to-digital converter connected to an output port.
+ Values have a 10-bit resolution.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/AnalogInputController.html" title="interface in com.qualcomm.robotcore.hardware"><code>AnalogInputController</code></a></dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -177,7 +182,8 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/AnalogInput.html#getConnectionInfo--">getConnectionInfo</a></span>()</code>
-<div class="block">Get connection information about this device in a human readable format</div>
+<div class="block">Gets connection information about this device in a human-readable format,
+ e.g.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -322,7 +328,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getDeviceName--">getDeviceName</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>device manufacturer and name</dd>
+<dd>the text <code>"Analog Input"</code></dd>
 </dl>
 </li>
 </ul>
@@ -333,13 +339,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.h
 <li class="blockList">
 <h4>getConnectionInfo</h4>
 <pre>public&nbsp;java.lang.String&nbsp;getConnectionInfo()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">HardwareDevice</a></code></span></div>
-<div class="block">Get connection information about this device in a human readable format</div>
+<div class="block">Gets connection information about this device in a human-readable format,
+ e.g. <code>USB USB AL00VDDK; analog port 0</code></div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">getConnectionInfo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>connection info</dd>
+<dd>the device and port this input is attached to</dd>
 </dl>
 </li>
 </ul>

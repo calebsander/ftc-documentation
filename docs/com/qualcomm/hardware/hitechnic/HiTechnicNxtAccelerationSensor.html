@@ -206,7 +206,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/AccelerationSens
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/Acceleration.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">Acceleration</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/hitechnic/HiTechnicNxtAccelerationSensor.html#getAcceleration--">getAcceleration</a></span>()</code>
-<div class="block">Acceleration, measured in g's</div>
+<div class="block">Gets the acceleration in each of the three axes.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -246,7 +246,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/AccelerationSens
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/hitechnic/HiTechnicNxtAccelerationSensor.html#status--">status</a></span>()</code>
-<div class="block">Status of this sensor, in string form</div>
+<div class="block">Gets the current acceleration values in string form</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
@@ -379,12 +379,14 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/AccelerationSens
 <h4>getAcceleration</h4>
 <pre>public&nbsp;<a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/Acceleration.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">Acceleration</a>&nbsp;getAcceleration()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/AccelerationSensor.html#getAcceleration--">AccelerationSensor</a></code></span></div>
-<div class="block">Acceleration, measured in g's</div>
+<div class="block">Gets the acceleration in each of the three axes.
+ The unit is g. For the HiTechnic sensor, the z-axis is vertical,
+ x is along the length of the sensor, and y is along the width of the sensor.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/AccelerationSensor.html#getAcceleration--">getAcceleration</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/AccelerationSensor.html" title="interface in com.qualcomm.robotcore.hardware">AccelerationSensor</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>acceleration in g's</dd>
+<dd>acceleration values for each axis</dd>
 </dl>
 </li>
 </ul>
@@ -396,12 +398,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/AccelerationSens
 <h4>status</h4>
 <pre>public&nbsp;java.lang.String&nbsp;status()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/AccelerationSensor.html#status--">AccelerationSensor</a></code></span></div>
-<div class="block">Status of this sensor, in string form</div>
+<div class="block">Gets the current acceleration values in string form</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/AccelerationSensor.html#status--">status</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/AccelerationSensor.html" title="interface in com.qualcomm.robotcore.hardware">AccelerationSensor</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>status</dd>
+<dd>the result of <code>getAcceleration().toString()</code></dd>
 </dl>
 </li>
 </ul>

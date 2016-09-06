@@ -1,15 +1,15 @@
-void setDirection(Direction)
+.method void setDirection(Direction)
 Sets the current direction that the motor is running in
 @see Direction
 @see getDirection()
 
-Direction getDirection()
+.method Direction getDirection()
 Gets the current direction that the motor is running in
 @return the direction that the motor will move when set to a positive power
 @see Direction
 @see setDirection(Direction)
 
-void setPower(double)
+.method void setPower(double)
 Sets the motor's power, where {@code -1.0} means full power backwards,
 {@code 0.0} means stopped, and {@code 1.0} means full power forward.
 In {@link DcMotor.RunMode#RUN_TO_POSITION RUN_TO_POSITION} mode,
@@ -17,7 +17,7 @@ sets the maximum power to send to the motor.
 @param power the desired power (between -1 and 1)
 @see getPower()
 
-double getPower()
+.method double getPower()
 Returns the power that the motor is moving at, where {@code -1.0} means full power backwards,
 {@code 0.0} means stopped or coasting, and {@code 1.0} means full power forward.
 @return the motor's power value (between -1 and 1)

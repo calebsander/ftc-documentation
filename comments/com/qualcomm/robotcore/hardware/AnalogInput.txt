@@ -1,0 +1,12 @@
+.class
+Represents an analog-to-digital converter connected to an output port.
+Values have a 10-bit resolution.
+@see AnalogInputController
+
+.method String getDeviceName()
+@return the text {@code "Analog Input"}
+
+.method String getConnectionInfo()
+Gets connection information about this device in a human-readable format,
+e.g. {@code USB USB AL00VDDK; analog port 0}
+@return the device and port this input is attached to

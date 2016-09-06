@@ -113,9 +113,12 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public interface <span class="typeNameLabel">AnalogOutputController</span>
 extends <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></pre>
-<div class="block">Interface for working with Analog Controllers
- <p>
- Different analog input controllers will implement this interface.</div>
+<div class="block">Represents a device with several <a href="../../../../com/qualcomm/robotcore/hardware/AnalogOutput.html" title="class in com.qualcomm.robotcore.hardware"><code>AnalogOutput</code></a> devices attached.
+ Currently the only such device is the <a href="../../../../com/qualcomm/robotcore/hardware/DeviceInterfaceModule.html" title="interface in com.qualcomm.robotcore.hardware"><code>DeviceInterfaceModule</code></a>.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/AnalogOutput.html" title="class in com.qualcomm.robotcore.hardware"><code>AnalogOutput</code></a></dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -152,7 +155,7 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/util/SerialNumber.html" title="class in com.qualcomm.robotcore.util">SerialNumber</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/AnalogOutputController.html#getSerialNumber--">getSerialNumber</a></span>()</code>
-<div class="block">Serial Number</div>
+<div class="block">Gets the FTDI serial number of the module.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -205,10 +208,10 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html
 <li class="blockList">
 <h4>getSerialNumber</h4>
 <pre><a href="../../../../com/qualcomm/robotcore/util/SerialNumber.html" title="class in com.qualcomm.robotcore.util">SerialNumber</a>&nbsp;getSerialNumber()</pre>
-<div class="block">Serial Number</div>
+<div class="block">Gets the FTDI serial number of the module.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>return the USB serial number of this device</dd>
+<dd>the serial number (text version will look like "AL00VDDK")</dd>
 </dl>
 </li>
 </ul>

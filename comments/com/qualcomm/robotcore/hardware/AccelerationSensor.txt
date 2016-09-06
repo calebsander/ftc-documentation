@@ -1,0 +1,12 @@
+.class
+Represents a sensor that measures acceleration in three dimensions
+
+.method Acceleration getAcceleration()
+Gets the acceleration in each of the three axes.
+The unit is g. For the HiTechnic sensor, the z-axis is vertical,
+x is along the length of the sensor, and y is along the width of the sensor.
+@return acceleration values for each axis
+
+.method String status()
+Gets the current acceleration values in string form
+@return the result of {@code getAcceleration().toString()}

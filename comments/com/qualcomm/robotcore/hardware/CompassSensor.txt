@@ -1,0 +1,16 @@
+.class
+Represents a sensor that gives a heading relative to magnetic north.
+Currently the only supported compass sensor is the HiTechnic one.
+
+.method double getDirection()
+Gets the current heading
+@return the heading in degrees between 0 and 359 (inclusive) where 0 indicates north and the direction increases clockwise
+
+.method String status()
+Gets the location (controller and port) of the sensor
+@return text containing the attached control serial number and port number
+
+.method void setMode(CompassMode)
+Switches the sensor to the desired mode.
+Heading values cannot be obtained when the sensor is calibrating.
+@param mode the desired mode to use

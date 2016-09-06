@@ -109,7 +109,16 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public interface <span class="typeNameLabel">DcMotor</span>
 extends <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorSimple.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorSimple</a></pre>
-<div class="block">DcMotor interface provides access to full-featured motor functionality.</div>
+<div class="block">Represents a motor attached to a certain port of a motor controller.
+ Most methods simply invoke the corresponding method for <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware"><code>DcMotorController</code></a>.
+ <p>It is also possible to set the motors as reversed or not reversed (see <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorSimple.Direction.html" title="enum in com.qualcomm.robotcore.hardware"><code>DcMotorSimple.Direction</code></a>).
+ <p>Motor powers are reset to <code>0.0</code> between runs of an <a href="../../../../com/qualcomm/robotcore/eventloop/opmode/OpMode.html" title="class in com.qualcomm.robotcore.eventloop.opmode"><code>OpMode</code></a>,
+ but encoder values and the run mode are not reset until the robot's power is turned off
+ and the direction of the motor is not reset until a USB scan is performed.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware"><code>DcMotorController</code></a></dd>
+</dl>
 </li>
 </ul>
 </div>
@@ -180,7 +189,7 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorSimple.html"
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.html#getCurrentPosition--">getCurrentPosition</a></span>()</code>
-<div class="block">Returns the current reading of the encoder for this motor.</div>
+<div class="block">Gets the current value of the encoder.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -199,13 +208,13 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorSimple.html"
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.html#getPortNumber--">getPortNumber</a></span>()</code>
-<div class="block">Returns the port number on the underlying motor controller on which this motor is situated.</div>
+<div class="block">Returns the port number that the motor is attached to on its motor controller.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.html#getPowerFloat--">getPowerFloat</a></span>()</code>
-<div class="block">Returns whether the motor is currently in a float power level.</div>
+<div class="block">Returns whether the controller has told the motor to coast (put minimal resistance on it).</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
@@ -223,7 +232,7 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorSimple.html"
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.html#isBusy--">isBusy</a></span>()</code>
-<div class="block">Returns true if the motor is currently advancing or retreating to a target position.</div>
+<div class="block">Returns whether the robot has not yet reached its target position.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
@@ -356,12 +365,12 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/DcMotorSimple.html"
 <li class="blockList">
 <h4>getPortNumber</h4>
 <pre>int&nbsp;getPortNumber()</pre>
-<div class="block">Returns the port number on the underlying motor controller on which this motor is situated.</div>
+<div class="block">Returns the port number that the motor is attached to on its motor controller.
+ The possible values are 1 or 2 on HiTechnic or Modern Robotics controllers
+ and 1 to 4 on Matrix controllers.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the port number on the underlying motor controller on which this motor is situated.</dd>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.html#getController--"><code>getController()</code></a></dd>
+<dd>the motor's port number</dd>
 </dl>
 </li>
 </ul>
@@ -438,10 +447,10 @@ void&nbsp;setPowerFloat()</pre>
 <li class="blockList">
 <h4>getPowerFloat</h4>
 <pre>boolean&nbsp;getPowerFloat()</pre>
-<div class="block">Returns whether the motor is currently in a float power level.</div>
+<div class="block">Returns whether the controller has told the motor to coast (put minimal resistance on it).</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>whether the motor is currently in a float power level.</dd>
+<dd><code>true</code> if the motor is coasting, <code>false</code> if not</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.html#setPowerFloat--"><code>setPowerFloat()</code></a></dd>
 </dl>
@@ -499,12 +508,12 @@ void&nbsp;setPowerFloat()</pre>
 <li class="blockList">
 <h4>isBusy</h4>
 <pre>boolean&nbsp;isBusy()</pre>
-<div class="block">Returns true if the motor is currently advancing or retreating to a target position.</div>
+<div class="block">Returns whether the robot has not yet reached its target position.
+ Don't rely on the return value if not in the
+ <a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html#RUN_TO_POSITION"><code>RUN_TO_POSITION</code></a> mode.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>true if the motor is currently advancing or retreating to a target position.</dd>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.html#setTargetPosition-int-"><code>setTargetPosition(int)</code></a></dd>
+<dd><code>false</code> if the motor has stopped, <code>true</code> otherwise</dd>
 </dl>
 </li>
 </ul>
@@ -515,15 +524,14 @@ void&nbsp;setPowerFloat()</pre>
 <li class="blockList">
 <h4>getCurrentPosition</h4>
 <pre>int&nbsp;getCurrentPosition()</pre>
-<div class="block">Returns the current reading of the encoder for this motor. The units for this reading,
- that is, the number of ticks per revolution, are specific to the motor/encoder in question,
- and thus are not specified here.</div>
+<div class="block">Gets the current value of the encoder. The number of encoder ticks per revolution
+ depends on the motor encoder being used. For example, Tetrix motors have 1440 ticks/rev
+ and Andymark NeveRest 40 motors have 1120.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>the current reading of the encoder for this motor</dd>
+<dd>the encoder tick count</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.html#getTargetPosition--"><code>getTargetPosition()</code></a>, 
-<a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html#STOP_AND_RESET_ENCODER"><code>DcMotor.RunMode.STOP_AND_RESET_ENCODER</code></a></dd>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/DcMotor.RunMode.html#STOP_AND_RESET_ENCODER"><code>DcMotor.RunMode.STOP_AND_RESET_ENCODER</code></a></dd>
 </dl>
 </li>
 </ul>

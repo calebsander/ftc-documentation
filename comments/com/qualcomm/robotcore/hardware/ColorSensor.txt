@@ -1,0 +1,33 @@
+.class
+Represents a sensor that can separately measure red, green, blue, and white light intensities
+
+.method int red()
+Gets the red value read by the sensor (scale depends on the sort of color sensor)
+@return a number proportional to the intensity of red light measured by the sensor
+
+.method int green()
+Gets the green value read by the sensor (scale depends on the sort of color sensor)
+@return a number proportional to the intensity of green light measured by the sensor
+
+.method int blue()
+Gets the blue value read by the sensor (scale depends on the sort of color sensor)
+@return a number proportional to the intensity of blue light measured by the sensor
+
+.method int alpha()
+Gets the white value read by the sensor (scale depends on the sort of color sensor)
+@return a number proportional to the intensity of light measured by the sensor
+
+.method int argb()
+Gets a integer whose bits specify all four channels' current intensities
+@return an sRGB color with the specified combined RGBA value consisting of the white component in bits 24-31, the red component in bits 16-23, the green component in bits 8-15, and the blue component in bits 0-7
+
+.method void enableLed(boolean)
+Turns on or off the sensor's light
+(to switch between measuring ambient or reflected light)
+@param enable <b>true</b> will turn on the LED, and <b>false</b> will turn it off
+
+.method void setI2cAddress(I2cAddr)
+Changes the I2C address that the sensor responds on. This only works for the Modern Robotics sensor.
+The sensor will keep its new address (even on loss of power) until it is set to a different value.
+@param newAddress the new address; the 8-bit value must be a multiple of 2 between 16 and 126, inclusive
+@see com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cColorSensor

@@ -1,0 +1,8 @@
+.class
+Represents a device with several {@link AnalogOutput} devices attached.
+Currently the only such device is the {@link DeviceInterfaceModule}.
+@see AnalogOutput
+
+.method SerialNumber getSerialNumber()
+Gets the FTDI serial number of the module.
+@return the serial number (text version will look like "AL00VDDK")

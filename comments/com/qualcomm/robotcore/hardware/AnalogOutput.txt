@@ -1,0 +1,11 @@
+.class
+Represents a digital-to-analog converter connected to an analog signal.
+@see AnalogOutputController
+
+.method String getDeviceName()
+@return the text {@code "Analog Output"}
+
+.method String getConnectionInfo()
+Gets connection information about this device in a human-readable format,
+e.g. {@code USB AL00VDDK; analog port 0}
+@return the device and port this output is attached to

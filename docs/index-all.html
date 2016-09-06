@@ -96,7 +96,7 @@
 </dd>
 <dt><a href="com/qualcomm/robotcore/hardware/AccelerationSensor.html" title="interface in com.qualcomm.robotcore.hardware"><span class="typeNameLink">AccelerationSensor</span></a> - Interface in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
-<div class="block">Acceleration Sensor</div>
+<div class="block">Represents a sensor that measures acceleration in three dimensions</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/HardwareMap.html#accelerationSensor">accelerationSensor</a></span> - Variable in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/HardwareMap.html" title="class in com.qualcomm.robotcore.hardware">HardwareMap</a></dt>
 <dd>&nbsp;</dd>
@@ -437,7 +437,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/ColorSensor.html#alpha--">alpha()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></dt>
 <dd>
-<div class="block">Get the amount of light detected by the sensor as an int.</div>
+<div class="block">Gets the white value read by the sensor (scale depends on the sort of color sensor)</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/ams/AMSColorSensor.html#AMS_COLOR_AIHTH">AMS_COLOR_AIHTH</a></span> - Static variable in interface com.qualcomm.hardware.ams.<a href="com/qualcomm/hardware/ams/AMSColorSensor.html" title="interface in com.qualcomm.hardware.ams">AMSColorSensor</a></dt>
 <dd>&nbsp;</dd>
@@ -588,7 +588,7 @@
 <dd>&nbsp;</dd>
 <dt><a href="com/qualcomm/robotcore/hardware/AnalogInput.html" title="class in com.qualcomm.robotcore.hardware"><span class="typeNameLink">AnalogInput</span></a> - Class in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
-<div class="block">Control a single analog device</div>
+<div class="block">Represents an analog-to-digital converter connected to an output port.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/AnalogInput.html#AnalogInput-com.qualcomm.robotcore.hardware.AnalogInputController-int-">AnalogInput(AnalogInputController, int)</a></span> - Constructor for class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/AnalogInput.html" title="class in com.qualcomm.robotcore.hardware">AnalogInput</a></dt>
 <dd>
@@ -598,11 +598,11 @@
 <dd>&nbsp;</dd>
 <dt><a href="com/qualcomm/robotcore/hardware/AnalogInputController.html" title="interface in com.qualcomm.robotcore.hardware"><span class="typeNameLink">AnalogInputController</span></a> - Interface in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
-<div class="block">Interface for working with Analog Controllers</div>
+<div class="block">Represents a device with several <a href="com/qualcomm/robotcore/hardware/AnalogInput.html" title="class in com.qualcomm.robotcore.hardware"><code>AnalogInput</code></a> devices attached.</div>
 </dd>
 <dt><a href="com/qualcomm/robotcore/hardware/AnalogOutput.html" title="class in com.qualcomm.robotcore.hardware"><span class="typeNameLink">AnalogOutput</span></a> - Class in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
-<div class="block">Control a single analog device</div>
+<div class="block">Represents a digital-to-analog converter connected to an analog signal.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/AnalogOutput.html#AnalogOutput-com.qualcomm.robotcore.hardware.AnalogOutputController-int-">AnalogOutput(AnalogOutputController, int)</a></span> - Constructor for class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/AnalogOutput.html" title="class in com.qualcomm.robotcore.hardware">AnalogOutput</a></dt>
 <dd>
@@ -612,7 +612,7 @@
 <dd>&nbsp;</dd>
 <dt><a href="com/qualcomm/robotcore/hardware/AnalogOutputController.html" title="interface in com.qualcomm.robotcore.hardware"><span class="typeNameLink">AnalogOutputController</span></a> - Interface in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
-<div class="block">Interface for working with Analog Controllers</div>
+<div class="block">Represents a device with several <a href="com/qualcomm/robotcore/hardware/AnalogOutput.html" title="class in com.qualcomm.robotcore.hardware"><code>AnalogOutput</code></a> devices attached.</div>
 </dd>
 <dt><a href="com/qualcomm/robotcore/hardware/AnalogSensor.html" title="interface in com.qualcomm.robotcore.hardware"><span class="typeNameLink">AnalogSensor</span></a> - Interface in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
@@ -669,7 +669,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/ColorSensor.html#argb--">argb()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></dt>
 <dd>
-<div class="block">Get the "hue"</div>
+<div class="block">Gets a integer whose bits specify all four channels' current intensities</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/ArmableUsbDevice.html#arm--">arm()</a></span> - Method in class com.qualcomm.hardware.<a href="com/qualcomm/hardware/ArmableUsbDevice.html" title="class in com.qualcomm.hardware">ArmableUsbDevice</a></dt>
 <dd>&nbsp;</dd>
@@ -767,7 +767,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/ColorSensor.html#blue--">blue()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></dt>
 <dd>
-<div class="block">Get the Blue values detected by the sensor as an int.</div>
+<div class="block">Gets the blue value read by the sensor (scale depends on the sort of color sensor)</div>
 </dd>
 <dt><a href="com/qualcomm/hardware/adafruit/BNO055IMU.html" title="interface in com.qualcomm.hardware.adafruit"><span class="typeNameLink">BNO055IMU</span></a> - Interface in <a href="com/qualcomm/hardware/adafruit/package-summary.html">com.qualcomm.hardware.adafruit</a></dt>
 <dd>
@@ -1203,7 +1203,7 @@
 <dd>&nbsp;</dd>
 <dt><a href="com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware"><span class="typeNameLink">ColorSensor</span></a> - Interface in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
-<div class="block">Color Sensor</div>
+<div class="block">Represents a sensor that can separately measure red, green, blue, and white light intensities</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/HardwareMap.html#colorSensor">colorSensor</a></span> - Variable in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/HardwareMap.html" title="class in com.qualcomm.robotcore.hardware">HardwareMap</a></dt>
 <dd>&nbsp;</dd>
@@ -1272,7 +1272,7 @@
 <dd>&nbsp;</dd>
 <dt><a href="com/qualcomm/robotcore/hardware/CompassSensor.html" title="interface in com.qualcomm.robotcore.hardware"><span class="typeNameLink">CompassSensor</span></a> - Interface in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
-<div class="block">Compass Sensor</div>
+<div class="block">Represents a sensor that gives a heading relative to magnetic north.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/HardwareMap.html#compassSensor">compassSensor</a></span> - Variable in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/HardwareMap.html" title="class in com.qualcomm.robotcore.hardware">HardwareMap</a></dt>
 <dd>&nbsp;</dd>
@@ -1579,7 +1579,7 @@
 </dd>
 <dt><a href="com/qualcomm/robotcore/hardware/DcMotor.html" title="interface in com.qualcomm.robotcore.hardware"><span class="typeNameLink">DcMotor</span></a> - Interface in <a href="com/qualcomm/robotcore/hardware/package-summary.html">com.qualcomm.robotcore.hardware</a></dt>
 <dd>
-<div class="block">DcMotor interface provides access to full-featured motor functionality.</div>
+<div class="block">Represents a motor attached to a certain port of a motor controller.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/HardwareMap.html#dcMotor">dcMotor</a></span> - Variable in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/HardwareMap.html" title="class in com.qualcomm.robotcore.hardware">HardwareMap</a></dt>
 <dd>&nbsp;</dd>
@@ -2031,7 +2031,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/ColorSensor.html#enableLed-boolean-">enableLed(boolean)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></dt>
 <dd>
-<div class="block">Enable the LED light</div>
+<div class="block">Turns on or off the sensor's light
+ (to switch between measuring ambient or reflected light)</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/LightSensor.html#enableLed-boolean-">enableLed(boolean)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/LightSensor.html" title="interface in com.qualcomm.robotcore.hardware">LightSensor</a></dt>
 <dd>
@@ -2329,7 +2330,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/AccelerationSensor.html#getAcceleration--">getAcceleration()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/AccelerationSensor.html" title="interface in com.qualcomm.robotcore.hardware">AccelerationSensor</a></dt>
 <dd>
-<div class="block">Acceleration, measured in g's</div>
+<div class="block">Gets the acceleration in each of the three axes.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/modernrobotics/ReadWriteRunnable.html#getAcceptingWrites--">getAcceptingWrites()</a></span> - Method in interface com.qualcomm.hardware.modernrobotics.<a href="com/qualcomm/hardware/modernrobotics/ReadWriteRunnable.html" title="interface in com.qualcomm.hardware.modernrobotics">ReadWriteRunnable</a></dt>
 <dd>&nbsp;</dd>
@@ -2479,9 +2480,15 @@
 <dt><span class="memberNameLink"><a href="com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbServoController.html#getConnectionInfo--">getConnectionInfo()</a></span> - Method in class com.qualcomm.hardware.modernrobotics.<a href="com/qualcomm/hardware/modernrobotics/ModernRoboticsUsbServoController.html" title="class in com.qualcomm.hardware.modernrobotics">ModernRoboticsUsbServoController</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/AnalogInput.html#getConnectionInfo--">getConnectionInfo()</a></span> - Method in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/AnalogInput.html" title="class in com.qualcomm.robotcore.hardware">AnalogInput</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Gets connection information about this device in a human-readable format,
+ e.g.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/AnalogOutput.html#getConnectionInfo--">getConnectionInfo()</a></span> - Method in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/AnalogOutput.html" title="class in com.qualcomm.robotcore.hardware">AnalogOutput</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Gets connection information about this device in a human-readable format,
+ e.g.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/CRServoImpl.html#getConnectionInfo--">getConnectionInfo()</a></span> - Method in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/CRServoImpl.html" title="class in com.qualcomm.robotcore.hardware">CRServoImpl</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorImpl.html#getConnectionInfo--">getConnectionInfo()</a></span> - Method in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorImpl.html" title="class in com.qualcomm.robotcore.hardware">DcMotorImpl</a></dt>
@@ -2577,7 +2584,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotor.html#getCurrentPosition--">getCurrentPosition()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotor.html" title="interface in com.qualcomm.robotcore.hardware">DcMotor</a></dt>
 <dd>
-<div class="block">Returns the current reading of the encoder for this motor.</div>
+<div class="block">Gets the current value of the encoder.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorImpl.html#getCurrentPosition--">getCurrentPosition()</a></span> - Method in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorImpl.html" title="class in com.qualcomm.robotcore.hardware">DcMotorImpl</a></dt>
 <dd>
@@ -2755,7 +2762,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/CompassSensor.html#getDirection--">getDirection()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/CompassSensor.html" title="interface in com.qualcomm.robotcore.hardware">CompassSensor</a></dt>
 <dd>
-<div class="block">Get the current direction, in degrees</div>
+<div class="block">Gets the current heading</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/CRServoImpl.html#getDirection--">getDirection()</a></span> - Method in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/CRServoImpl.html" title="class in com.qualcomm.robotcore.hardware">CRServoImpl</a></dt>
 <dd>&nbsp;</dd>
@@ -3369,7 +3376,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotor.html#getPortNumber--">getPortNumber()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotor.html" title="interface in com.qualcomm.robotcore.hardware">DcMotor</a></dt>
 <dd>
-<div class="block">Returns the port number on the underlying motor controller on which this motor is situated.</div>
+<div class="block">Returns the port number that the motor is attached to on its motor controller.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorImpl.html#getPortNumber--">getPortNumber()</a></span> - Method in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorImpl.html" title="class in com.qualcomm.robotcore.hardware">DcMotorImpl</a></dt>
 <dd>
@@ -3443,7 +3450,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotor.html#getPowerFloat--">getPowerFloat()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotor.html" title="interface in com.qualcomm.robotcore.hardware">DcMotor</a></dt>
 <dd>
-<div class="block">Returns whether the motor is currently in a float power level.</div>
+<div class="block">Returns whether the controller has told the motor to coast (put minimal resistance on it).</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorImpl.html#getPowerFloat--">getPowerFloat()</a></span> - Method in class com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorImpl.html" title="class in com.qualcomm.robotcore.hardware">DcMotorImpl</a></dt>
 <dd>
@@ -3620,11 +3627,11 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/AnalogInputController.html#getSerialNumber--">getSerialNumber()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/AnalogInputController.html" title="interface in com.qualcomm.robotcore.hardware">AnalogInputController</a></dt>
 <dd>
-<div class="block">Serial Number</div>
+<div class="block">Gets the FTDI serial number of the module.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/AnalogOutputController.html#getSerialNumber--">getSerialNumber()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/AnalogOutputController.html" title="interface in com.qualcomm.robotcore.hardware">AnalogOutputController</a></dt>
 <dd>
-<div class="block">Serial Number</div>
+<div class="block">Gets the FTDI serial number of the module.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DigitalChannelController.html#getSerialNumber--">getSerialNumber()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DigitalChannelController.html" title="interface in com.qualcomm.robotcore.hardware">DigitalChannelController</a></dt>
 <dd>
@@ -3898,7 +3905,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/ColorSensor.html#green--">green()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></dt>
 <dd>
-<div class="block">Get the Green values detected by the sensor as an int.</div>
+<div class="block">Gets the green value read by the sensor (scale depends on the sort of color sensor)</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/eventloop/opmode/OpModeMeta.html#group">group</a></span> - Variable in class com.qualcomm.robotcore.eventloop.opmode.<a href="com/qualcomm/robotcore/eventloop/opmode/OpModeMeta.html" title="class in com.qualcomm.robotcore.eventloop.opmode">OpModeMeta</a></dt>
 <dd>&nbsp;</dd>
@@ -4470,7 +4477,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotor.html#isBusy--">isBusy()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotor.html" title="interface in com.qualcomm.robotcore.hardware">DcMotor</a></dt>
 <dd>
-<div class="block">Returns true if the motor is currently advancing or retreating to a target position.</div>
+<div class="block">Returns whether the robot has not yet reached its target position.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotorController.html#isBusy-int-">isBusy(int)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotorController.html" title="interface in com.qualcomm.robotcore.hardware">DcMotorController</a></dt>
 <dd>
@@ -6176,7 +6183,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/ColorSensor.html#red--">red()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></dt>
 <dd>
-<div class="block">Get the Red values detected by the sensor as an int.</div>
+<div class="block">Gets the red value read by the sensor (scale depends on the sort of color sensor)</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/ftccommon/UpdateUI.Callback.html#refreshErrorTextOnUiThread--">refreshErrorTextOnUiThread()</a></span> - Method in class com.qualcomm.ftccommon.<a href="com/qualcomm/ftccommon/UpdateUI.Callback.html" title="class in com.qualcomm.ftccommon">UpdateUI.Callback</a></dt>
 <dd>&nbsp;</dd>
@@ -7007,7 +7014,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/ColorSensor.html#setI2cAddress-com.qualcomm.robotcore.hardware.I2cAddr-">setI2cAddress(I2cAddr)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></dt>
 <dd>
-<div class="block">Set the I2C address to a new value.</div>
+<div class="block">Changes the I2C address that the sensor responds on.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/IrSeekerSensor.html#setI2cAddress-com.qualcomm.robotcore.hardware.I2cAddr-">setI2cAddress(I2cAddr)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/IrSeekerSensor.html" title="interface in com.qualcomm.robotcore.hardware">IrSeekerSensor</a></dt>
 <dd>
@@ -7097,7 +7104,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/CompassSensor.html#setMode-com.qualcomm.robotcore.hardware.CompassSensor.CompassMode-">setMode(CompassSensor.CompassMode)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/CompassSensor.html" title="interface in com.qualcomm.robotcore.hardware">CompassSensor</a></dt>
 <dd>
-<div class="block">Change to calibration or measurement mode</div>
+<div class="block">Switches the sensor to the desired mode.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/DcMotor.html#setMode-com.qualcomm.robotcore.hardware.DcMotor.RunMode-">setMode(DcMotor.RunMode)</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/DcMotor.html" title="interface in com.qualcomm.robotcore.hardware">DcMotor</a></dt>
 <dd>
@@ -7605,11 +7612,11 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/AccelerationSensor.html#status--">status()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/AccelerationSensor.html" title="interface in com.qualcomm.robotcore.hardware">AccelerationSensor</a></dt>
 <dd>
-<div class="block">Status of this sensor, in string form</div>
+<div class="block">Gets the current acceleration values in string form</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/CompassSensor.html#status--">status()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/CompassSensor.html" title="interface in com.qualcomm.robotcore.hardware">CompassSensor</a></dt>
 <dd>
-<div class="block">Status of this sensor, in string form</div>
+<div class="block">Gets the location (controller and port) of the sensor</div>
 </dd>
 <dt><span class="memberNameLink"><a href="com/qualcomm/robotcore/hardware/GyroSensor.html#status--">status()</a></span> - Method in interface com.qualcomm.robotcore.hardware.<a href="com/qualcomm/robotcore/hardware/GyroSensor.html" title="interface in com.qualcomm.robotcore.hardware">GyroSensor</a></dt>
 <dd>

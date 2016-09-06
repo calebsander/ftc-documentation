@@ -9,7 +9,6 @@ const SOURCES_PATH = __dirname + '/sources/'
 
 rmdir(SOURCES_PATH, err => {
 	fs.mkdir(SOURCES_PATH, err => {
-		if (err) throw err
 		for (const library of LIBRARIES) {
 			fs.createReadStream(LIBRARY_PREFIX + library + LIBRARY_SUFFIX).pipe(unzip.Parse())
 				.on('entry', entry => {

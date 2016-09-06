@@ -236,19 +236,19 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cColorSensor.html#alpha--">alpha</a></span>()</code>
-<div class="block">Get the amount of light detected by the sensor as an int.</div>
+<div class="block">Gets the white value read by the sensor (scale depends on the sort of color sensor)</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cColorSensor.html#argb--">argb</a></span>()</code>
-<div class="block">Get the "hue"</div>
+<div class="block">Gets a integer whose bits specify all four channels' current intensities</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cColorSensor.html#blue--">blue</a></span>()</code>
-<div class="block">Get the Blue values detected by the sensor as an int.</div>
+<div class="block">Gets the blue value read by the sensor (scale depends on the sort of color sensor)</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -260,7 +260,8 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cColorSensor.html#enableLed-boolean-">enableLed</a></span>(boolean&nbsp;enable)</code>
-<div class="block">Enable the LED light</div>
+<div class="block">Turns on or off the sensor's light
+ (to switch between measuring ambient or reflected light)</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -296,7 +297,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cColorSensor.html#green--">green</a></span>()</code>
-<div class="block">Get the Green values detected by the sensor as an int.</div>
+<div class="block">Gets the green value read by the sensor (scale depends on the sort of color sensor)</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -306,7 +307,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cColorSensor.html#red--">red</a></span>()</code>
-<div class="block">Get the Red values detected by the sensor as an int.</div>
+<div class="block">Gets the red value read by the sensor (scale depends on the sort of color sensor)</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
@@ -318,7 +319,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cColorSensor.html#setI2cAddress-com.qualcomm.robotcore.hardware.I2cAddr-">setI2cAddress</a></span>(<a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a>&nbsp;newAddress)</code>
-<div class="block">Set the I2C address to a new value.</div>
+<div class="block">Changes the I2C address that the sensor responds on.</div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
@@ -568,12 +569,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <h4>red</h4>
 <pre>public&nbsp;int&nbsp;red()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#red--">ColorSensor</a></code></span></div>
-<div class="block">Get the Red values detected by the sensor as an int.</div>
+<div class="block">Gets the red value read by the sensor (scale depends on the sort of color sensor)</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#red--">red</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>reading, unscaled.</dd>
+<dd>a number proportional to the intensity of red light measured by the sensor</dd>
 </dl>
 </li>
 </ul>
@@ -585,12 +586,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <h4>green</h4>
 <pre>public&nbsp;int&nbsp;green()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#green--">ColorSensor</a></code></span></div>
-<div class="block">Get the Green values detected by the sensor as an int.</div>
+<div class="block">Gets the green value read by the sensor (scale depends on the sort of color sensor)</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#green--">green</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>reading, unscaled.</dd>
+<dd>a number proportional to the intensity of green light measured by the sensor</dd>
 </dl>
 </li>
 </ul>
@@ -602,12 +603,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <h4>blue</h4>
 <pre>public&nbsp;int&nbsp;blue()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#blue--">ColorSensor</a></code></span></div>
-<div class="block">Get the Blue values detected by the sensor as an int.</div>
+<div class="block">Gets the blue value read by the sensor (scale depends on the sort of color sensor)</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#blue--">blue</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>reading, unscaled.</dd>
+<dd>a number proportional to the intensity of blue light measured by the sensor</dd>
 </dl>
 </li>
 </ul>
@@ -619,12 +620,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <h4>alpha</h4>
 <pre>public&nbsp;int&nbsp;alpha()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#alpha--">ColorSensor</a></code></span></div>
-<div class="block">Get the amount of light detected by the sensor as an int.</div>
+<div class="block">Gets the white value read by the sensor (scale depends on the sort of color sensor)</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#alpha--">alpha</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>reading, unscaled.</dd>
+<dd>a number proportional to the intensity of light measured by the sensor</dd>
 </dl>
 </li>
 </ul>
@@ -636,12 +637,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <h4>argb</h4>
 <pre>public&nbsp;int&nbsp;argb()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#argb--">ColorSensor</a></code></span></div>
-<div class="block">Get the "hue"</div>
+<div class="block">Gets a integer whose bits specify all four channels' current intensities</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#argb--">argb</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>hue</dd>
+<dd>an sRGB color with the specified combined RGBA value consisting of the white component in bits 24-31, the red component in bits 16-23, the green component in bits 8-15, and the blue component in bits 0-7</dd>
 </dl>
 </li>
 </ul>
@@ -653,12 +654,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <h4>enableLed</h4>
 <pre>public&nbsp;void&nbsp;enableLed(boolean&nbsp;enable)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#enableLed-boolean-">ColorSensor</a></code></span></div>
-<div class="block">Enable the LED light</div>
+<div class="block">Turns on or off the sensor's light
+ (to switch between measuring ambient or reflected light)</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#enableLed-boolean-">enableLed</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>enable</code> - true to enable; false to disable</dd>
+<dd><code>enable</code> - <b>true</b> will turn on the LED, and <b>false</b> will turn it off</dd>
 </dl>
 </li>
 </ul>
@@ -782,10 +784,15 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html
 <h4>setI2cAddress</h4>
 <pre>public&nbsp;void&nbsp;setI2cAddress(<a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a>&nbsp;newAddress)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#setI2cAddress-com.qualcomm.robotcore.hardware.I2cAddr-">ColorSensor</a></code></span></div>
-<div class="block">Set the I2C address to a new value.</div>
+<div class="block">Changes the I2C address that the sensor responds on. This only works for the Modern Robotics sensor.
+ The sensor will keep its new address (even on loss of power) until it is set to a different value.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html#setI2cAddress-com.qualcomm.robotcore.hardware.I2cAddr-">setI2cAddress</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/ColorSensor.html" title="interface in com.qualcomm.robotcore.hardware">ColorSensor</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>newAddress</code> - the new address; the 8-bit value must be a multiple of 2 between 16 and 126, inclusive</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cColorSensor.html" title="class in com.qualcomm.hardware.modernrobotics"><code>ModernRoboticsI2cColorSensor</code></a></dd>
 </dl>
 </li>
 </ul>

@@ -1,0 +1,32 @@
+.class
+Represents a motor attached to a certain port of a motor controller.
+Most methods simply invoke the corresponding method for {@link DcMotorController}.
+<p>It is also possible to set the motors as reversed or not reversed (see {@link DcMotorSimple.Direction}).
+<p>Motor powers are reset to {@code 0.0} between runs of an {@link com.qualcomm.robotcore.eventloop.opmode.OpMode},
+but encoder values and the run mode are not reset until the robot's power is turned off
+and the direction of the motor is not reset until a USB scan is performed.
+@see DcMotorController
+
+.method int getPortNumber()
+Returns the port number that the motor is attached to on its motor controller.
+The possible values are 1 or 2 on HiTechnic or Modern Robotics controllers
+and 1 to 4 on Matrix controllers.
+@return the motor's port number
+
+.method boolean getPowerFloat()
+Returns whether the controller has told the motor to coast (put minimal resistance on it).
+@return {@code true} if the motor is coasting, {@code false} if not
+@see setPowerFloat()
+
+.method boolean isBusy()
+Returns whether the robot has not yet reached its target position.
+Don't rely on the return value if not in the
+{@link DcMotor.RunMode#RUN_TO_POSITION RUN_TO_POSITION} mode.
+@return {@code false} if the motor has stopped, {@code true} otherwise
+
+.method int getCurrentPosition()
+Gets the current value of the encoder. The number of encoder ticks per revolution
+depends on the motor encoder being used. For example, Tetrix motors have 1440 ticks/rev
+and Andymark NeveRest 40 motors have 1120.
+@return the encoder tick count
+@see RunMode#STOP_AND_RESET_ENCODER

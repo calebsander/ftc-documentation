@@ -271,7 +271,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.ht
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/hitechnic/HiTechnicNxtCompassSensor.html#getDirection--">getDirection</a></span>()</code>
-<div class="block">Get the current direction, in degrees</div>
+<div class="block">Gets the current heading</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -299,13 +299,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.ht
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/hitechnic/HiTechnicNxtCompassSensor.html#setMode-com.qualcomm.robotcore.hardware.CompassSensor.CompassMode-">setMode</a></span>(<a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.CompassMode.html" title="enum in com.qualcomm.robotcore.hardware">CompassSensor.CompassMode</a>&nbsp;mode)</code>
-<div class="block">Change to calibration or measurement mode</div>
+<div class="block">Switches the sensor to the desired mode.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/hitechnic/HiTechnicNxtCompassSensor.html#status--">status</a></span>()</code>
-<div class="block">Status of this sensor, in string form</div>
+<div class="block">Gets the location (controller and port) of the sensor</div>
 </td>
 </tr>
 <tr id="i11" class="rowColor">
@@ -568,12 +568,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.ht
 <h4>getDirection</h4>
 <pre>public&nbsp;double&nbsp;getDirection()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.html#getDirection--">CompassSensor</a></code></span></div>
-<div class="block">Get the current direction, in degrees</div>
+<div class="block">Gets the current heading</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.html#getDirection--">getDirection</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.html" title="interface in com.qualcomm.robotcore.hardware">CompassSensor</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>current direction, in degrees</dd>
+<dd>the heading in degrees between 0 and 359 (inclusive) where 0 indicates north and the direction increases clockwise</dd>
 </dl>
 </li>
 </ul>
@@ -585,12 +585,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.ht
 <h4>status</h4>
 <pre>public&nbsp;java.lang.String&nbsp;status()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.html#status--">CompassSensor</a></code></span></div>
-<div class="block">Status of this sensor, in string form</div>
+<div class="block">Gets the location (controller and port) of the sensor</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.html#status--">status</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.html" title="interface in com.qualcomm.robotcore.hardware">CompassSensor</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>status</dd>
+<dd>text containing the attached control serial number and port number</dd>
 </dl>
 </li>
 </ul>
@@ -602,10 +602,13 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.ht
 <h4>setMode</h4>
 <pre>public&nbsp;void&nbsp;setMode(<a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.CompassMode.html" title="enum in com.qualcomm.robotcore.hardware">CompassSensor.CompassMode</a>&nbsp;mode)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.html#setMode-com.qualcomm.robotcore.hardware.CompassSensor.CompassMode-">CompassSensor</a></code></span></div>
-<div class="block">Change to calibration or measurement mode</div>
+<div class="block">Switches the sensor to the desired mode.
+ Heading values cannot be obtained when the sensor is calibrating.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.html#setMode-com.qualcomm.robotcore.hardware.CompassSensor.CompassMode-">setMode</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/CompassSensor.html" title="interface in com.qualcomm.robotcore.hardware">CompassSensor</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>mode</code> - the desired mode to use</dd>
 </dl>
 </li>
 </ul>

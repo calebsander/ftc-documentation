@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#node download-source.js &&
+node download-source.js &&
 node extract-source.js &&
 node set-comments.js &&
 

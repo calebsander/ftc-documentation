@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -111,7 +111,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html" title="class in com.qualcomm.hardware.adafruit">AdafruitBNO055IMU</a>, <a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html" title="class in com.qualcomm.hardware.ams">AMSColorSensorImpl</a></dd>
+<dd><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html" title="class in com.qualcomm.hardware.adafruit">AdafruitBNO055IMU</a>, <a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html" title="class in com.qualcomm.hardware.ams">AMSColorSensorImpl</a>, <a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cCompassSensor.html" title="class in com.qualcomm.hardware.modernrobotics">ModernRoboticsI2cCompassSensor</a>, <a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cRangeSensor.html" title="class in com.qualcomm.hardware.modernrobotics">ModernRoboticsI2cRangeSensor</a></dd>
 </dl>
 <hr>
 <br>
@@ -155,10 +155,28 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/usb/RobotArmingS
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#close--">close</a></span>()</code>
+<div class="block">Carries out any tasks necessary to prepare the device to end communication</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#getConnectionInfo--">getConnectionInfo</a></span>()</code>
+<div class="block">Gets information about what the device is connected to</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#getVersion--">getVersion</a></span>()</code>
+<div class="block">Returns a number representing the "version" of a sensor, or 1 for other devices.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#initialize--">initialize</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#onModuleStateChange-com.qualcomm.robotcore.hardware.usb.RobotArmingStateNotifier-com.qualcomm.robotcore.hardware.usb.RobotArmingStateNotifier.ARMINGSTATE-">onModuleStateChange</a></span>(<a href="../../../../com/qualcomm/robotcore/hardware/usb/RobotArmingStateNotifier.html" title="interface in com.qualcomm.robotcore.hardware.usb">RobotArmingStateNotifier</a>&nbsp;module,
                    <a href="../../../../com/qualcomm/robotcore/hardware/usb/RobotArmingStateNotifier.ARMINGSTATE.html" title="enum in com.qualcomm.robotcore.hardware.usb">RobotArmingStateNotifier.ARMINGSTATE</a>&nbsp;state)</code>
@@ -166,7 +184,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/usb/RobotArmingS
  has undergone a change of state.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#resetDeviceConfigurationForOpMode--">resetDeviceConfigurationForOpMode</a></span>()</code>
 <div class="block">Resets the device's configuration to that which is expected at the beginning of an OpMode.</div>
@@ -185,7 +203,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/usb/RobotArmingS
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;com.qualcomm.robotcore.hardware.<a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></h3>
-<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">close</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">getConnectionInfo</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getDeviceName--">getDeviceName</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getManufacturer--">getManufacturer</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">getVersion</a></code></li>
+<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getDeviceName--">getDeviceName</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getManufacturer--">getManufacturer</a></code></li>
 </ul>
 </li>
 </ul>
@@ -235,7 +253,7 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/usb/RobotArmingS
 <a name="resetDeviceConfigurationForOpMode--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>resetDeviceConfigurationForOpMode</h4>
 <pre>public&nbsp;void&nbsp;resetDeviceConfigurationForOpMode()</pre>
@@ -245,6 +263,57 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/usb/RobotArmingS
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#resetDeviceConfigurationForOpMode--">resetDeviceConfigurationForOpMode</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="close--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>close</h4>
+<pre>public&nbsp;void&nbsp;close()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">HardwareDevice</a></code></span></div>
+<div class="block">Carries out any tasks necessary to prepare the device to end communication</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="getVersion--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVersion</h4>
+<pre>public&nbsp;int&nbsp;getVersion()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">HardwareDevice</a></code></span></div>
+<div class="block">Returns a number representing the "version" of a sensor, or 1 for other devices.
+ This value will be the same for all objects of the same class.
+ For example, the MR IRSeeker V3 returns <code>3</code>.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">getVersion</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a number representing the "version" of a sensor</dd>
+</dl>
+</li>
+</ul>
+<a name="getConnectionInfo--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getConnectionInfo</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getConnectionInfo()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">HardwareDevice</a></code></span></div>
+<div class="block">Gets information about what the device is connected to</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">getConnectionInfo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a human-readable string showing the chain of devices connecting the device to the Power Distribution Module</dd>
 </dl>
 </li>
 </ul>

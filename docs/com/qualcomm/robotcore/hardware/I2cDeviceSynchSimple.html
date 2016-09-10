@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":6,"i1":38,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":38,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -99,7 +99,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></dd>
+<dd><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cAddrConfig.html" title="interface in com.qualcomm.robotcore.hardware">I2cAddrConfig</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cAddressableDevice.html" title="interface in com.qualcomm.robotcore.hardware">I2cAddressableDevice</a></dd>
 </dl>
 <dl>
 <dt>All Known Subinterfaces:</dt>
@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">I2cDeviceSynchSimple</span>
-extends <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></pre>
+extends <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cAddrConfig.html" title="interface in com.qualcomm.robotcore.hardware">I2cAddrConfig</a></pre>
 <div class="block">I2cDeviceSyncSimple is an interface that provides simple synchronous read and write
  functionality to an I2c device.</div>
 <dl>
@@ -162,7 +162,7 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t6" class="tableTab"><span><a href="javascript:show(32);">Deprecated Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -178,7 +178,9 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchSimple.html#getI2cAddr--">getI2cAddr</a></span>()</code>
-<div class="block">Returns the I2C address currently being used by this device client</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../../com/qualcomm/robotcore/hardware/I2cAddressableDevice.html#getI2cAddress--"><code>I2cAddressableDevice.getI2cAddress()</code></a> instead.</span></div>
+</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
@@ -219,7 +221,9 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchSimple.html#setI2cAddr-com.qualcomm.robotcore.hardware.I2cAddr-">setI2cAddr</a></span>(<a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a>&nbsp;i2cAddr)</code>
-<div class="block">Sets the I2C address of the underlying client.</div>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;
+<div class="block"><span class="deprecationComment">Use <a href="../../../../com/qualcomm/robotcore/hardware/I2cAddrConfig.html#setI2cAddress-com.qualcomm.robotcore.hardware.I2cAddr-"><code>I2cAddrConfig.setI2cAddress(I2cAddr)</code></a> instead.</span></div>
+</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
@@ -277,6 +281,20 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html
 </a>
 <h3>Methods inherited from interface&nbsp;com.qualcomm.robotcore.hardware.<a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></h3>
 <code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">close</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">getConnectionInfo</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getDeviceName--">getDeviceName</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getManufacturer--">getManufacturer</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">getVersion</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#resetDeviceConfigurationForOpMode--">resetDeviceConfigurationForOpMode</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.com.qualcomm.robotcore.hardware.I2cAddrConfig">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;com.qualcomm.robotcore.hardware.<a href="../../../../com/qualcomm/robotcore/hardware/I2cAddrConfig.html" title="interface in com.qualcomm.robotcore.hardware">I2cAddrConfig</a></h3>
+<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cAddrConfig.html#setI2cAddress-com.qualcomm.robotcore.hardware.I2cAddr-">setI2cAddress</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.com.qualcomm.robotcore.hardware.I2cAddressableDevice">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;com.qualcomm.robotcore.hardware.<a href="../../../../com/qualcomm/robotcore/hardware/I2cAddressableDevice.html" title="interface in com.qualcomm.robotcore.hardware">I2cAddressableDevice</a></h3>
+<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cAddressableDevice.html#getI2cAddress--">getI2cAddress</a></code></li>
 </ul>
 </li>
 </ul>
@@ -524,7 +542,9 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html
 <ul class="blockList">
 <li class="blockList">
 <h4>setI2cAddr</h4>
-<pre>void&nbsp;setI2cAddr(<a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a>&nbsp;i2cAddr)</pre>
+<pre>@Deprecated
+void&nbsp;setI2cAddr(<a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a>&nbsp;i2cAddr)</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../com/qualcomm/robotcore/hardware/I2cAddrConfig.html#setI2cAddress-com.qualcomm.robotcore.hardware.I2cAddr-"><code>I2cAddrConfig.setI2cAddress(I2cAddr)</code></a> instead.</span></div>
 <div class="block">Sets the I2C address of the underlying client. If necessary, the client may be briefly
  disengaged (and then automatically reengaged) in the process.</div>
 <dl>
@@ -539,7 +559,9 @@ extends <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getI2cAddr</h4>
-<pre><a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a>&nbsp;getI2cAddr()</pre>
+<pre>@Deprecated
+<a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a>&nbsp;getI2cAddr()</pre>
+<div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Use <a href="../../../../com/qualcomm/robotcore/hardware/I2cAddressableDevice.html#getI2cAddress--"><code>I2cAddressableDevice.getI2cAddress()</code></a> instead.</span></div>
 <div class="block">Returns the I2C address currently being used by this device client</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -201,7 +201,7 @@ implements <a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.html" t
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#close--">close</a></span>()</code>
-<div class="block">Shut down the sensor.</div>
+<div class="block">Carries out any tasks necessary to prepare the device to end communication</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -230,177 +230,165 @@ implements <a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.html" t
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getConnectionInfo--">getConnectionInfo</a></span>()</code>
-<div class="block">Gets information about what the device is connected to</div>
-</td>
-</tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getDeviceName--">getDeviceName</a></span>()</code>
 <div class="block">Gets the name of the type of device.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/Acceleration.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">Acceleration</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getGravity--">getGravity</a></span>()</code>
 <div class="block">Returns the direction of the force of gravity relative to the sensor.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/Acceleration.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">Acceleration</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getLinearAcceleration--">getLinearAcceleration</a></span>()</code>
 <div class="block">Returns the acceleration experienced by the sensor due to the movement of the sensor.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/MagneticFlux.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">MagneticFlux</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getMagneticFieldStrength--">getMagneticFieldStrength</a></span>()</code>
 <div class="block">Returns the magnetic field strength experienced by the sensor.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.Manufacturer.html" title="enum in com.qualcomm.robotcore.hardware">HardwareDevice.Manufacturer</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getManufacturer--">getManufacturer</a></span>()</code>
 <div class="block">Returns an indication of the manufacturer of this device.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/Acceleration.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">Acceleration</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getOverallAcceleration--">getOverallAcceleration</a></span>()</code>
 <div class="block">Returns the overall acceleration experienced by the sensor.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.Parameters.html" title="class in com.qualcomm.hardware.adafruit">BNO055IMU.Parameters</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getParameters--">getParameters</a></span>()</code>
 <div class="block">Returns the parameters which which initialization was last attempted, if any</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/Position.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">Position</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getPosition--">getPosition</a></span>()</code>
 <div class="block">Returns the current position of the sensor as calculated by doubly integrating the observed
  sensor accelerations.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/Quaternion.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">Quaternion</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getQuaternionOrientation--">getQuaternionOrientation</a></span>()</code>
 <div class="block">Returns the absolute orientation of the sensor as a quaternion.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.SystemError.html" title="enum in com.qualcomm.hardware.adafruit">BNO055IMU.SystemError</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getSystemError--">getSystemError</a></span>()</code>
 <div class="block">If <a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.html#getSystemStatus--"><code>BNO055IMU.getSystemStatus()</code></a> is 'system error' (1), returns particulars
  regarding that error.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.SystemStatus.html" title="enum in com.qualcomm.hardware.adafruit">BNO055IMU.SystemStatus</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getSystemStatus--">getSystemStatus</a></span>()</code>
 <div class="block">Returns the current status of the system.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/Temperature.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">Temperature</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getTemperature--">getTemperature</a></span>()</code>
 <div class="block">Returns the current temperature.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/Velocity.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">Velocity</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getVelocity--">getVelocity</a></span>()</code>
 <div class="block">Returns the current velocity of the sensor as calculated by integrating the observed
  sensor accelerations.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#getVersion--">getVersion</a></span>()</code>
-<div class="block">Returns a number representing the "version" of a sensor, or 1 for other devices.</div>
-</td>
-</tr>
-<tr id="i20" class="altColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#initialize-com.qualcomm.hardware.adafruit.BNO055IMU.Parameters-">initialize</a></span>(<a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.Parameters.html" title="class in com.qualcomm.hardware.adafruit">BNO055IMU.Parameters</a>&nbsp;parameters)</code>
 <div class="block">Initialize the sensor using the indicated set of parameters.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#internalInitialize-com.qualcomm.hardware.adafruit.BNO055IMU.Parameters-">internalInitialize</a></span>(<a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.Parameters.html" title="class in com.qualcomm.hardware.adafruit">BNO055IMU.Parameters</a>&nbsp;parameters)</code>
 <div class="block">Initialize the device to be running in the indicated operation mode</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#isAccelerometerCalibrated--">isAccelerometerCalibrated</a></span>()</code>
 <div class="block">Answers as to whether the accelerometer is fully calibrated.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#isGyroCalibrated--">isGyroCalibrated</a></span>()</code>
 <div class="block">Answers as to whether the gyro is fully calibrated.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#isMagnetometerCalibrated--">isMagnetometerCalibrated</a></span>()</code>
 <div class="block">Answers as to whether the magnetometer is fully calibrated.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#isSystemCalibrated--">isSystemCalibrated</a></span>()</code>
 <div class="block">Answers as to whether the system is fully calibrated.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#onOpModePostStop-com.qualcomm.robotcore.eventloop.opmode.OpMode-">onOpModePostStop</a></span>(<a href="../../../../com/qualcomm/robotcore/eventloop/opmode/OpMode.html" title="class in com.qualcomm.robotcore.eventloop.opmode">OpMode</a>&nbsp;opMode)</code>
 <div class="block">The indicated opmode has just been stopped.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#onOpModePreInit-com.qualcomm.robotcore.eventloop.opmode.OpMode-">onOpModePreInit</a></span>(<a href="../../../../com/qualcomm/robotcore/eventloop/opmode/OpMode.html" title="class in com.qualcomm.robotcore.eventloop.opmode">OpMode</a>&nbsp;opMode)</code>
 <div class="block">The indicated opmode is just about to be initialized.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#onOpModePreStart-com.qualcomm.robotcore.eventloop.opmode.OpMode-">onOpModePreStart</a></span>(<a href="../../../../com/qualcomm/robotcore/eventloop/opmode/OpMode.html" title="class in com.qualcomm.robotcore.eventloop.opmode">OpMode</a>&nbsp;opMode)</code>
 <div class="block">The indicated opmode is just about to be started.</div>
 </td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#read-com.qualcomm.hardware.adafruit.BNO055IMU.Register-int-">read</a></span>(<a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.Register.html" title="enum in com.qualcomm.hardware.adafruit">BNO055IMU.Register</a>&nbsp;reg,
     int&nbsp;cb)</code>
 <div class="block">Low level: read data starting at the indicated register</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code>byte</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#read8-com.qualcomm.hardware.adafruit.BNO055IMU.Register-">read8</a></span>(<a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.Register.html" title="enum in com.qualcomm.hardware.adafruit">BNO055IMU.Register</a>&nbsp;reg)</code>
 <div class="block">Low level: read the byte starting at the indicated register</div>
 </td>
 </tr>
-<tr id="i31" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.CalibrationData.html" title="class in com.qualcomm.hardware.adafruit">BNO055IMU.CalibrationData</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#readCalibrationData--">readCalibrationData</a></span>()</code>
 <div class="block">Read calibration data from the IMU which later can be restored with writeCalibrationData().</div>
 </td>
 </tr>
-<tr id="i32" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#resetDeviceConfigurationForOpMode--">resetDeviceConfigurationForOpMode</a></span>()</code>
 <div class="block">Resets the device's configuration to that which is expected at the beginning of an OpMode.</div>
 </td>
 </tr>
-<tr id="i33" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#startAccelerationIntegration-org.firstinspires.ftc.robotcore.external.navigation.Position-org.firstinspires.ftc.robotcore.external.navigation.Velocity-int-">startAccelerationIntegration</a></span>(<a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/Position.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">Position</a>&nbsp;initalPosition,
                             <a href="../../../../org/firstinspires/ftc/robotcore/external/navigation/Velocity.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">Velocity</a>&nbsp;initialVelocity,
@@ -409,27 +397,27 @@ implements <a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.html" t
  of the sensor and integrates it to provide velocity and position information.</div>
 </td>
 </tr>
-<tr id="i34" class="altColor">
+<tr id="i32" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#stopAccelerationIntegration--">stopAccelerationIntegration</a></span>()</code>
 <div class="block">Stop the integration thread if it is currently running.</div>
 </td>
 </tr>
-<tr id="i35" class="rowColor">
+<tr id="i33" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#write-com.qualcomm.hardware.adafruit.BNO055IMU.Register-byte:A-">write</a></span>(<a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.Register.html" title="enum in com.qualcomm.hardware.adafruit">BNO055IMU.Register</a>&nbsp;reg,
      byte[]&nbsp;data)</code>
 <div class="block">Low level: write data starting at the indicated register</div>
 </td>
 </tr>
-<tr id="i36" class="altColor">
+<tr id="i34" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#write8-com.qualcomm.hardware.adafruit.BNO055IMU.Register-int-">write8</a></span>(<a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.Register.html" title="enum in com.qualcomm.hardware.adafruit">BNO055IMU.Register</a>&nbsp;reg,
       int&nbsp;data)</code>
 <div class="block">Low level: write a byte to the indicated register</div>
 </td>
 </tr>
-<tr id="i37" class="rowColor">
+<tr id="i35" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/adafruit/AdafruitBNO055IMU.html#writeCalibrationData-com.qualcomm.hardware.adafruit.BNO055IMU.CalibrationData-">writeCalibrationData</a></span>(<a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.CalibrationData.html" title="class in com.qualcomm.hardware.adafruit">BNO055IMU.CalibrationData</a>&nbsp;data)</code>
 <div class="block">Write calibration data previously retrieved.</div>
@@ -441,7 +429,7 @@ implements <a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.html" t
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.qualcomm.robotcore.hardware.<a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html" title="class in com.qualcomm.robotcore.hardware">I2cDeviceSynchDevice</a></h3>
-<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#initialize--">initialize</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#onModuleStateChange-com.qualcomm.robotcore.hardware.usb.RobotArmingStateNotifier-com.qualcomm.robotcore.hardware.usb.RobotArmingStateNotifier.ARMINGSTATE-">onModuleStateChange</a></code></li>
+<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#getConnectionInfo--">getConnectionInfo</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#getVersion--">getVersion</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#initialize--">initialize</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#onModuleStateChange-com.qualcomm.robotcore.hardware.usb.RobotArmingStateNotifier-com.qualcomm.robotcore.hardware.usb.RobotArmingStateNotifier.ARMINGSTATE-">onModuleStateChange</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -688,51 +676,15 @@ implements <a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.html" t
 <li class="blockList">
 <h4>close</h4>
 <pre>public&nbsp;void&nbsp;close()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.html#close--">BNO055IMU</a></code></span></div>
-<div class="block">Shut down the sensor. This doesn't do anything in the hardware device itself, but rather
- shuts down any resources (threads, etc) that we use to communicate with it. It is rare
- that user code has a need to call this method.</div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">HardwareDevice</a></code></span></div>
+<div class="block">Carries out any tasks necessary to prepare the device to end communication</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.html#close--">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/hardware/adafruit/BNO055IMU.html" title="interface in com.qualcomm.hardware.adafruit">BNO055IMU</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="getVersion--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getVersion</h4>
-<pre>public&nbsp;int&nbsp;getVersion()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">HardwareDevice</a></code></span></div>
-<div class="block">Returns a number representing the "version" of a sensor, or 1 for other devices.
- This value will be the same for all objects of the same class.
- For example, the MR IRSeeker V3 returns <code>3</code>.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">getVersion</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>a number representing the "version" of a sensor</dd>
-</dl>
-</li>
-</ul>
-<a name="getConnectionInfo--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getConnectionInfo</h4>
-<pre>public&nbsp;java.lang.String&nbsp;getConnectionInfo()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">HardwareDevice</a></code></span></div>
-<div class="block">Gets information about what the device is connected to</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">getConnectionInfo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>a human-readable string showing the chain of devices connecting the device to the Power Distribution Module</dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#close--">close</a></code>&nbsp;in class&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html" title="class in com.qualcomm.robotcore.hardware">I2cDeviceSynchDevice</a>&lt;<a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynch.html" title="interface in com.qualcomm.robotcore.hardware">I2cDeviceSynch</a>&gt;</code></dd>
 </dl>
 </li>
 </ul>

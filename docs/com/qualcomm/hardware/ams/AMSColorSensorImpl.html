@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":9,"i4":9,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -201,130 +201,112 @@ implements <a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.html" t
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#close--">close</a></span>()</code>
-<div class="block">Carries out any tasks necessary to prepare the device to end communication</div>
-</td>
-</tr>
-<tr id="i4" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.html" title="interface in com.qualcomm.hardware.ams">AMSColorSensor</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#create-com.qualcomm.hardware.ams.AMSColorSensor.Parameters-com.qualcomm.robotcore.hardware.I2cDevice-">create</a></span>(<a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.Parameters.html" title="class in com.qualcomm.hardware.ams">AMSColorSensor.Parameters</a>&nbsp;parameters,
       <a href="../../../../com/qualcomm/robotcore/hardware/I2cDevice.html" title="interface in com.qualcomm.robotcore.hardware">I2cDevice</a>&nbsp;i2cDevice)</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.html" title="interface in com.qualcomm.hardware.ams">AMSColorSensor</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#create-com.qualcomm.hardware.ams.AMSColorSensor.Parameters-com.qualcomm.robotcore.hardware.I2cDeviceSynchSimple-boolean-">create</a></span>(<a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.Parameters.html" title="class in com.qualcomm.hardware.ams">AMSColorSensor.Parameters</a>&nbsp;parameters,
       <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchSimple.html" title="interface in com.qualcomm.robotcore.hardware">I2cDeviceSynchSimple</a>&nbsp;i2cDevice,
       boolean&nbsp;isOwned)</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#enableLed-boolean-">enableLed</a></span>(boolean&nbsp;enable)</code>
 <div class="block">Turns on or off the sensor's light
  (to switch between measuring ambient or reflected light)</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#getConnectionInfo--">getConnectionInfo</a></span>()</code>
-<div class="block">Gets information about what the device is connected to</div>
-</td>
-</tr>
-<tr id="i8" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>byte</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#getDeviceID--">getDeviceID</a></span>()</code>
 <div class="block">Returns the flavor of the AMS color sensor as reported by the chip itself</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#getDeviceName--">getDeviceName</a></span>()</code>
 <div class="block">Gets the name of the type of device.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#getI2cAddress--">getI2cAddress</a></span>()</code>
 <div class="block">Get the current I2C Address of this object.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.Manufacturer.html" title="enum in com.qualcomm.robotcore.hardware">HardwareDevice.Manufacturer</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#getManufacturer--">getManufacturer</a></span>()</code>
 <div class="block">Returns an indication of the manufacturer of this device.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.Parameters.html" title="class in com.qualcomm.hardware.ams">AMSColorSensor.Parameters</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#getParameters--">getParameters</a></span>()</code>
 <div class="block">Returns the parameters which which initialization was last attempted, if any</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#getVersion--">getVersion</a></span>()</code>
-<div class="block">Returns a number representing the "version" of a sensor, or 1 for other devices.</div>
-</td>
-</tr>
-<tr id="i14" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#green--">green</a></span>()</code>
 <div class="block">Gets the green value read by the sensor (scale depends on the sort of color sensor)</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#initialize-com.qualcomm.hardware.ams.AMSColorSensor.Parameters-">initialize</a></span>(<a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.Parameters.html" title="class in com.qualcomm.hardware.ams">AMSColorSensor.Parameters</a>&nbsp;parameters)</code>
 <div class="block">Initialize the sensor using the indicated set of parameters.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>byte[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#read-com.qualcomm.hardware.ams.AMSColorSensor.Register-int-">read</a></span>(<a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.Register.html" title="enum in com.qualcomm.hardware.ams">AMSColorSensor.Register</a>&nbsp;reg,
     int&nbsp;cb)</code>
 <div class="block">Low level: read data starting at the indicated register</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>byte</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#read8-com.qualcomm.hardware.ams.AMSColorSensor.Register-">read8</a></span>(<a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.Register.html" title="enum in com.qualcomm.hardware.ams">AMSColorSensor.Register</a>&nbsp;reg)</code>
 <div class="block">Low level: read the byte starting at the indicated register</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#readUnsignedShort-com.qualcomm.hardware.ams.AMSColorSensor.Register-">readUnsignedShort</a></span>(<a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.Register.html" title="enum in com.qualcomm.hardware.ams">AMSColorSensor.Register</a>&nbsp;reg)</code>
 <div class="block">Low level: read two bytes of data starting at the indicated register
  and return the results as an unsigned integer</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#red--">red</a></span>()</code>
 <div class="block">Gets the red value read by the sensor (scale depends on the sort of color sensor)</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#setI2cAddress-com.qualcomm.robotcore.hardware.I2cAddr-">setI2cAddress</a></span>(<a href="../../../../com/qualcomm/robotcore/hardware/I2cAddr.html" title="class in com.qualcomm.robotcore.hardware">I2cAddr</a>&nbsp;i2cAddr)</code>
 <div class="block">Changes the I2C address that the sensor responds on.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#write-com.qualcomm.hardware.ams.AMSColorSensor.Register-byte:A-">write</a></span>(<a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.Register.html" title="enum in com.qualcomm.hardware.ams">AMSColorSensor.Register</a>&nbsp;reg,
      byte[]&nbsp;data)</code>
 <div class="block">Low level: write data starting at the indicated register</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#write8-com.qualcomm.hardware.ams.AMSColorSensor.Register-int-">write8</a></span>(<a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.Register.html" title="enum in com.qualcomm.hardware.ams">AMSColorSensor.Register</a>&nbsp;reg,
       int&nbsp;data)</code>
 <div class="block">Low level: write a byte to the indicated register</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/ams/AMSColorSensorImpl.html#writeShort-com.qualcomm.hardware.ams.AMSColorSensor.Register-int-">writeShort</a></span>(<a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.Register.html" title="enum in com.qualcomm.hardware.ams">AMSColorSensor.Register</a>&nbsp;ireg,
           int&nbsp;value)</code>
@@ -337,7 +319,7 @@ implements <a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.html" t
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;com.qualcomm.robotcore.hardware.<a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html" title="class in com.qualcomm.robotcore.hardware">I2cDeviceSynchDevice</a></h3>
-<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#initialize--">initialize</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#onModuleStateChange-com.qualcomm.robotcore.hardware.usb.RobotArmingStateNotifier-com.qualcomm.robotcore.hardware.usb.RobotArmingStateNotifier.ARMINGSTATE-">onModuleStateChange</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#resetDeviceConfigurationForOpMode--">resetDeviceConfigurationForOpMode</a></code></li>
+<code><a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#close--">close</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#getConnectionInfo--">getConnectionInfo</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#getVersion--">getVersion</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#initialize--">initialize</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#onModuleStateChange-com.qualcomm.robotcore.hardware.usb.RobotArmingStateNotifier-com.qualcomm.robotcore.hardware.usb.RobotArmingStateNotifier.ARMINGSTATE-">onModuleStateChange</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html#resetDeviceConfigurationForOpMode--">resetDeviceConfigurationForOpMode</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -358,7 +340,7 @@ implements <a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.html" t
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;com.qualcomm.robotcore.hardware.<a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></h3>
-<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#resetDeviceConfigurationForOpMode--">resetDeviceConfigurationForOpMode</a></code></li>
+<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">close</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">getConnectionInfo</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">getVersion</a>, <a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#resetDeviceConfigurationForOpMode--">resetDeviceConfigurationForOpMode</a></code></li>
 </ul>
 </li>
 </ul>
@@ -588,57 +570,6 @@ implements <a href="../../../../com/qualcomm/hardware/ams/AMSColorSensor.html" t
 <dd><code>i2cAddr</code> - the new address; the 8-bit value must be a multiple of 2 between 16 and 126, inclusive</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cColorSensor.html" title="class in com.qualcomm.hardware.modernrobotics"><code>ModernRoboticsI2cColorSensor</code></a></dd>
-</dl>
-</li>
-</ul>
-<a name="close--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>close</h4>
-<pre>public&nbsp;void&nbsp;close()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">HardwareDevice</a></code></span></div>
-<div class="block">Carries out any tasks necessary to prepare the device to end communication</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#close--">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="getVersion--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getVersion</h4>
-<pre>public&nbsp;int&nbsp;getVersion()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">HardwareDevice</a></code></span></div>
-<div class="block">Returns a number representing the "version" of a sensor, or 1 for other devices.
- This value will be the same for all objects of the same class.
- For example, the MR IRSeeker V3 returns <code>3</code>.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getVersion--">getVersion</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>a number representing the "version" of a sensor</dd>
-</dl>
-</li>
-</ul>
-<a name="getConnectionInfo--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getConnectionInfo</h4>
-<pre>public&nbsp;java.lang.String&nbsp;getConnectionInfo()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">HardwareDevice</a></code></span></div>
-<div class="block">Gets information about what the device is connected to</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html#getConnectionInfo--">getConnectionInfo</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../com/qualcomm/robotcore/hardware/HardwareDevice.html" title="interface in com.qualcomm.robotcore.hardware">HardwareDevice</a></code></dd>
-<dt><span class="returnLabel">Returns:</span></dt>
-<dd>a human-readable string showing the chain of devices connecting the device to the Power Distribution Module</dd>
 </dl>
 </li>
 </ul>

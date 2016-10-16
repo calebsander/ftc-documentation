@@ -122,12 +122,14 @@ var activeTableTab = "activeTableTab";
 public class <span class="typeNameLabel">ModernRoboticsI2cRangeSensor</span>
 extends <a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynchDevice.html" title="class in com.qualcomm.robotcore.hardware">I2cDeviceSynchDevice</a>&lt;<a href="../../../../com/qualcomm/robotcore/hardware/I2cDeviceSynch.html" title="interface in com.qualcomm.robotcore.hardware">I2cDeviceSynch</a>&gt;
 implements <a href="../../../../com/qualcomm/robotcore/hardware/DistanceSensor.html" title="interface in com.qualcomm.robotcore.hardware">DistanceSensor</a>, <a href="../../../../com/qualcomm/robotcore/hardware/OpticalDistanceSensor.html" title="interface in com.qualcomm.robotcore.hardware">OpticalDistanceSensor</a>, <a href="../../../../com/qualcomm/robotcore/hardware/I2cAddrConfig.html" title="interface in com.qualcomm.robotcore.hardware">I2cAddrConfig</a></pre>
-<div class="block"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cRangeSensor.html" title="class in com.qualcomm.hardware.modernrobotics"><code>ModernRoboticsI2cRangeSensor</code></a> implements support for the MR ultrasonic/optical combo
- range sensor.</div>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="http://www.modernroboticsinc.com/range-sensor">MR Range Sensor</a></dd>
-</dl>
+<div class="block">Implementation of the Modern Robotics Range Sensor,
+ a combination of an ultrasonic sensor and an optical (EOPD) range sensor.
+ The ultrasonic sensor is intended for longer distances and
+ the EOPD is intended for very short distances (at most a few inches).
+ Note that which sensor gives better values depends also on the
+ shape and material of the surface.
+ The two sensors can be read individually, or you can use <a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cRangeSensor.html#getDistance-org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit-"><code>getDistance(org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit)</code></a>,
+ which will automatically select between the two sensors' values.</div>
 </li>
 </ul>
 </div>
@@ -226,11 +228,15 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DistanceSensor.h
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cRangeSensor.html#cmOptical--">cmOptical</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cRangeSensor.html#cmOptical--">cmOptical</a></span>()</code>
+<div class="block">Gets the distance as reported by the EOPD sensor, in centimeters.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cRangeSensor.html#cmUltrasonic--">cmUltrasonic</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/hardware/modernrobotics/ModernRoboticsI2cRangeSensor.html#cmUltrasonic--">cmUltrasonic</a></span>()</code>
+<div class="block">Gets the distance as reported by the ultrasonic sensor, in centimeters</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -559,6 +565,11 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DistanceSensor.h
 <li class="blockList">
 <h4>cmUltrasonic</h4>
 <pre>public&nbsp;double&nbsp;cmUltrasonic()</pre>
+<div class="block">Gets the distance as reported by the ultrasonic sensor, in centimeters</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The approximate distance to the nearest centimeter (0 - 255cm)</dd>
+</dl>
 </li>
 </ul>
 <a name="cmOptical--">
@@ -568,6 +579,12 @@ implements <a href="../../../../com/qualcomm/robotcore/hardware/DistanceSensor.h
 <li class="blockList">
 <h4>cmOptical</h4>
 <pre>public&nbsp;double&nbsp;cmOptical()</pre>
+<div class="block">Gets the distance as reported by the EOPD sensor, in centimeters.
+ Note that this value depends on how reflective the surface is.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The approximate distance to the target, if it is quite close</dd>
+</dl>
 </li>
 </ul>
 <a name="getDistance-org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit-">

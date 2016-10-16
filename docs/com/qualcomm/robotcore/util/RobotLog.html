@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":9,"i43":9,"i44":9,"i45":9,"i46":9,"i47":9,"i48":9,"i49":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":9,"i28":9,"i29":9,"i30":9,"i31":9,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":9,"i43":9,"i44":9,"i45":9,"i46":9,"i47":9,"i48":9,"i49":9,"i50":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -129,6 +129,26 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#kbLogcatQuantum">kbLogcatQuantum</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#logcatCommand">logcatCommand</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#logcatFilter">logcatFilter</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#logcatFormat">logcatFormat</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#logcatRotatedLogsMax">logcatRotatedLogsMax</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#TAG">TAG</a></span></code>&nbsp;</td>
 </tr>
@@ -169,7 +189,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#cancelWriteLogcatToDisk-android.content.Context-">cancelWriteLogcatToDisk</a></span>(android.content.Context&nbsp;context)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#cancelWriteLogcatToDisk--">cancelWriteLogcatToDisk</a></span>()</code>
+<div class="block">Cancels any logcat writing to disk that might currently be going on</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
@@ -399,17 +421,21 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i47" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#writeLogcatToDisk-android.content.Context-int-">writeLogcatToDisk</a></span>(android.content.Context&nbsp;context,
-                 int&nbsp;fileSizeKb)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#writeLogcatToDisk--">writeLogcatToDisk</a></span>()</code>
 <div class="block">Write logcat logs to disk.</div>
 </td>
 </tr>
 <tr id="i48" class="altColor">
 <td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#writeLogcatToDisk-android.content.Context-int-">writeLogcatToDisk</a></span>(android.content.Context&nbsp;context,
+                 int&nbsp;kbFileSize)</code>&nbsp;</td>
+</tr>
+<tr id="i49" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#ww-java.lang.String-java.lang.String-">ww</a></span>(java.lang.String&nbsp;tag,
   java.lang.String&nbsp;message)</code>&nbsp;</td>
 </tr>
-<tr id="i49" class="rowColor">
+<tr id="i50" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#ww-java.lang.String-java.lang.String-java.lang.Object...-">ww</a></span>(java.lang.String&nbsp;tag,
   java.lang.String&nbsp;format,
@@ -440,7 +466,7 @@ extends java.lang.Object</pre>
 <a name="TAG">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>TAG</h4>
 <pre>public static final&nbsp;java.lang.String TAG</pre>
@@ -448,6 +474,51 @@ extends java.lang.Object</pre>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../constant-values.html#com.qualcomm.robotcore.util.RobotLog.TAG">Constant Field Values</a></dd>
 </dl>
+</li>
+</ul>
+<a name="logcatCommand">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>logcatCommand</h4>
+<pre>public static&nbsp;java.lang.String logcatCommand</pre>
+</li>
+</ul>
+<a name="kbLogcatQuantum">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>kbLogcatQuantum</h4>
+<pre>public static&nbsp;int kbLogcatQuantum</pre>
+</li>
+</ul>
+<a name="logcatRotatedLogsMax">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>logcatRotatedLogsMax</h4>
+<pre>public static&nbsp;int logcatRotatedLogsMax</pre>
+</li>
+</ul>
+<a name="logcatFormat">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>logcatFormat</h4>
+<pre>public static&nbsp;java.lang.String logcatFormat</pre>
+</li>
+</ul>
+<a name="logcatFilter">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>logcatFilter</h4>
+<pre>public static&nbsp;java.lang.String logcatFilter</pre>
 </li>
 </ul>
 </li>
@@ -1001,6 +1072,18 @@ extends java.lang.Object</pre>
 <div class="block">Clears the current global warning message.</div>
 </li>
 </ul>
+<a name="writeLogcatToDisk--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>writeLogcatToDisk</h4>
+<pre>public static&nbsp;void&nbsp;writeLogcatToDisk()</pre>
+<div class="block">Write logcat logs to disk. Log data will continue to be written to disk until
+ <a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#cancelWriteLogcatToDisk--"><code>cancelWriteLogcatToDisk()</code></a> is called. <a href="../../../../com/qualcomm/robotcore/util/RobotLog.html#writeLogcatToDisk--"><code>writeLogcatToDisk()</code></a> is
+ idempotent: additional calls to this method will be a NOOP.</div>
+</li>
+</ul>
 <a name="writeLogcatToDisk-android.content.Context-int-">
 <!--   -->
 </a>
@@ -1008,13 +1091,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>writeLogcatToDisk</h4>
 <pre>public static&nbsp;void&nbsp;writeLogcatToDisk(android.content.Context&nbsp;context,
-                                     int&nbsp;fileSizeKb)</pre>
-<div class="block">Write logcat logs to disk. This method will continue writing logcat files for as long as the
- program runs. Additional calls to this method will be a NOOP.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>context</code> - this app's context</dd>
-</dl>
+                                     int&nbsp;kbFileSize)</pre>
 </li>
 </ul>
 <a name="getLogFilename-android.content.Context-">
@@ -1026,13 +1103,14 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;java.lang.String&nbsp;getLogFilename(android.content.Context&nbsp;context)</pre>
 </li>
 </ul>
-<a name="cancelWriteLogcatToDisk-android.content.Context-">
+<a name="cancelWriteLogcatToDisk--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>cancelWriteLogcatToDisk</h4>
-<pre>public static&nbsp;void&nbsp;cancelWriteLogcatToDisk(android.content.Context&nbsp;context)</pre>
+<pre>public static&nbsp;void&nbsp;cancelWriteLogcatToDisk()</pre>
+<div class="block">Cancels any logcat writing to disk that might currently be going on</div>
 </li>
 </ul>
 </li>

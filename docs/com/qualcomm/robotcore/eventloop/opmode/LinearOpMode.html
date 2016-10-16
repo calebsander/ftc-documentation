@@ -219,7 +219,7 @@ extends <a href="../../../../../com/qualcomm/robotcore/eventloop/opmode/OpMode.h
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html#sleep-long-">sleep</a></span>(long&nbsp;milliseconds)</code>
-<div class="block">Sleep for the given amount of milliseconds.</div>
+<div class="block">Sleeps for the given amount of milliseconds, or until the thread is interrupted.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
@@ -249,7 +249,8 @@ extends <a href="../../../../../com/qualcomm/robotcore/eventloop/opmode/OpMode.h
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html#waitForStart--">waitForStart</a></span>()</code>
-<div class="block">Pause the Linear Op Mode until start has been pressed</div>
+<div class="block">Pauses the Linear Op Mode until start has been pressed or until the current thread
+ is interrupted.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
@@ -334,13 +335,9 @@ extends <a href="../../../../../com/qualcomm/robotcore/eventloop/opmode/OpMode.h
 <ul class="blockList">
 <li class="blockList">
 <h4>waitForStart</h4>
-<pre>public&nbsp;void&nbsp;waitForStart()
-                  throws java.lang.InterruptedException</pre>
-<div class="block">Pause the Linear Op Mode until start has been pressed</div>
-<dl>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.InterruptedException</code></dd>
-</dl>
+<pre>public&nbsp;void&nbsp;waitForStart()</pre>
+<div class="block">Pauses the Linear Op Mode until start has been pressed or until the current thread
+ is interrupted.</div>
 </li>
 </ul>
 <a name="waitOneFullHardwareCycle--">
@@ -411,23 +408,20 @@ public&nbsp;void&nbsp;waitForNextHardwareCycle()
 <ul class="blockList">
 <li class="blockList">
 <h4>idle</h4>
-<pre>public final&nbsp;void&nbsp;idle()
-                throws java.lang.InterruptedException</pre>
+<pre>public final&nbsp;void&nbsp;idle()</pre>
 <div class="block">Puts the current thread to sleep for a bit as it has nothing better to do. This allows other
  threads in the system to run.
 
- One should use this method when you have nothing better to do in your code, usually
- at the very end of your while(opModeIsActive()) loop in TeleOp. Calling idle()
- is entirely optional: it just helps make the system a little more responsive and a
- little more efficient.
+ <p>One can use this method when you have nothing better to do in your code as you await state
+ managed by other threads to change. Calling idle() is entirely optional: it just helps make
+ the system a little more responsive and a little more efficient.</p>
 
- <a href="../../../../../com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html#idle--"><code>idle()</code></a> is conceptually related to waitOneFullHardwareCycle(), but makes no
- guarantees as to completing any particular number of hardware cycles, if any.</div>
+ <p><a href="../../../../../com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html#idle--"><code>idle()</code></a> is conceptually related to waitOneFullHardwareCycle(), but makes no
+ guarantees as to completing any particular number of hardware cycles, if any.</p></div>
 <dl>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.InterruptedException</code> - thrown if the thread is interrupted</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html#waitOneFullHardwareCycle--"><code>waitOneFullHardwareCycle()</code></a></dd>
+<dd><a href="../../../../../com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html#opModeIsActive--"><code>opModeIsActive()</code></a>, 
+<a href="../../../../../com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html#waitOneFullHardwareCycle--"><code>waitOneFullHardwareCycle()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -437,15 +431,12 @@ public&nbsp;void&nbsp;waitForNextHardwareCycle()
 <ul class="blockList">
 <li class="blockList">
 <h4>sleep</h4>
-<pre>public final&nbsp;void&nbsp;sleep(long&nbsp;milliseconds)
-                 throws java.lang.InterruptedException</pre>
-<div class="block">Sleep for the given amount of milliseconds. This is simple shorthand for the operating-system-
- provided <code>sleep()</code> method.</div>
+<pre>public final&nbsp;void&nbsp;sleep(long&nbsp;milliseconds)</pre>
+<div class="block">Sleeps for the given amount of milliseconds, or until the thread is interrupted. This is
+ simple shorthand for the operating-system-provided <code>sleep()</code> method.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>milliseconds</code> - amount of time to sleep, in milliseconds</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.InterruptedException</code></dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>Thread.sleep(long)</code></dd>
 </dl>
@@ -459,7 +450,9 @@ public&nbsp;void&nbsp;waitForNextHardwareCycle()
 <h4>opModeIsActive</h4>
 <pre>public final&nbsp;boolean&nbsp;opModeIsActive()</pre>
 <div class="block">Answer as to whether this opMode is active and the robot should continue onwards. If the
- opMode is not active, the OpMode should terminate at its earliest convenience.</div>
+ opMode is not active, the OpMode should terminate at its earliest convenience.
+
+ <p>Note that internally this method calls <a href="../../../../../com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.html#idle--"><code>idle()</code></a></p></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>whether the OpMode is currently active. If this returns false, you should

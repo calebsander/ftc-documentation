@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -149,7 +149,7 @@ implements <a href="../../../../../org/firstinspires/ftc/robotcore/external/navi
 <!--   -->
 </a>
 <h3>Nested classes/interfaces inherited from interface&nbsp;org.firstinspires.ftc.robotcore.external.navigation.<a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html" title="interface in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer</a></h3>
-<code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.CameraDirection.html" title="enum in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer.CameraDirection</a>, <a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.Parameters.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer.Parameters</a></code></li>
+<code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.CameraDirection.html" title="enum in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer.CameraDirection</a>, <a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.CloseableFrame.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer.CloseableFrame</a>, <a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.Parameters.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer.Parameters</a></code></li>
 </ul>
 </li>
 </ul>
@@ -202,23 +202,51 @@ implements <a href="../../../../../org/firstinspires/ftc/robotcore/external/navi
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/robotcore/internal/VuforiaLocalizerImpl.html#getCallbackCount--">getCallbackCount</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>CameraCalibration</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/robotcore/internal/VuforiaLocalizerImpl.html#getCameraCalibration--">getCameraCalibration</a></span>()</code>
 <div class="block">(Advanced) Returns information about Vuforia's knowledge of the camera that it is using.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>java.util.concurrent.BlockingQueue&lt;<a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.CloseableFrame.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer.CloseableFrame</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/robotcore/internal/VuforiaLocalizerImpl.html#getFrameQueue--">getFrameQueue</a></span>()</code>
+<div class="block">(Advanced) Returns a queue into which, if requested, Vuforia <code>Frame</code>s are placed
+ as they become available.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/robotcore/internal/VuforiaLocalizerImpl.html#getFrameQueueCapacity--">getFrameQueueCapacity</a></span>()</code>
+<div class="block">Returns the current capacity of the frame queue.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/robotcore/internal/VuforiaLocalizerImpl.html#getRenderCount--">getRenderCount</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaTrackables.html" title="interface in org.firstinspires.ftc.robotcore.external.navigation">VuforiaTrackables</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/robotcore/internal/VuforiaLocalizerImpl.html#loadTrackablesFromAsset-java.lang.String-">loadTrackablesFromAsset</a></span>(java.lang.String&nbsp;assetName)</code>
 <div class="block">Loads a Vuforia dataset from the indicated application asset, which must be of
  type .XML.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaTrackables.html" title="interface in org.firstinspires.ftc.robotcore.external.navigation">VuforiaTrackables</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/robotcore/internal/VuforiaLocalizerImpl.html#loadTrackablesFromFile-java.lang.String-">loadTrackablesFromFile</a></span>(java.lang.String&nbsp;absoluteFileName)</code>
 <div class="block">Loads a Vuforia dataset from the indicated file, which must be a .XML file
  and contain the full file path.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../org/firstinspires/ftc/robotcore/internal/VuforiaLocalizerImpl.html#setFrameQueueCapacity-int-">setFrameQueueCapacity</a></span>(int&nbsp;capacity)</code>
+<div class="block">Sets the maximum number of <code>Frame</code>s that will simultaneously be stored in the
+ frame queue.</div>
 </td>
 </tr>
 </table>
@@ -334,10 +362,28 @@ implements <a href="../../../../../org/firstinspires/ftc/robotcore/external/navi
 </dl>
 </li>
 </ul>
+<a name="getRenderCount--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getRenderCount</h4>
+<pre>public&nbsp;int&nbsp;getRenderCount()</pre>
+</li>
+</ul>
+<a name="getCallbackCount--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCallbackCount</h4>
+<pre>public&nbsp;int&nbsp;getCallbackCount()</pre>
+</li>
+</ul>
 <a name="getCameraCalibration--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getCameraCalibration</h4>
 <pre>public&nbsp;CameraCalibration&nbsp;getCameraCalibration()</pre>
@@ -348,6 +394,89 @@ implements <a href="../../../../../org/firstinspires/ftc/robotcore/external/navi
 <dd><code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#getCameraCalibration--">getCameraCalibration</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html" title="interface in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer</a></code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>information about Vuforia's knowledge of the camera that it is using.</dd>
+</dl>
+</li>
+</ul>
+<a name="getFrameQueue--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFrameQueue</h4>
+<pre>public&nbsp;java.util.concurrent.BlockingQueue&lt;<a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.CloseableFrame.html" title="class in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer.CloseableFrame</a>&gt;&nbsp;getFrameQueue()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#getFrameQueue--">VuforiaLocalizer</a></code></span></div>
+<div class="block">(Advanced) Returns a queue into which, if requested, Vuforia <code>Frame</code>s are placed
+ as they become available. This provides a means by which camera image data can be accessed
+ even while the Vuforia engine is running.
+
+ <p>While the Vuforia engine is running, it takes exclusive ownership of the camera it is
+ using. This impedes the ability to also use that camera image data in alternative visual
+ processing algorithms. However, periodically (at a rate of tens of Hz), the Vuforia engine
+ makes available <code>Frame</code>s containing snapshots from the camera, and through which
+ camera image data can be retrieved. These can optionally be retrieved through the frame
+ queue.</p>
+
+ <p>To access these <code>Frame</code>s, call <a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#setFrameQueueCapacity-int-"><code>VuforiaLocalizer.setFrameQueueCapacity(int)</code></a> to enable the
+ frame queue. Once enabled, the frame queue can be accessed using <a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#getFrameQueue--"><code>VuforiaLocalizer.getFrameQueue()</code></a>
+ and the methods thereon used to access <code>Frame</code>s as they become available.</p>
+
+ <p>When <a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#setFrameQueueCapacity-int-"><code>VuforiaLocalizer.setFrameQueueCapacity(int)</code></a> is called, any frame queue returned previously by
+ <a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#getFrameQueue--"><code>VuforiaLocalizer.getFrameQueue()</code></a> becomes invalid and must be re-fetched.</p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#getFrameQueue--">getFrameQueue</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html" title="interface in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a queue through which Vuforia <code>Frame</code>s may be retrieved.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#setFrameQueueCapacity-int-"><code>VuforiaLocalizer.setFrameQueueCapacity(int)</code></a>, 
+<a href="https://library.vuforia.com/sites/default/api/java/classcom_1_1vuforia_1_1Frame.html">Frame (Java)</a>, 
+<a href="https://library.vuforia.com/sites/default/api/cpp/classVuforia_1_1Frame.html">Frame (C++)</a>, 
+<a href="https://developer.android.com/reference/java/util/concurrent/BlockingQueue.html">BlockingQueue</a></dd>
+</dl>
+</li>
+</ul>
+<a name="setFrameQueueCapacity-int-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setFrameQueueCapacity</h4>
+<pre>public&nbsp;void&nbsp;setFrameQueueCapacity(int&nbsp;capacity)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#setFrameQueueCapacity-int-">VuforiaLocalizer</a></code></span></div>
+<div class="block">Sets the maximum number of <code>Frame</code>s that will simultaneously be stored in the
+ frame queue. If the queue is full and new <code>Frame</code>s become available, older frames
+ will be discarded. The frame queue initially has a capacity of zero.
+
+ <p>Note that calling this method invalidates any frame queue retreived previously
+ through <a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#getFrameQueue--"><code>VuforiaLocalizer.getFrameQueue()</code></a>.</p></div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#setFrameQueueCapacity-int-">setFrameQueueCapacity</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html" title="interface in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer</a></code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>capacity</code> - the maximum number of items that may be stored in the frame queue</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#getFrameQueue--"><code>VuforiaLocalizer.getFrameQueue()</code></a>, 
+<a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#getFrameQueueCapacity--"><code>VuforiaLocalizer.getFrameQueueCapacity()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="getFrameQueueCapacity--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getFrameQueueCapacity</h4>
+<pre>public&nbsp;int&nbsp;getFrameQueueCapacity()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#getFrameQueueCapacity--">VuforiaLocalizer</a></code></span></div>
+<div class="block">Returns the current capacity of the frame queue.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#getFrameQueueCapacity--">getFrameQueueCapacity</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html" title="interface in org.firstinspires.ftc.robotcore.external.navigation">VuforiaLocalizer</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the current capacity of the frame queue.</dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#setFrameQueueCapacity-int-"><code>VuforiaLocalizer.setFrameQueueCapacity(int)</code></a>, 
+<a href="../../../../../org/firstinspires/ftc/robotcore/external/navigation/VuforiaLocalizer.html#getFrameQueue--"><code>VuforiaLocalizer.getFrameQueue()</code></a></dd>
 </dl>
 </li>
 </ul>

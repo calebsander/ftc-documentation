@@ -20,7 +20,7 @@ const METHOD_MATCH = /^\.method ([a-zA-Z0-9.\[\]]+) ([a-zA-Z0-9_$]+)\(((?:[a-zA-
 const CLASS_MATCH = '.class'
 const FIELD_MATCH = /^\.field ([a-zA-Z0-9_$]+)\n/m
 const CONSTRUCTOR_MATCH = /^.constructor \(((?:[a-zA-Z0-9.\[\] @]+)(?:, [a-zA-Z0-9.\[\] @]+)*)?\)\n/m
-const MODIFIERS = '(?:\\n|^)\\s*(?:(?:(?:@?[A-Z][a-zA-Z]*(?:\\([^)]*\\))?)|(?:[a-z]+))\\s+)*'
+const MODIFIERS = '(?:\\n|^)\\s*(?:(?:(?:@?[A-Z][a-zA-Z0-9]*(?:\\([^)]*\\))?)|(?:[a-z]+))\\s+)*'
 RegExp.escape = str => {
 	return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
 }

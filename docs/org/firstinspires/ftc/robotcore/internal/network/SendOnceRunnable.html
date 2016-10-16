@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -156,8 +156,24 @@ implements java.lang.Runnable</pre>
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>static double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.html#ASSUME_DISCONNECT_TIMER">ASSUME_DISCONNECT_TIMER</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.html#DEBUG">DEBUG</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static long</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.html#GAMEPAD_UPDATE_THRESHOLD">GAMEPAD_UPDATE_THRESHOLD</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.html#MAX_COMMAND_ATTEMPTS">MAX_COMMAND_ATTEMPTS</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.html#MS_HEARTBEAT_TRANSMISSION_INTERVAL">MS_HEARTBEAT_TRANSMISSION_INTERVAL</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
@@ -204,16 +220,20 @@ implements java.lang.Runnable</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.html#clearCommands--">clearCommands</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.html#onPeerConnected-boolean-">onPeerConnected</a></span>(boolean&nbsp;peerLikelyChanged)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.html#removeCommand-com.qualcomm.robotcore.robocol.Command-">removeCommand</a></span>(<a href="../../../../../../com/qualcomm/robotcore/robocol/Command.html" title="class in com.qualcomm.robotcore.robocol">Command</a>&nbsp;cmd)</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.html#run--">run</a></span>()</code>
 <div class="block">Starts executing the active part of the class' code.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../org/firstinspires/ftc/robotcore/internal/network/SendOnceRunnable.html#sendCommand-com.qualcomm.robotcore.robocol.Command-">sendCommand</a></span>(<a href="../../../../../../com/qualcomm/robotcore/robocol/Command.html" title="class in com.qualcomm.robotcore.robocol">Command</a>&nbsp;cmd)</code>&nbsp;</td>
 </tr>
@@ -255,13 +275,65 @@ implements java.lang.Runnable</pre>
 <a name="DEBUG">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>DEBUG</h4>
 <pre>public static final&nbsp;boolean DEBUG</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../../constant-values.html#org.firstinspires.ftc.robotcore.internal.network.SendOnceRunnable.DEBUG">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="ASSUME_DISCONNECT_TIMER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ASSUME_DISCONNECT_TIMER</h4>
+<pre>public static final&nbsp;double ASSUME_DISCONNECT_TIMER</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../../constant-values.html#org.firstinspires.ftc.robotcore.internal.network.SendOnceRunnable.ASSUME_DISCONNECT_TIMER">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="MAX_COMMAND_ATTEMPTS">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MAX_COMMAND_ATTEMPTS</h4>
+<pre>public static final&nbsp;int MAX_COMMAND_ATTEMPTS</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../../constant-values.html#org.firstinspires.ftc.robotcore.internal.network.SendOnceRunnable.MAX_COMMAND_ATTEMPTS">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="GAMEPAD_UPDATE_THRESHOLD">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>GAMEPAD_UPDATE_THRESHOLD</h4>
+<pre>public static final&nbsp;long GAMEPAD_UPDATE_THRESHOLD</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../../constant-values.html#org.firstinspires.ftc.robotcore.internal.network.SendOnceRunnable.GAMEPAD_UPDATE_THRESHOLD">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="MS_HEARTBEAT_TRANSMISSION_INTERVAL">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>MS_HEARTBEAT_TRANSMISSION_INTERVAL</h4>
+<pre>public static final&nbsp;int MS_HEARTBEAT_TRANSMISSION_INTERVAL</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../../constant-values.html#org.firstinspires.ftc.robotcore.internal.network.SendOnceRunnable.MS_HEARTBEAT_TRANSMISSION_INTERVAL">Constant Field Values</a></dd>
 </dl>
 </li>
 </ul>
@@ -294,6 +366,15 @@ implements java.lang.Runnable</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="onPeerConnected-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>onPeerConnected</h4>
+<pre>public&nbsp;void&nbsp;onPeerConnected(boolean&nbsp;peerLikelyChanged)</pre>
+</li>
+</ul>
 <a name="run--">
 <!--   -->
 </a>

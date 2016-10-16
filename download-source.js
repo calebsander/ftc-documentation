@@ -15,6 +15,11 @@ rmdir(REPO_PATH, err => {
 	https.get(REPO_URL, res => {
 		https.get(res.headers.location, res => {
 			const length = Number(res.headers['content-length'])
+			if (isNaN(length)) {
+				fs.unlink(REPO_ZIP_PATH, err => {
+					throw new Error('Failed to download; try again')
+				})
+			}
 			const bar = new ProgressBar('Downloading repo [:bar] :current/:total (:percent) :etas', {total: length})
 			let receivedBytes = 0
 			let lastDisplayedBytes = 0

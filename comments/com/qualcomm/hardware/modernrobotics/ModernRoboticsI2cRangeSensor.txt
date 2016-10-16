@@ -1,0 +1,18 @@
+.class
+Implementation of the Modern Robotics Range Sensor,
+a combination of an ultrasonic sensor and an optical (EOPD) range sensor.
+The ultrasonic sensor is intended for longer distances and
+the EOPD is intended for very short distances (at most a few inches).
+Note that which sensor gives better values depends also on the
+shape and material of the surface.
+The two sensors can be read individually, or you can use {@link #getDistance},
+which will automatically select between the two sensors' values.
+
+.method double cmUltrasonic()
+Gets the distance as reported by the ultrasonic sensor, in centimeters
+@return The approximate distance to the nearest centimeter (0 - 255cm)
+
+.method double cmOptical()
+Gets the distance as reported by the EOPD sensor, in centimeters.
+Note that this value depends on how reflective the surface is.
+@return The approximate distance to the target, if it is quite close
